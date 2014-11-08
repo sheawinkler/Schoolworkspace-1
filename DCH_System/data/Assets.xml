@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<investmentAccounts alphaNumeric="RSTOR322">
+    <label>7" Vinyl Records</label>
+    <type>RSTOR322</type>
+    <baseRateOfReturn>2.1</baseRateOfReturn>
+    <omega>0.54</omega>
+    <quarterlyDividend>2453.21</quarterlyDividend>
+</investmentAccounts>

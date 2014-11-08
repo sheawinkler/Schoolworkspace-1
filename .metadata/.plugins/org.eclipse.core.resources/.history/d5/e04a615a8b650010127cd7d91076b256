@@ -1,0 +1,6 @@
+// import java.sql.*;
+public class Query {
+	public static void main(args{}){
+	System.out.println("asf");
+	}
+}

@@ -1,0 +1,37 @@
+-- Compiled by Deverick Simpson Assembler
+DEPTH = 1024;
+WIDTH = 12;
+ADDRESS_RADIX = HEX;
+DATA_RADIX=BIN;
+CONTENT_BEGIN
+0	: 011000000000;	 % (la) movl number, Data at: 0x00 %
+1	: 000010101110;	 % movfw $mar %
+2	: 001000000000;	 
+3	: 000010100100;	 % some lines have comments (so you can verify) %
+4	: 001000000001;	 
+5	: 000010100101;	 
+6	: 000011000110;	 % notice the address comments vs immediate field %
+7	: 011000000111;	 % why do they not match? %
+8	: 000010100111;	 
+9	: 100000001010;	 % call multiply, Address: 0x00b %
+A	: 110000001001;	 % jump exit, Address: 0x00a %
+B	: 000011010000;	 % clrw %
+C	: 000000000111;	 % addf $s3 %
+D	: 010100001111;	 % jne continue, Address: 0x010 %
+E	: 000000000110;	 % addf $s2 %
+F	: 010000011011;	 % jeq mult_exit, Address: 0x01c %
+10	: 000010111100;	 % movf $ioa %
+11	: 000000000101;	 
+12	: 000010101100;	 
+13	: 000010111101;	 % remember to use register names, i.e. $s0 %
+14	: 000000010100;	 
+15	: 000010101101;	 
+16	: 000010110111;	 
+17	: 000111111111;	 
+18	: 000010100111;	 
+19	: 011011111111;	 % movl -1 %
+1A	: 000000000110;	 % addf $s2 %
+1B	: 110000001010;	 % jump multiply, Address: 0x00b %
+1C	: 011100000000;	 % ret %
+[1d..3ff]: 000000000000;
+END;

@@ -1,0 +1,60 @@
+/* style.css - a simple style sheet */
+#index {
+  margin-left: 5%; margin-right: 10%;
+  color: black; background: white;
+  height:100%;
+}
+
+#header{
+	 background:red;
+	width:1000px;
+	height:35px;
+}
+
+#banner{
+	background:green;
+	height:700px;
+	width:150px;
+	float:left;
+}
+
+#main_body{
+
+	float:left;
+	background:black;
+	height:700px;
+	width:850px;
+
+
+}
+
+#index {
+	  margin-left: 5%; margin-right: 10%;
+	  color: red; background: white;
+	  height:100%;
+}
+#featured{
+
+}
+
+#content{
+
+}
+#posts-list
+#extras
+#blogroll
+#social{
+
+}
+
+#footer{
+	background:yellow;
+	absolute;
+	height:20px;
+	float:left;
+	
+}
+
+#contentinfo{
+
+}

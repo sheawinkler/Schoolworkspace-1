@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<person code="doc05">
+    <city> Los Cabos</city>
+    <country> Mexico</country>
+    <emailName></emailName>
+    <firstName>Davison</firstName>
+    <lastName> Peter</lastName>
+    <state> BCS</state>
+    <street>123 Cabo San Lucas</street>
+    <zip> </zip>
+</person>

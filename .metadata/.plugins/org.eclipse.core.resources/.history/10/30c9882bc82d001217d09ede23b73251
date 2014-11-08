@@ -1,0 +1,127 @@
+import java.io.*;
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import java.util.Formatter;
+import java.util.Scanner;
+import java.sql.*;
+
+public class Report {
+	//mySQL connection
+    /**Connection con = null;
+    ResultSet rs=null;
+    Statement statement = null;
+    String url = "jdbc:mysql://cse.unl.edu/";
+    String db = "dsimpson";
+    String driver = "com.mysql.jdbc.Driver";
+    String user = "dsimpson";
+    String pass = "t64__W";
+    **/
+	public void createWindow(){
+    	JFrame jf= new JFrame();
+    	jf.setTitle("CompanionLinc");
+    	jf.setDefaultCloseOperation(jf.EXIT_ON_CLOSE);
+    	jf.setVisible(true);
+    	
+    	Container pane = jf.getContentPane();
+    	GridBagLayout layout = new GridBagLayout();
+    	GridBagConstraints cons = new GridBagConstraints();
+    	pane.setLayout(layout);
+ 
+    	cons.gridx = 1;
+    	cons.gridy = 1;
+    	JButton cancel = new JButton("Cancel");
+    	layout.setConstraints(cancel, cons);
+    	pane.add(cancel);
+
+    	cons.gridx = -1;
+    	cons.gridy = 1;
+    	JButton submit = new JButton("Submit");
+    	layout.setConstraints(submit, cons);
+    	pane.add(submit);
+    	
+    	
+    	cons.gridx = -1;
+    	cons.gridy = -1;
+    	JLabel intro = new JLabel("Using this system, you can edit Employee Data");
+    	layout.setConstraints(intro,cons);
+    	pane.add(intro);
+    	
+    	
+    	jf.pack(); 
+    	jf.setLocationRelativeTo(null); 
+		
+	}
+    
+	public void printAll(){
+		
+	}
+	
+	public void printIndividual(){
+		
+	}
+	
+	public void newIndividual(){
+		System.out.println("First Name/n");
+			Scanner firstName = null;
+			firstName = new Scanner(System.in);
+		System.out.println("Last Name/n");
+			Scanner lastName = null;
+			lastName = new Scanner(System.in);
+		System.out.println("Social Security");
+			Scanner socialSecurity = null;
+			socialSecurity = new Scanner(System.in);
+		System.out.println("Date of Birth");
+			Scanner dateOfBirth = null;
+			dateOfBirth = new Scanner(System.in);
+	}
+	
+    public void userInput(){	
+		System.out.println("\nYou can view Employee information, add employees, and run reports using this system.");
+		System.out.println("Please select one of the following options (1-5):");
+		System.out.println("1. Print  Report for All Employess\n2. Run Report for an Employee\n3. Enter New Employee Into System\n4. Quit\n");
+		
+		Scanner choice = null;
+		choice = new Scanner(System.in);
+		
+		//Choosing event case
+		String quitVariable = "QUIT";
+		String userOption = choice.next().toUpperCase();
+		if(userOption.equals(quitVariable)){
+						System.out.println("Thank you for using the Employee Directoy System System");
+		 				System.exit(0);		
+		}
+
+		int myChoice = Integer.parseInt(userOption);
+		try{
+			switch(myChoice){
+			case 1:
+				newIndividual();
+				break;
+			case 2:
+				System.out.println("2");
+				break;
+			case 3:
+				System.out.println("3");
+				break;
+			case 4:
+				System.out.println("Quit");
+				break;
+			}
+		}
+		catch (Exception e){
+	          e.printStackTrace();
+      }
+  }
+			
+    
+
+  
+    
+	public static void main(String[] args) throws IOException {
+		Report grades = new Report();
+		//grades.createWindow();
+		grades.userInput();
+	}
+	
+}

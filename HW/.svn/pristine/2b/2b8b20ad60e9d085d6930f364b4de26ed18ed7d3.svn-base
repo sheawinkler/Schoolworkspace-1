@@ -1,0 +1,309 @@
+[
+  {
+    "personCode": "944c",
+    "nameFirst": "Castro",
+    "nameLast": "Starlin",
+    "mailingAddress": {
+      "street": "1060 West Addison Street",
+      "City": "Chicago",
+      "state": "IL",
+      "ZIP": "60613",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "scastro@cubs.com",
+      "starlin_castro13@gmail.com"
+    ]
+  },
+  {
+    "personCode": "306a",
+    "nameFirst": "Sampson",
+    "nameLast": "Brock",
+    "mailingAddress": {
+      "street": "123 N 1st Street",
+      "City": "Omaha",
+      "state": "NE",
+      "ZIP": "68116",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "brock_f_sampson@gmail.com",
+      "bsampson@venture.com"
+    ]
+  },
+  {
+    "personCode": "2342",
+    "nameFirst": "O\u0027Brien",
+    "nameLast": "Miles",
+    "mailingAddress": {
+      "street": "123 Friendly Street",
+      "City": "Ottawa",
+      "state": "ON",
+      "ZIP": "K1A 0G9",
+      "country": "Canada"
+    },
+    "emailAddress": []
+  },
+  {
+    "rank": "E",
+    "SEC": "sec001",
+    "personCode": "aef1",
+    "nameFirst": "Gordon",
+    "nameLast": "Gekko",
+    "mailingAddress": {
+      "street": "1 Wall Street",
+      "City": "New York",
+      "state": "NY",
+      "ZIP": "10005-0012",
+      "country": "USA"
+    },
+    "emailAddress": []
+  },
+  {
+    "rank": "J",
+    "SEC": "sec991",
+    "personCode": "321f",
+    "nameFirst": "Bud",
+    "nameLast": "Fox",
+    "mailingAddress": {
+      "street": "321 Bronx Street",
+      "City": "New York",
+      "state": "NY",
+      "ZIP": "10004",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "bfox@gmail.com",
+      "csheen@crazy.net"
+    ]
+  },
+  {
+    "personCode": "ma12",
+    "nameFirst": "Sveum",
+    "nameLast": "Dale",
+    "mailingAddress": {
+      "street": "1060 West Addison Street",
+      "City": "Chicago",
+      "state": "IL",
+      "ZIP": "60613",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "sveum@cubs.com"
+    ]
+  },
+  {
+    "personCode": "321nd",
+    "nameFirst": "Hartnell",
+    "nameLast": "William",
+    "mailingAddress": {
+      "street": "1060 West Addison Street",
+      "City": "Chicago",
+      "state": "IL",
+      "ZIP": "60613",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "whartnell@doctors.com",
+      "dr@who.com"
+    ]
+  },
+  {
+    "personCode": "nf32a",
+    "nameFirst": "Troughton",
+    "nameLast": "Patrick",
+    "mailingAddress": {
+      "street": "1060 West Addison Street",
+      "City": "Chicago",
+      "state": "IL",
+      "ZIP": "60613",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "ptroug@cse.unl.edu",
+      "ptrou32@unl.edu"
+    ]
+  },
+  {
+    "rank": "E",
+    "SEC": "sec125",
+    "personCode": "321na",
+    "nameFirst": "Jon",
+    "nameLast": "Pertwee",
+    "mailingAddress": {
+      "street": "301 Front St W",
+      "City": " Toronto",
+      "state": " ON",
+      "ZIP": " M5V 2T6",
+      "country": " Canada"
+    },
+    "emailAddress": [
+      "jpet@whofan.com"
+    ]
+  },
+  {
+    "rank": "E",
+    "SEC": "sec221",
+    "personCode": "231",
+    "nameFirst": "Tom",
+    "nameLast": "Baker",
+    "mailingAddress": {
+      "street": "1 Blue Jays Way",
+      "City": " Toronto",
+      "state": " ON",
+      "ZIP": " M5V 1J1",
+      "country": " Canada"
+    },
+    "emailAddress": [
+      "famousdoc@who.com",
+      "tbaker@cse.unl.edu",
+      "mostfamous@whovian.com",
+      "thedoctor@bbc.com"
+    ]
+  },
+  {
+    "rank": "J",
+    "SEC": "sec982",
+    "personCode": "6doc",
+    "nameFirst": "Richard",
+    "nameLast": "Hurndall",
+    "mailingAddress": {
+      "street": "Campos El290",
+      "City": "Mexico City",
+      "state": " FD",
+      "ZIP": "",
+      "country": " Mexico"
+    },
+    "emailAddress": [
+      "rhurndall@cse.unl.edu",
+      "richard@unl.edu"
+    ]
+  },
+  {
+    "rank": "J",
+    "SEC": "sec543",
+    "personCode": "321dr",
+    "nameFirst": "C.",
+    "nameLast": "Baker",
+    "mailingAddress": {
+      "street": "Avery Hall",
+      "City": "Lincoln",
+      "state": "NE",
+      "ZIP": "68503",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "dr@baker.com"
+    ]
+  },
+  {
+    "personCode": "1svndr",
+    "nameFirst": "McCoy",
+    "nameLast": "Sylvester",
+    "mailingAddress": {
+      "street": "126-01 Roosevelt Ave",
+      "City": " Flushing",
+      "state": " NY",
+      "ZIP": "11368",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "slyguy@hotmail.com",
+      "mccoy@whofan.com"
+    ]
+  },
+  {
+    "rank": "E",
+    "SEC": "sec31x",
+    "personCode": "123lst",
+    "nameFirst": "Paul",
+    "nameLast": "McGann",
+    "mailingAddress": {
+      "street": "1 MetLife Stadium Dr",
+      "City": " East Rutherford",
+      "state": " NJ",
+      "ZIP": "07073",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "pmcgann@mlb.com",
+      "foo@bar.com",
+      "pmc@unl.edu"
+    ]
+  },
+  {
+    "rank": "J",
+    "SEC": "sec953",
+    "personCode": "nwdoc1",
+    "nameFirst": "Chris",
+    "nameLast": "Eccleston",
+    "mailingAddress": {
+      "street": "1 E 161st St",
+      "City": " Bronx",
+      "state": " NY",
+      "ZIP": "10451",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "newguy@whovian.com"
+    ]
+  },
+  {
+    "personCode": "2ndbestd",
+    "nameFirst": "Tennant",
+    "nameLast": "David",
+    "mailingAddress": {
+      "street": "700 E Grand Ave",
+      "City": " Chicago",
+      "state": " IL",
+      "ZIP": " 60611",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "actor@shakespeare.com",
+      "tdavid@unl.edu"
+    ]
+  },
+  {
+    "personCode": "wrddoc",
+    "nameFirst": "Smith",
+    "nameLast": "Matt",
+    "mailingAddress": {
+      "street": "333 W 35th St",
+      "City": " Chicago",
+      "state": " IL",
+      "ZIP": "60616",
+      "country": "USA"
+    },
+    "emailAddress": [
+      "msmith@who.com",
+      "thedoc@cse.unl.edu"
+    ]
+  },
+  {
+    "personCode": "bbchar",
+    "nameFirst": "Ehrmantraut",
+    "nameLast": "Kaylee",
+    "mailingAddress": {
+      "street": "800 West 7th Street",
+      "City": " Albuquerque",
+      "state": " NM",
+      "ZIP": " 87105",
+      "country": "USA"
+    },
+    "emailAddress": []
+  },
+  {
+    "personCode": "doc05",
+    "nameFirst": "Davison",
+    "nameLast": "Peter",
+    "mailingAddress": {
+      "street": "123 Cabo San Lucas",
+      "City": " Los Cabos",
+      "state": " BCS",
+      "ZIP": " ",
+      "country": " Mexico"
+    },
+    "emailAddress": []
+  }
+]

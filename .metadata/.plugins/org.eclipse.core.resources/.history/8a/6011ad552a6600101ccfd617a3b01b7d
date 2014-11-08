@@ -1,0 +1,66 @@
+ import java.sql.*;
+public class Query {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Listing all table name in Database!");
+	    Connection con = null;
+	    ResultSet rs=null;
+	    Statement statement = null;
+	 
+	    String url = "jdbc:mysql://cse.unl.edu/";
+	    String db = "dsimpson";
+	    String driver = "com.mysql.jdbc.Driver";
+	    String user = "dsimpson";
+	    String pass = "t64__W";
+	    try{
+	        Class.forName(driver);
+	        con = DriverManager.getConnection(url+db, user, pass);
+	        try{
+	            DatabaseMetaData dbm = con.getMetaData();
+	            String[] types = {"TABLE"};
+	        
+	            rs = dbm.getTables(null,null,"%",types);
+	            System.out.println("Table name:");
+	            while (rs.next()){
+	              String table = rs.getString("TABLE_NAME");
+	              System.out.println(table);
+	            }
+	            System.out.println("\nAll songs by Linkin Park:");
+	            statement = con.createStatement();
+	            ResultSet results = statement.executeQuery("SELECT SongTitle FROM Songs natural join AlbumSongs natural join Albums natural join Bands WHERE BandName='Linkin Park'");
+	            while(results.next()){
+	            	String table2 = results.getString("SongTitle");
+	            	System.out.println(table2);
+	            }
+
+	            System.out.println("\nInserting information");
+	            ResultSet insert = statement.executeQuery("UPDATE Albums SET AlbumTitle='Kids' WHERE AlbumTitle='Kid';");
+	            while(insert.next()){
+	            	String table3 = insert.getString("AlbumTitle");
+	            	System.out.println(table3);
+	          
+	            }
+	            System.out.println("Updating");
+	            ResultSet update = statement.executeQuery("UPDATE");
+	            while(update.next()){
+	            	String table4 = update.getString("AlbumTitle");
+	            	System.out.println(table4);
+	            }
+	          }
+	          catch (SQLException s){
+	            System.out.println("Not any table in the database");
+	          }
+		      finally{
+		        con.close();
+		      }
+	        }
+	        catch (Exception e){
+	          e.printStackTrace();
+	        }
+
+	      }
+	    }

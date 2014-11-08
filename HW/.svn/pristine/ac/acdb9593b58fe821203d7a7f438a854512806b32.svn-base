@@ -1,0 +1,240 @@
+try {
+			ps = conn.prepareStatement(query1);
+			ps.setString(1, personCode);
+			rs = ps.executeQuery();
+			if(!rs.next()){
+				String query2 = "INSERT INTO Person(personCode,firstName,lastName,brokerCode,SECIdentifier) VALUES (?,?,?,?,?)";
+				try{
+					ps=conn.prepareStatement(query2);
+					ps.setString(1,personCode);
+					ps.setString(2, firstName);
+					ps.setString(3, lastName);
+					if(brokerType.equalsIgnoreCase("E")||brokerType.equalsIgnoreCase("J")){
+						ps.setString(4, brokerType);
+						ps.setString(5, secBrokerId);					
+					}
+					rs = ps.executeQuery();
+					personID = rs.getInt("personID");
+				}catch(SQLException e){
+					logger.error("SQLExpcetion: in the add person to Database");
+				}
+				try{
+					ps = conn.prepareStatement(query1);
+					ps.setString(1, personCode);
+					rs = ps.executeQuery();
+				}catch(SQLException e){
+					logger.error("SQLExpcetion: getting personID from Database that was just added");
+				}
+			}else{
+				personID = rs.getInt("personID");
+			}
+		}catch(SQLException e){
+			logger.error("SQLExpcetion: in the check to see if person is already there");
+			logger.trace("SQLException");
+		}
+		
+		
+		
+		http://dev.mysql.com/doc/refman/5.0/en/truncate-table.html
+		
+		
+			private static void createMailAddress(){
+		Connection conn = ConnectionFactory.getConnection();
+		PreparedStatement ps = null;
+		String query = "CREATE  TABLE IF NOT EXISTS `mailAddress` ("
+				+  "`mailAddressID` INT NOT NULL AUTO_INCREMENT ,"
+				+"  `personID` INT NOT NULL ,"
+				+"  `street` VARCHAR(255) NULL ,"
+				+"  `city` VARCHAR(255) NULL ,"
+				+"  `state` VARCHAR(255) NULL ,"
+				+"  `zip` VARCHAR(255) NULL ,"
+				+"  `country` VARCHAR(255) NULL ,"
+				+"  PRIMARY KEY (`mailAddressID`) ,"
+				+"  UNIQUE INDEX `mailAddressID_UNIQUE` (`mailAddressID` ASC) ,"
+				+"  INDEX `fk_mailAddress_Person1` (`personID` ASC) ,"
+				+"  CONSTRAINT `fk_mailAddress_Person1` FOREIGN KEY (`personID` ) REFERENCES `Person` (`personID` ) )"
+				+"ENGINE = InnoDB COLLATE = utf8_unicode_ci";
+		try{
+			ps = conn.prepareStatement(query);
+			ps.executeUpdate();
+		}catch(SQLException e ){
+			logger.error("SQL error in dropping mailAddress Table");
+			throw new RuntimeException(e);
+		}
+		ConnectionFactory.closeConnection(conn,ps);
+	}
+	private static void createEmail(){
+		Connection conn = ConnectionFactory.getConnection();
+		PreparedStatement ps = null;
+		String query = "CREATE  TABLE IF NOT EXISTS  `Email` ("
+				+"  `emailID` INT NOT NULL AUTO_INCREMENT ,"
+				+"  `personID` INT NOT NULL ,"
+				+"  `emailAddress` VARCHAR(255) NOT NULL ,"
+				+"  PRIMARY KEY (`emailID`) ,"
+				+"  UNIQUE INDEX `emailAddressID_UNIQUE` (`emailID` ASC) ,"
+				+"  UNIQUE INDEX `emailAddresscol_UNIQUE` (`emailAddress` ASC) ,"
+				+"  INDEX `fk_emailAddress_Person1` (`personID` ASC) ,"
+				+"  CONSTRAINT `fk_emailAddress_Person1` FOREIGN KEY (`personID` ) REFERENCES `Person` (`personID` ))"
+				+"ENGINE = InnoDB COLLATE = utf8_unicode_ci";
+		try{
+			ps = conn.prepareStatement(query);
+			ps.executeUpdate();
+		}catch(SQLException e ){
+			logger.error("SQL error in dropping mailAddress Table");
+			throw new RuntimeException(e);
+		}
+		ConnectionFactory.closeConnection(conn,ps);
+	}
+	private static void createPortfolioAsset(){
+		Connection conn = ConnectionFactory.getConnection();
+		PreparedStatement ps = null;
+		String query = "CREATE TABLE IF NOT EXISTS `portfolioAsset` (`portfolioAssetID` INT NOT NULL AUTO_INCREMENT ,"
+				+" `portfolioID` INT NOT NULL ,`assetID` INT NOT NULL ,"
+				+"`numberShare` VARCHAR(255) NULL ,`totalBalance` VARCHAR(255) NULL ,"
+				+"  `percentStake` VARCHAR(255) NULL ,"
+				+"  PRIMARY KEY (`portfolioAssetID`) ,"
+				+"  UNIQUE INDEX `portfolioAssetID_UNIQUE` (`portfolioAssetID` ASC) ,"
+				+"  INDEX `fk_portfolioAsset_Portfolio1` (`portfolioID` ASC) ,"
+				+"  INDEX `fk_portfolioAsset_Asset1` (`assetID` ASC) ,"
+				+"  CONSTRAINT fk_portfolioAsset_Portfolio1 FOREIGN KEY (portfolioID ) REFERENCES Portfolio (portfolioID ),"
+				+"  CONSTRAINT fk_portfolioAsset_Asset1 FOREIGN KEY (assetID ) REFERENCES Asset (assetID ) )"
+				+"ENGINE = InnoDB COLLATE = utf8_unicode_ci" ;
+		try{
+			ps = conn.prepareStatement(query);
+			ps.executeUpdate();
+		}catch(SQLException e ){
+			logger.error("SQL error in dropping mailAddress Table");
+			throw new RuntimeException(e);
+		}
+		ConnectionFactory.closeConnection(conn,ps);
+	}
+	private static void createPortfolio(){
+		Connection conn = ConnectionFactory.getConnection();
+		PreparedStatement ps = null;
+		String query1 ="CREATE  TABLE IF NOT EXISTS `Portfolio` ( "
+				+"  `portfolioID` INT NOT NULL AUTO_INCREMENT , "
+				+"  `portfolioCode` VARCHAR(45) NOT NULL , "
+				+"  `ownerID` INT NOT NULL , "
+				+"  `managerID` INT NOT NULL , "
+				+"  `beneficiaryID` INT NULL , "
+				+"  PRIMARY KEY (`portfolioID`) ,"
+				+"  UNIQUE INDEX `portfolioID_UNIQUE` (`portfolioID` ASC) ,"
+				+"  INDEX `fk_Portfolio_Person1` (`ownerID` ASC) ,"
+				+"  INDEX `fk_Portfolio_Person2` (`managerID` ASC) ,"
+				+"  INDEX `fk_Portfolio_Person3` (`beneficiaryID` ASC) ,"
+				+"  CONSTRAINT `fk_Portfolio_Person1` FOREIGN KEY (`ownerID` ) REFERENCES `Person` (`personID` ),"
+				+"  CONSTRAINT `fk_Portfolio_Person2` FOREIGN KEY (`managerID` ) REFERENCES `Person` (`personID` ),"
+				+"  CONSTRAINT `fk_Portfolio_Person3` FOREIGN KEY (`beneficiaryID` ) REFERENCES `Person` (`personID` ))"
+				+"ENGINE = InnoDB COLLATE = utf8_unicode_ci;";
+		try{
+			ps = conn.prepareStatement(query1);
+			ps.executeUpdate();
+		}catch(SQLException e ){
+			logger.error("SQL error in Portfolio Table");
+			e.printStackTrace();
+			throw new RuntimeException(e);
+		}
+		ConnectionFactory.closeConnection(conn,ps);
+	}
+	
+	private static void createAsset(){
+		Connection conn = ConnectionFactory.getConnection();
+		PreparedStatement ps = null;
+		String query= "CREATE  TABLE IF NOT EXISTS `Asset` ("
+				+"  `assetID` INT NOT NULL AUTO_INCREMENT ,"
+				+"  `assetCode` VARCHAR(45) NOT NULL ,"
+				+"  `char` VARCHAR(1) NOT NULL ,"
+				+"  `label` VARCHAR(255) NOT NULL ,"
+				+"  `annualPercentRate` VARCHAR(255) NULL ,"
+				+"  `quarterlyDivident` VARCHAR(255) NULL ,"
+				+"  `baseRateOfReturn` VARCHAR(255) NULL ,"
+				+"  `omega` VARCHAR(45) NULL ,"
+				+"  `stockSymbol` VARCHAR(45) NULL ,"
+				+"  `sharePrice` VARCHAR(255) NULL ,"
+				+"  `totalValue` VARCHAR(255) NULL ,"
+				+"  PRIMARY KEY (`assetID`) ,"
+				+"  UNIQUE INDEX `idAsset_UNIQUE` (`assetID` ASC) ,"
+				+"  UNIQUE INDEX `assetCode_UNIQUE` (`assetCode` ASC) ,"
+				+"  UNIQUE INDEX `label_UNIQUE` (`label` ASC) )"
+				+"ENGINE = InnoDB COLLATE = utf8_unicode_ci";
+		try{
+			ps = conn.prepareStatement(query);
+			ps.executeUpdate();
+		}catch(SQLException e ){
+			logger.error("SQL error in removeAllAssets->droping Asset Table");
+			throw new RuntimeException(e);
+		}
+		ConnectionFactory.closeConnection(conn,ps);
+	}
+	private static void createPerson(){
+		Connection conn = ConnectionFactory.getConnection();
+		PreparedStatement ps = null;
+		String query ="CREATE  TABLE IF NOT EXISTS `Person` ("
+				+"  `personID` INT NOT NULL AUTO_INCREMENT ,"
+				+"  `personCode` VARCHAR(45) NOT NULL ,"
+				+"  `brokerCode` VARCHAR(45) NULL ,"
+				+"  `lastName` VARCHAR(255) NULL ,"
+				+"  `firstName` VARCHAR(255) NULL ,"
+				+"  `SECIdentifier` VARCHAR(45) NULL ,"
+				+"  UNIQUE INDEX `idPerson_UNIQUE` (`personID` ASC) ,"
+				+"  UNIQUE INDEX `personCode_UNIQUE` (`personCode` ASC) ,"
+				+"  PRIMARY KEY (`personID`),"
+				+"  UNIQUE INDEX `SECIdentifier_UNIQUE` (`SECIdentifier` ASC) )"
+				+"ENGINE = InnoDB COLLATE = utf8_unicode_ci";
+		try{
+			ps = conn.prepareStatement(query);
+			ps.executeUpdate();
+		}catch(SQLException e ){
+			logger.error("SQL error in dropping All Persons Table");
+
+		}
+		ConnectionFactory.closeConnection(conn,ps);
+	}
+	private static void createTables(){
+		Connection conn = ConnectionFactory.getConnection();
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		String query= "SHOW TABLES";
+		try{
+			ps = conn.prepareStatement(query);
+			rs = ps.executeQuery();
+			if(rs.next()){
+				if(!(rs.getString(1).contains("Person"))){
+					createPerson();
+				}
+				if(!(rs.getString(1).contains("Email"))){
+					createEmail();
+				}
+				if(!(rs.getString(1).contains("mailAddress"))){
+					createMailAddress();
+				}
+				if(!(rs.getString(1).contains("Portfolio"))){
+					createPortfolio();
+				}
+				if(!(rs.getString(1).contains("Asset"))){
+					createAsset();
+				}
+				if(!(rs.getString(1).contains("portfolioAsset"))){
+					createPortfolioAsset();
+				}
+			}
+		}catch(SQLException e ){
+			logger.error("SQL error in dropping All Persons Table");
+			e.printStackTrace();
+			
+		}
+		ConnectionFactory.closeConnection(rs,conn,ps);
+		
+		
+		
+		//		if(string.equalsIgnoreCase("lastname")){
+//			this.function = 1;
+//		}else if (string.equalsIgnoreCase("totalvalue")){
+//			this.function = 2;
+//		}else if (string.equalsIgnoreCase("managerRank")){
+//			this.function = 3;
+//		}else{
+//			logger.error("didnt pass in right size");
+//			throw new IllegalArgumentException("need sorting function");
+//		}
+	}

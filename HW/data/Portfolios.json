@@ -1,0 +1,738 @@
+[
+  {
+    "portfolioCode": "PT001",
+    "owner": {
+      "personCode": "944c",
+      "nameFirst": "Castro",
+      "nameLast": "Starlin",
+      "mailingAddress": {
+        "street": "1060 West Addison Street",
+        "City": "Chicago",
+        "state": "IL",
+        "ZIP": "60613",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "scastro@cubs.com",
+        "starlin_castro13@gmail.com"
+      ]
+    },
+    "manager": {
+      "rank": "E",
+      "SEC": "sec001",
+      "personCode": "aef1",
+      "nameFirst": "Gordon",
+      "nameLast": "Gekko",
+      "mailingAddress": {
+        "street": "1 Wall Street",
+        "City": "New York",
+        "state": "NY",
+        "ZIP": "10005-0012",
+        "country": "USA"
+      },
+      "emailAddress": []
+    },
+    "beneficiary": {
+      "personCode": "ma12",
+      "nameFirst": "Sveum",
+      "nameLast": "Dale",
+      "mailingAddress": {
+        "street": "1060 West Addison Street",
+        "City": "Chicago",
+        "state": "IL",
+        "ZIP": "60613",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "sveum@cubs.com"
+      ]
+    },
+    "assetList": [
+      {
+        "APR": 1.05,
+        "amount": 124.32,
+        "label": "Money Market Savings",
+        "code": "BX001-23",
+        "letter": "D"
+      },
+      {
+        "APR": 0.25,
+        "amount": 26534.21,
+        "label": "Savings Account",
+        "code": "AGTSAV",
+        "letter": "D"
+      },
+      {
+        "sharePrice": 106.13,
+        "shareOwned": 125.0,
+        "quarterlyDivident": 10.0,
+        "baseRateOfReturn": 2.25,
+        "omegaMeasure": 0.13,
+        "stockSymbol": "COST",
+        "label": "Costco",
+        "code": "B0oWM",
+        "letter": "S"
+      }
+    ]
+  },
+  {
+    "portfolioCode": "PF001",
+    "owner": {
+      "personCode": "2342",
+      "nameFirst": "O\u0027Brien",
+      "nameLast": "Miles",
+      "mailingAddress": {
+        "street": "123 Friendly Street",
+        "City": "Ottawa",
+        "state": "ON",
+        "ZIP": "K1A 0G9",
+        "country": "Canada"
+      },
+      "emailAddress": []
+    },
+    "manager": {
+      "rank": "E",
+      "SEC": "sec001",
+      "personCode": "aef1",
+      "nameFirst": "Gordon",
+      "nameLast": "Gekko",
+      "mailingAddress": {
+        "street": "1 Wall Street",
+        "City": "New York",
+        "state": "NY",
+        "ZIP": "10005-0012",
+        "country": "USA"
+      },
+      "emailAddress": []
+    },
+    "beneficiary": {
+      "personCode": "",
+      "nameFirst": "",
+      "nameLast": "",
+      "mailingAddress": {
+        "street": "",
+        "City": "",
+        "state": "",
+        "ZIP": "",
+        "country": ""
+      },
+      "emailAddress": []
+    },
+    "assetList": [
+      {
+        "APR": 1.05,
+        "amount": 124.32,
+        "label": "Money Market Savings",
+        "code": "BX001-23",
+        "letter": "D"
+      },
+      {
+        "sharePrice": 107.04,
+        "shareOwned": 1050.0,
+        "quarterlyDivident": 0.0,
+        "baseRateOfReturn": 7.2,
+        "omegaMeasure": -0.1,
+        "stockSymbol": "BRK-B",
+        "label": "Berkshire Hathaway",
+        "code": "BERK-B",
+        "letter": "S"
+      }
+    ]
+  },
+  {
+    "portfolioCode": "PD102",
+    "owner": {
+      "rank": "J",
+      "SEC": "sec543",
+      "personCode": "321dr",
+      "nameFirst": "C.",
+      "nameLast": "Baker",
+      "mailingAddress": {
+        "street": "Avery Hall",
+        "City": "Lincoln",
+        "state": "NE",
+        "ZIP": "68503",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "dr@baker.com"
+      ]
+    },
+    "manager": {
+      "rank": "J",
+      "SEC": "sec991",
+      "personCode": "321f",
+      "nameFirst": "Bud",
+      "nameLast": "Fox",
+      "mailingAddress": {
+        "street": "321 Bronx Street",
+        "City": "New York",
+        "state": "NY",
+        "ZIP": "10004",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "bfox@gmail.com",
+        "csheen@crazy.net"
+      ]
+    },
+    "beneficiary": {
+      "rank": "E",
+      "SEC": "sec001",
+      "personCode": "aef1",
+      "nameFirst": "Gordon",
+      "nameLast": "Gekko",
+      "mailingAddress": {
+        "street": "1 Wall Street",
+        "City": "New York",
+        "state": "NY",
+        "ZIP": "10005-0012",
+        "country": "USA"
+      },
+      "emailAddress": []
+    },
+    "assetList": [
+      {
+        "totalValue": 120000.0,
+        "percentageStake": 100.0,
+        "quarterlyDivident": 2400.0,
+        "baseRateOfReturn": 0.25,
+        "omegaMeasure": 0.15,
+        "stockSymbol": "",
+        "label": "Rental Property",
+        "code": "RENT445",
+        "letter": "P"
+      },
+      {
+        "totalValue": 1212500.0,
+        "percentageStake": 35.0,
+        "quarterlyDivident": 35000.0,
+        "baseRateOfReturn": 3.0,
+        "omegaMeasure": 0.32,
+        "stockSymbol": "",
+        "label": "Cluckin\u0027s restaurant chain",
+        "code": "FOOD12",
+        "letter": "P"
+      }
+    ]
+  },
+  {
+    "portfolioCode": "PF002",
+    "owner": {
+      "personCode": "wrddoc",
+      "nameFirst": "Smith",
+      "nameLast": "Matt",
+      "mailingAddress": {
+        "street": "333 W 35th St",
+        "City": " Chicago",
+        "state": " IL",
+        "ZIP": "60616",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "msmith@who.com",
+        "thedoc@cse.unl.edu"
+      ]
+    },
+    "manager": {
+      "rank": "E",
+      "SEC": "sec221",
+      "personCode": "231",
+      "nameFirst": "Tom",
+      "nameLast": "Baker",
+      "mailingAddress": {
+        "street": "1 Blue Jays Way",
+        "City": " Toronto",
+        "state": " ON",
+        "ZIP": " M5V 1J1",
+        "country": " Canada"
+      },
+      "emailAddress": [
+        "famousdoc@who.com",
+        "tbaker@cse.unl.edu",
+        "mostfamous@whovian.com",
+        "thedoctor@bbc.com"
+      ]
+    },
+    "beneficiary": {
+      "personCode": "1svndr",
+      "nameFirst": "McCoy",
+      "nameLast": "Sylvester",
+      "mailingAddress": {
+        "street": "126-01 Roosevelt Ave",
+        "City": " Flushing",
+        "state": " NY",
+        "ZIP": "11368",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "slyguy@hotmail.com",
+        "mccoy@whofan.com"
+      ]
+    },
+    "assetList": [
+      {
+        "sharePrice": 41.08,
+        "shareOwned": 10000.0,
+        "quarterlyDivident": 5.45,
+        "baseRateOfReturn": 3.1,
+        "omegaMeasure": 0.075,
+        "stockSymbol": "KO",
+        "label": "Coca-Cola",
+        "code": "321CC",
+        "letter": "S"
+      }
+    ]
+  },
+  {
+    "portfolioCode": "PF003",
+    "owner": {
+      "personCode": "2ndbestd",
+      "nameFirst": "Tennant",
+      "nameLast": "David",
+      "mailingAddress": {
+        "street": "700 E Grand Ave",
+        "City": " Chicago",
+        "state": " IL",
+        "ZIP": " 60611",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "actor@shakespeare.com",
+        "tdavid@unl.edu"
+      ]
+    },
+    "manager": {
+      "rank": "E",
+      "SEC": "sec221",
+      "personCode": "231",
+      "nameFirst": "Tom",
+      "nameLast": "Baker",
+      "mailingAddress": {
+        "street": "1 Blue Jays Way",
+        "City": " Toronto",
+        "state": " ON",
+        "ZIP": " M5V 1J1",
+        "country": " Canada"
+      },
+      "emailAddress": [
+        "famousdoc@who.com",
+        "tbaker@cse.unl.edu",
+        "mostfamous@whovian.com",
+        "thedoctor@bbc.com"
+      ]
+    },
+    "beneficiary": {
+      "personCode": "1svndr",
+      "nameFirst": "McCoy",
+      "nameLast": "Sylvester",
+      "mailingAddress": {
+        "street": "126-01 Roosevelt Ave",
+        "City": " Flushing",
+        "state": " NY",
+        "ZIP": "11368",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "slyguy@hotmail.com",
+        "mccoy@whofan.com"
+      ]
+    },
+    "assetList": [
+      {
+        "sharePrice": 35.4,
+        "shareOwned": 21.0,
+        "quarterlyDivident": 0.0,
+        "baseRateOfReturn": 1.25,
+        "omegaMeasure": 0.08,
+        "stockSymbol": "DDD",
+        "label": "3D Systems",
+        "code": "N0TPIX",
+        "letter": "S"
+      }
+    ]
+  },
+  {
+    "portfolioCode": "PF004",
+    "owner": {
+      "personCode": "2ndbestd",
+      "nameFirst": "Tennant",
+      "nameLast": "David",
+      "mailingAddress": {
+        "street": "700 E Grand Ave",
+        "City": " Chicago",
+        "state": " IL",
+        "ZIP": " 60611",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "actor@shakespeare.com",
+        "tdavid@unl.edu"
+      ]
+    },
+    "manager": {
+      "rank": "J",
+      "SEC": "sec982",
+      "personCode": "6doc",
+      "nameFirst": "Richard",
+      "nameLast": "Hurndall",
+      "mailingAddress": {
+        "street": "Campos El290",
+        "City": "Mexico City",
+        "state": " FD",
+        "ZIP": "",
+        "country": " Mexico"
+      },
+      "emailAddress": [
+        "rhurndall@cse.unl.edu",
+        "richard@unl.edu"
+      ]
+    },
+    "beneficiary": {
+      "personCode": "bbchar",
+      "nameFirst": "Ehrmantraut",
+      "nameLast": "Kaylee",
+      "mailingAddress": {
+        "street": "800 West 7th Street",
+        "City": " Albuquerque",
+        "state": " NM",
+        "ZIP": " 87105",
+        "country": "USA"
+      },
+      "emailAddress": []
+    },
+    "assetList": [
+      {
+        "APR": 3.4,
+        "amount": 120000.0,
+        "label": "Roth IRA",
+        "code": "RIRA01",
+        "letter": "D"
+      }
+    ]
+  },
+  {
+    "portfolioCode": "PF006",
+    "owner": {
+      "personCode": "1svndr",
+      "nameFirst": "McCoy",
+      "nameLast": "Sylvester",
+      "mailingAddress": {
+        "street": "126-01 Roosevelt Ave",
+        "City": " Flushing",
+        "state": " NY",
+        "ZIP": "11368",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "slyguy@hotmail.com",
+        "mccoy@whofan.com"
+      ]
+    },
+    "manager": {
+      "rank": "E",
+      "SEC": "sec221",
+      "personCode": "231",
+      "nameFirst": "Tom",
+      "nameLast": "Baker",
+      "mailingAddress": {
+        "street": "1 Blue Jays Way",
+        "City": " Toronto",
+        "state": " ON",
+        "ZIP": " M5V 1J1",
+        "country": " Canada"
+      },
+      "emailAddress": [
+        "famousdoc@who.com",
+        "tbaker@cse.unl.edu",
+        "mostfamous@whovian.com",
+        "thedoctor@bbc.com"
+      ]
+    },
+    "beneficiary": {
+      "personCode": "",
+      "nameFirst": "",
+      "nameLast": "",
+      "mailingAddress": {
+        "street": "",
+        "City": "",
+        "state": "",
+        "ZIP": "",
+        "country": ""
+      },
+      "emailAddress": []
+    },
+    "assetList": []
+  },
+  {
+    "portfolioCode": "PF007",
+    "owner": {
+      "rank": "E",
+      "SEC": "sec221",
+      "personCode": "231",
+      "nameFirst": "Tom",
+      "nameLast": "Baker",
+      "mailingAddress": {
+        "street": "1 Blue Jays Way",
+        "City": " Toronto",
+        "state": " ON",
+        "ZIP": " M5V 1J1",
+        "country": " Canada"
+      },
+      "emailAddress": [
+        "famousdoc@who.com",
+        "tbaker@cse.unl.edu",
+        "mostfamous@whovian.com",
+        "thedoctor@bbc.com"
+      ]
+    },
+    "manager": {
+      "rank": "E",
+      "SEC": "sec221",
+      "personCode": "231",
+      "nameFirst": "Tom",
+      "nameLast": "Baker",
+      "mailingAddress": {
+        "street": "1 Blue Jays Way",
+        "City": " Toronto",
+        "state": " ON",
+        "ZIP": " M5V 1J1",
+        "country": " Canada"
+      },
+      "emailAddress": [
+        "famousdoc@who.com",
+        "tbaker@cse.unl.edu",
+        "mostfamous@whovian.com",
+        "thedoctor@bbc.com"
+      ]
+    },
+    "beneficiary": {
+      "personCode": "bbchar",
+      "nameFirst": "Ehrmantraut",
+      "nameLast": "Kaylee",
+      "mailingAddress": {
+        "street": "800 West 7th Street",
+        "City": " Albuquerque",
+        "state": " NM",
+        "ZIP": " 87105",
+        "country": "USA"
+      },
+      "emailAddress": []
+    },
+    "assetList": [
+      {
+        "sharePrice": 41.08,
+        "shareOwned": 10000.0,
+        "quarterlyDivident": 5.45,
+        "baseRateOfReturn": 3.1,
+        "omegaMeasure": 0.075,
+        "stockSymbol": "KO",
+        "label": "Coca-Cola",
+        "code": "321CC",
+        "letter": "S"
+      },
+      {
+        "totalValue": 1.0456E+7,
+        "percentageStake": 23.5,
+        "quarterlyDivident": 14240.0,
+        "baseRateOfReturn": 5.35,
+        "omegaMeasure": 0.25,
+        "stockSymbol": "",
+        "label": "Commercial Property-Red Oaks Mall",
+        "code": "CMPROP0121",
+        "letter": "P"
+      },
+      {
+        "totalValue": 54300.0,
+        "percentageStake": 12.0,
+        "quarterlyDivident": 1232.0,
+        "baseRateOfReturn": 1.23,
+        "omegaMeasure": 0.13,
+        "stockSymbol": "",
+        "label": "Fred\u0027s Fabulous Hardware Store",
+        "code": "REALStr12",
+        "letter": "P"
+      },
+      {
+        "sharePrice": 97.75,
+        "shareOwned": 50.0,
+        "quarterlyDivident": 2.75,
+        "baseRateOfReturn": 4.6,
+        "omegaMeasure": 0.12,
+        "stockSymbol": "CNI",
+        "label": "Canadian National Railway",
+        "code": "wOOWoo1S",
+        "letter": "S"
+      }
+    ]
+  },
+  {
+    "portfolioCode": "PF200",
+    "owner": {
+      "rank": "J",
+      "SEC": "sec982",
+      "personCode": "6doc",
+      "nameFirst": "Richard",
+      "nameLast": "Hurndall",
+      "mailingAddress": {
+        "street": "Campos El290",
+        "City": "Mexico City",
+        "state": " FD",
+        "ZIP": "",
+        "country": " Mexico"
+      },
+      "emailAddress": [
+        "rhurndall@cse.unl.edu",
+        "richard@unl.edu"
+      ]
+    },
+    "manager": {
+      "rank": "J",
+      "SEC": "sec953",
+      "personCode": "nwdoc1",
+      "nameFirst": "Chris",
+      "nameLast": "Eccleston",
+      "mailingAddress": {
+        "street": "1 E 161st St",
+        "City": " Bronx",
+        "state": " NY",
+        "ZIP": "10451",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "newguy@whovian.com"
+      ]
+    },
+    "beneficiary": {
+      "personCode": "bbchar",
+      "nameFirst": "Ehrmantraut",
+      "nameLast": "Kaylee",
+      "mailingAddress": {
+        "street": "800 West 7th Street",
+        "City": " Albuquerque",
+        "state": " NM",
+        "ZIP": " 87105",
+        "country": "USA"
+      },
+      "emailAddress": []
+    },
+    "assetList": []
+  },
+  {
+    "portfolioCode": "PF300",
+    "owner": {
+      "personCode": "1svndr",
+      "nameFirst": "McCoy",
+      "nameLast": "Sylvester",
+      "mailingAddress": {
+        "street": "126-01 Roosevelt Ave",
+        "City": " Flushing",
+        "state": " NY",
+        "ZIP": "11368",
+        "country": "USA"
+      },
+      "emailAddress": [
+        "slyguy@hotmail.com",
+        "mccoy@whofan.com"
+      ]
+    },
+    "manager": {
+      "rank": "J",
+      "SEC": "sec982",
+      "personCode": "6doc",
+      "nameFirst": "Richard",
+      "nameLast": "Hurndall",
+      "mailingAddress": {
+        "street": "Campos El290",
+        "City": "Mexico City",
+        "state": " FD",
+        "ZIP": "",
+        "country": " Mexico"
+      },
+      "emailAddress": [
+        "rhurndall@cse.unl.edu",
+        "richard@unl.edu"
+      ]
+    },
+    "beneficiary": {
+      "personCode": "",
+      "nameFirst": "",
+      "nameLast": "",
+      "mailingAddress": {
+        "street": "",
+        "City": "",
+        "state": "",
+        "ZIP": "",
+        "country": ""
+      },
+      "emailAddress": []
+    },
+    "assetList": [
+      {
+        "totalValue": 4213333.0,
+        "percentageStake": 25.0,
+        "quarterlyDivident": 10500.0,
+        "baseRateOfReturn": 2.0,
+        "omegaMeasure": -0.15,
+        "stockSymbol": "",
+        "label": "Industrial Widget Manufacturers Inc.",
+        "code": "IND321",
+        "letter": "P"
+      },
+      {
+        "totalValue": 13500.0,
+        "percentageStake": 100.0,
+        "quarterlyDivident": 2453.21,
+        "baseRateOfReturn": 2.1,
+        "omegaMeasure": 0.54,
+        "stockSymbol": "",
+        "label": "7\" Vinyl Records",
+        "code": "RSTOR322",
+        "letter": "P"
+      },
+      {
+        "sharePrice": 429.8,
+        "shareOwned": 1000.0,
+        "quarterlyDivident": 24.5,
+        "baseRateOfReturn": 4.3,
+        "omegaMeasure": -0.07,
+        "stockSymbol": "AAPL",
+        "label": "Apple",
+        "code": "123APP",
+        "letter": "S"
+      },
+      {
+        "sharePrice": 814.708,
+        "shareOwned": 100.0,
+        "quarterlyDivident": 0.0,
+        "baseRateOfReturn": 5.6,
+        "omegaMeasure": -0.05,
+        "stockSymbol": "GOOG",
+        "label": "Google Inc.",
+        "code": "GOOG001",
+        "letter": "S"
+      },
+      {
+        "APR": 2.75,
+        "amount": 25000.0,
+        "label": "1-year Rollover CD",
+        "code": "CD1Y3X",
+        "letter": "D"
+      },
+      {
+        "APR": 2.75,
+        "amount": 25000.0,
+        "label": "1-year Rollover CD",
+        "code": "CD1Y3X",
+        "letter": "D"
+      },
+      {
+        "APR": 3.4,
+        "amount": 120000.0,
+        "label": "Roth IRA",
+        "code": "RIRA01",
+        "letter": "D"
+      }
+    ]
+  }
+]

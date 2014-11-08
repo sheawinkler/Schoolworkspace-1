@@ -1,0 +1,57 @@
+Portfolio Summary Report
+============================================================================================================================
+Portfolio   Owner               Manager                      Fees  Commissions Weighted Risk         Return           Total
+chicken     Downes, Steve       speical, Cheese        $   50.00 $     2099.15       0.0000 $     104957.64 $     300000.00
+shots       speical, Cheese     Downes, Steve          $   20.00 $   120767.00       0.1036 $    2415340.00 $     415000.00
+donttouch   Downes, Steve       Downes, Steve          $   30.00 $   126140.68       0.0564 $    2522813.64 $     780000.00
+
+                                                   -------------------------------------------------------------------------
+                                                Totals $  100.00  $   249006.83		        $  5043111.28 $    1495000.00
+
+
+
+
+Portfolio Detail Report
+============================================================================================================================
+PortFolio  chicken
+-----------------------------------------------------------
+Owner:          Downes, Steve
+Manager:        speical, Cheese
+Beneficiary:    candy, Micmac
+Assets
+Code        Asset                                   Return Rate       Risk (Omega)   Annual Return          Value               
+AVGBall    Roth are it                                  34.99                0.00   $    104957.64   $   300000.00
+                                                               ----------------------------------------------------
+                                                      Totals               0.0000   $    104957.64   $   300000.00
+
+
+
+PortFolio  shots
+-----------------------------------------------------------
+Owner:          speical, Cheese
+Manager:        Downes, Steve
+Beneficiary:    , 
+Assets
+Code        Asset                                   Return Rate       Risk (Omega)   Annual Return          Value               
+Halo       Bungie                                      603.26                 0.1   $   2413040.00   $   400000.00
+goo        Googlie eye's                                15.33                 0.2   $      2300.00   $    15000.00
+                                                               ----------------------------------------------------
+                                                      Totals               0.1036   $   2415340.00   $   415000.00
+
+
+
+PortFolio  donttouch
+-----------------------------------------------------------
+Owner:          Downes, Steve
+Manager:        Downes, Steve
+Beneficiary:    Downes, Steve
+Assets
+Code        Asset                                   Return Rate       Risk (Omega)   Annual Return          Value               
+Rustie     broke collegefund                             6.02                0.05   $      4816.00   $    80000.00
+Halo       Bungie                                      603.26                 0.1   $   2413040.00   $   400000.00
+AVGBall    Roth are it                                  34.99                0.00   $    104957.64   $   300000.00
+                                                               ----------------------------------------------------
+                                                      Totals               0.0564   $   2522813.64   $   780000.00
+
+
+

@@ -1,0 +1,197 @@
+[
+  {
+    "APR": 0.25,
+    "label": "Savings Account",
+    "code": "AGTSAV",
+    "letter": "D"
+  },
+  {
+    "APR": 1.05,
+    "label": "Money Market Savings",
+    "code": "BX001-23",
+    "letter": "D"
+  },
+  {
+    "APR": 4.35,
+    "label": "5-year CD",
+    "code": "CD99312",
+    "letter": "D"
+  },
+  {
+    "APR": 2.75,
+    "label": "1-year Rollover CD",
+    "code": "CD1Y3X",
+    "letter": "D"
+  },
+  {
+    "APR": 3.4,
+    "label": "Roth IRA",
+    "code": "RIRA01",
+    "letter": "D"
+  },
+  {
+    "sharePrice": 814.708,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 0.0,
+    "baseRateOfReturn": 5.6,
+    "omegaMeasure": -0.05,
+    "stockSymbol": "GOOG",
+    "label": "Google Inc.",
+    "code": "GOOG001",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 122.75,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 12.0,
+    "baseRateOfReturn": 3.2,
+    "omegaMeasure": 0.01,
+    "stockSymbol": "DEO",
+    "label": "Diageo PLC",
+    "code": "DIAGEO12",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 429.8,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 24.5,
+    "baseRateOfReturn": 4.3,
+    "omegaMeasure": -0.07,
+    "stockSymbol": "AAPL",
+    "label": "Apple",
+    "code": "123APP",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 41.08,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 5.45,
+    "baseRateOfReturn": 3.1,
+    "omegaMeasure": 0.075,
+    "stockSymbol": "KO",
+    "label": "Coca-Cola",
+    "code": "321CC",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 341.91,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 45.57,
+    "baseRateOfReturn": 3.19,
+    "omegaMeasure": 0.0,
+    "stockSymbol": "CMG",
+    "label": "Chipotle Mexican Grill",
+    "code": "No1BURR",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 106.13,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 10.0,
+    "baseRateOfReturn": 2.25,
+    "omegaMeasure": 0.13,
+    "stockSymbol": "COST",
+    "label": "Costco",
+    "code": "B0oWM",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 35.4,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 0.0,
+    "baseRateOfReturn": 1.25,
+    "omegaMeasure": 0.08,
+    "stockSymbol": "DDD",
+    "label": "3D Systems",
+    "code": "N0TPIX",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 97.75,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 2.75,
+    "baseRateOfReturn": 4.6,
+    "omegaMeasure": 0.12,
+    "stockSymbol": "CNI",
+    "label": "Canadian National Railway",
+    "code": "wOOWoo1S",
+    "letter": "S"
+  },
+  {
+    "sharePrice": 107.04,
+    "shareOwned": 0.0,
+    "quarterlyDivident": 0.0,
+    "baseRateOfReturn": 7.2,
+    "omegaMeasure": -0.1,
+    "stockSymbol": "BRK-B",
+    "label": "Berkshire Hathaway",
+    "code": "BERK-B",
+    "letter": "S"
+  },
+  {
+    "totalValue": 120000.0,
+    "percentageStake": 0.0,
+    "quarterlyDivident": 2400.0,
+    "baseRateOfReturn": 0.25,
+    "omegaMeasure": 0.15,
+    "stockSymbol": "",
+    "label": "Rental Property",
+    "code": "RENT445",
+    "letter": "P"
+  },
+  {
+    "totalValue": 1.0456E+7,
+    "percentageStake": 0.0,
+    "quarterlyDivident": 14240.0,
+    "baseRateOfReturn": 5.35,
+    "omegaMeasure": 0.25,
+    "stockSymbol": "",
+    "label": "Commercial Property-Red Oaks Mall",
+    "code": "CMPROP0121",
+    "letter": "P"
+  },
+  {
+    "totalValue": 1212500.0,
+    "percentageStake": 0.0,
+    "quarterlyDivident": 35000.0,
+    "baseRateOfReturn": 3.0,
+    "omegaMeasure": 0.32,
+    "stockSymbol": "",
+    "label": "Cluckin\u0027s restaurant chain",
+    "code": "FOOD12",
+    "letter": "P"
+  },
+  {
+    "totalValue": 54300.0,
+    "percentageStake": 0.0,
+    "quarterlyDivident": 1232.0,
+    "baseRateOfReturn": 1.23,
+    "omegaMeasure": 0.13,
+    "stockSymbol": "",
+    "label": "Fred\u0027s Fabulous Hardware Store",
+    "code": "REALStr12",
+    "letter": "P"
+  },
+  {
+    "totalValue": 4213333.0,
+    "percentageStake": 0.0,
+    "quarterlyDivident": 10500.0,
+    "baseRateOfReturn": 2.0,
+    "omegaMeasure": -0.15,
+    "stockSymbol": "",
+    "label": "Industrial Widget Manufacturers Inc.",
+    "code": "IND321",
+    "letter": "P"
+  },
+  {
+    "totalValue": 13500.0,
+    "percentageStake": 0.0,
+    "quarterlyDivident": 2453.21,
+    "baseRateOfReturn": 2.1,
+    "omegaMeasure": 0.54,
+    "stockSymbol": "",
+    "label": "7\" Vinyl Records",
+    "code": "RSTOR322",
+    "letter": "P"
+  }
+]
