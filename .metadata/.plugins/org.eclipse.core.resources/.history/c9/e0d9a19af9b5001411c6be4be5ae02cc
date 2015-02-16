@@ -1,0 +1,30 @@
+/*
+ * InfixToPostfix.cpp
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+#include <string>
+#include "InfixToPostfix.h"
+#include <iostream>
+
+class InfixToPostfix{
+
+
+
+InfixToPostfix::InfixToPostfix() {
+	// TODO Auto-generated constructor stub
+
+}
+
+InfixToPostfix::~InfixToPostfix() {
+	// TODO Auto-generated destructor stub
+}
+
+void convertToPostfix(std::string STRING){
+	for(char& c : STRING) {
+	   std::cout<<c<<std::endl;
+	}
+}
+
+};

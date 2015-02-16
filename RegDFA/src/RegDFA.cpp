@@ -5,7 +5,7 @@
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
 //============================================================================
-
+#include "InfixToPostfix.h"
 #include <iostream>
 #include <stack>
 #include <string>
@@ -32,6 +32,7 @@ struct nfaStruct{
  */
 stack<int>parsingTree;
 
+
 void emptyEdge(){
 
 }
@@ -51,7 +52,7 @@ void orEdge(){
 void parser(){
 	string STRING;
 	    ifstream infile;
-	    int b=0;
+	    int bIndex=0;
 	    string previousLine="";
 	    infile.open ("/Users/Deverick/Documents/workspace/RegDFA/Libs/input.txt");
 
@@ -59,37 +60,22 @@ void parser(){
 	    {
 	        getline(infile,STRING); // Saves the line in STRING.
 	        //Parsing RegEx
-	        if(b==0){
-	        	/* Optimization may need to be adjusted for cse.unl.edu
-	        	 */
-
-
-	        	for(std::string::iterator it = STRING.end(); it != STRING.begin(); --it) {
-	        	    cout<<"HERE IS THE REVERSE"<<*it<<endl;
-	        	}
-
-	        	/*
-	        	for(char& c : STRING) {
-	        		cout<< "Here is the char: "<< c << endl;
-
-	        	}
-	        	*/
-
-
-	        	cout<<"First String is the REGEX, building table"<<endl;
+	        if(bIndex==0){
+	        	cout<<"First char is the REGEX is "<<endl;
+	        	//Calling InfixToPostfix File
+	        	InfixToPostfix sampleTest;
+	        	sampleTest.convertToPostfix(STRING);
 	        }else{
 	        //Testing String Input against cases
-
+	        	cout<<"The test case is: "<<endl;
 
 	        }
 	        cout<<STRING<<endl; // Prints our STRING.
-	        b++;
+	        bIndex++;
 	    }
 	    infile.close();
-	    cout<<"We are here"<<endl;
+	    cout<<"We are here "<<endl;
 	    //Need to return a parsing stack to manipulate the regex to a NFA
-
-
 }
 
 
@@ -100,7 +86,6 @@ int main(){
 	char Name[30];
 	cout << "!!!Hello, what is your name!!!" << endl; // prints !!!Hello World!!!
 	cin >> Name;
-
 	ifstream ifs( "/Users/Deverick/Documents/workspace/RegDFA/Libs/input.txt" );       // note no mode needed
 	   if ( ! ifs.is_open() ) {
 		   cout << "Hello,"<< Name << " we have failed to open the file, check the path"<< endl;

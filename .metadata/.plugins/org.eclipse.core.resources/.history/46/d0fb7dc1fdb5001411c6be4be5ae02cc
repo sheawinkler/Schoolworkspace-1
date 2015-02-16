@@ -1,0 +1,21 @@
+/*
+ * InfixToPostfix.h
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+
+#ifndef INFIXTOPOSTFIX_H_
+#define INFIXTOPOSTFIX_H_
+using namespace std;
+
+class InfixToPostfix {
+public:
+	InfixToPostfix(string STRING);
+	virtual ~InfixToPostfix();
+	void convertToPostfix(string STRING);
+private:
+};
+
+
+#endif /* INFIXTOPOSTFIX_H_ */

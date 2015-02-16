@@ -1,4 +1,4 @@
-00:44:12 **** Incremental Build of configuration Debug for project RegDFA ****
+11:45:54 **** Incremental Build of configuration Debug for project RegDFA ****
 make all 
 Building file: ../src/RegDFA.cpp
 Invoking: GCC C++ Compiler
@@ -7,9 +7,9 @@ Finished building: ../src/RegDFA.cpp
  
 Building target: RegDFA
 Invoking: MacOS X C++ Linker
-g++  -o "RegDFA"  ./src/RegDFA.o   
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
 Finished building target: RegDFA
  
 
-00:44:12 Build Finished (took 616ms)
+11:45:55 Build Finished (took 818ms)
 

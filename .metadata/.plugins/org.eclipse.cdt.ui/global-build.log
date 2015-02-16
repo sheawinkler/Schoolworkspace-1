@@ -216,3 +216,948 @@ Invoking: MacOS X C++ Linker
 g++  -o "RegDFA"  ./src/RegDFA.o   
 Finished building target: RegDFA
  
+03:14:22 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:8:10: error: 'InfixToPostfix.h' file not found with <angled> include; use "quotes" instead
+#include <InfixToPostfix.h>
+         ^~~~~~~~~~~~~~~~~~
+         "InfixToPostfix.h"
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+03:14:54 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+03:15:00 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:15:45 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+03:17:45 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:19:21: error: unknown type name 'string'; did you mean 'std::string'?
+void convertPostfix(string INFIX){
+                    ^~~~~~
+                    std::string
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iosfwd:189:65: note: 'std::string' declared here
+typedef basic_string<char, char_traits<char>, allocator<char> > string;
+                                                                ^
+1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+03:17:59 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:19:28: error: expected ')'
+void convertPostfix(char[] INFIX){
+                           ^
+../src/InfixToPostfix.cpp:19:20: note: to match this '('
+void convertPostfix(char[] INFIX){
+                   ^
+1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+03:18:24 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+03:22:02 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+03:22:08 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+03:22:11 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:22:13 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:22:14 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:22:15 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:22:15 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:22:16 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:22:17 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+make: Nothing to be done for `all'.
+03:24:46 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+../src/InfixToPostfix.cpp:24:5: error: use of undeclared identifier 'cout'; did you mean 'std::cout'?
+           cout<<c<<endl;
+           ^~~~
+           std::cout
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/iostream:50:33: note: 'std::cout' declared here
+extern _LIBCPP_FUNC_VIS ostream cout;
+                                ^
+../src/InfixToPostfix.cpp:24:14: error: use of undeclared identifier 'endl'; did you mean 'std::endl'?
+           cout<<c<<endl;
+                    ^~~~
+                    std::endl
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:1020:1: note: 'std::endl' declared here
+endl(basic_ostream<_CharT, _Traits>& __os)
+^
+1 warning and 2 errors generated.
+make: *** [src/InfixToPostfix.o] Error 1
+03:25:03 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+../src/InfixToPostfix.cpp:24:19: error: use of undeclared identifier 'endl'; did you mean 'std::endl'?
+           std::cout<<c<<endl;
+                         ^~~~
+                         std::endl
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:1020:1: note: 'std::endl' declared here
+endl(basic_ostream<_CharT, _Traits>& __os)
+^
+1 warning and 1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+03:25:16 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+03:25:29 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+03:25:35 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+03:31:55 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+10:25:48 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+10:27:09 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+10:29:06 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+10:29:10 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:65:11: error: use of undeclared identifier 'cout'; did you mean 'count'?
+                        cout<<"First String is the REGEX, building table "<<endl;
+                        ^~~~
+                        count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:65:11: error: reference to overloaded function could not be resolved; did you mean to call it?
+                        cout<<"First String is the REGEX, building table "<<endl;
+                        ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:66:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+../src/RegDFA.cpp:69:11: error: use of undeclared identifier 'cout'; did you mean 'count'?
+                        cout<<"The test case is: "<<endl;
+                        ^~~~
+                        count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:69:11: error: reference to overloaded function could not be resolved; did you mean to call it?
+                        cout<<"The test case is: "<<endl;
+                        ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:72:10: error: use of undeclared identifier 'cout'; did you mean 'count'?
+                cout<<STRING<<endl; // Prints our STRING.
+                ^~~~
+                count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:72:10: error: reference to overloaded function could not be resolved; did you mean to call it?
+                cout<<STRING<<endl; // Prints our STRING.
+                ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:1065:1: note: candidate function [with _CharT = char, _Traits = std::__1::char_traits<char>, _Allocator = std::__1::allocator<char>] not viable: no overload of 'count' matching 'basic_ostream<char, std::__1::char_traits<char> > &' for 1st argument
+operator<<(basic_ostream<_CharT, _Traits>& __os,
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:766:1: note: candidate template ignored: couldn't infer template argument '_Traits'
+operator<<(basic_ostream<_CharT, _Traits>& __os, _CharT __c)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:773:1: note: candidate template ignored: couldn't infer template argument '_CharT'
+operator<<(basic_ostream<_CharT, _Traits>& __os, char __cn)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:806:1: note: candidate template ignored: couldn't infer template argument '_Traits'
+operator<<(basic_ostream<char, _Traits>& __os, char __c)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:813:1: note: candidate template ignored: couldn't infer template argument '_Traits'
+operator<<(basic_ostream<char, _Traits>& __os, signed char __c)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:820:1: note: candidate template ignored: couldn't infer template argument '_Traits'
+operator<<(basic_ostream<char, _Traits>& __os, unsigned char __c)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:834:1: note: candidate template ignored: couldn't infer template argument '_CharT'
+operator<<(basic_ostream<_CharT, _Traits>& __os, const char* __strn)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:880:1: note: candidate template ignored: couldn't infer template argument '_Traits'
+operator<<(basic_ostream<char, _Traits>& __os, const char* __str)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:887:1: note: candidate template ignored: couldn't infer template argument '_Traits'
+operator<<(basic_ostream<char, _Traits>& __os, const signed char* __str)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:895:1: note: candidate template ignored: couldn't infer template argument '_Traits'
+operator<<(basic_ostream<char, _Traits>& __os, const unsigned char* __str)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:1074:1: note: candidate template ignored: couldn't infer template argument '_CharT'
+operator<<(basic_ostream<_CharT, _Traits>& __os, const error_code& __ec)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:827:1: note: candidate template ignored: could not match 'const _CharT *' against 'string' (aka 'basic_string<char, char_traits<char>, allocator<char> >')
+operator<<(basic_ostream<_CharT, _Traits>& __os, const _CharT* __str)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:1082:1: note: candidate template ignored: could not match 'shared_ptr' against 'basic_string'
+operator<<(basic_ostream<_CharT, _Traits>& __os, shared_ptr<_Yp> const& __p)
+^
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/ostream:1089:1: note: candidate template ignored: could not match 'bitset' against 'basic_string'
+operator<<(basic_ostream<_CharT, _Traits>& __os, const bitset<_Size>& __x)
+^
+../src/RegDFA.cpp:76:6: error: use of undeclared identifier 'cout'; did you mean 'count'?
+            cout<<"We are here "<<endl;
+            ^~~~
+            count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:76:6: error: reference to overloaded function could not be resolved; did you mean to call it?
+            cout<<"We are here "<<endl;
+            ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:86:2: error: use of undeclared identifier 'cout'; did you mean 'count'?
+        cout << "!!!Hello, what is your name!!!" << endl; // prints !!!Hello World!!!
+        ^~~~
+        count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:86:2: error: reference to overloaded function could not be resolved; did you mean to call it?
+        cout << "!!!Hello, what is your name!!!" << endl; // prints !!!Hello World!!!
+        ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:87:2: error: use of undeclared identifier 'cin'; did you mean 'min'?
+        cin >> Name;
+        ^~~
+        min
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:2536:1: note: 'min' declared here
+min(const _Tp& __a, const _Tp& __b, _Compare __comp)
+^
+../src/RegDFA.cpp:87:2: error: reference to overloaded function could not be resolved; did you mean to call it?
+        cin >> Name;
+        ^~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:2536:1: note: possible target for call
+min(const _Tp& __a, const _Tp& __b, _Compare __comp)
+^
+../src/RegDFA.cpp:90:6: error: use of undeclared identifier 'cout'; did you mean 'count'?
+                   cout << "Hello,"<< Name << " we have failed to open the file, check the path"<< endl;
+                   ^~~~
+                   count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:90:6: error: reference to overloaded function could not be resolved; did you mean to call it?
+                   cout << "Hello,"<< Name << " we have failed to open the file, check the path"<< endl;
+                   ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:93:6: error: use of undeclared identifier 'cout'; did you mean 'count'?
+                   cout << "Hello, "<< Name <<" All seems to be running smooth...Here's the parsing of the file"<< endl;
+                   ^~~~
+                   count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:93:6: error: reference to overloaded function could not be resolved; did you mean to call it?
+                   cout << "Hello, "<< Name <<" All seems to be running smooth...Here's the parsing of the file"<< endl;
+                   ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:96:5: error: use of undeclared identifier 'cout'; did you mean 'count'?
+           cout<< "Closing Down"<< endl;
+           ^~~~
+           count
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: 'count' declared here
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+../src/RegDFA.cpp:96:5: error: reference to overloaded function could not be resolved; did you mean to call it?
+           cout<< "Closing Down"<< endl;
+           ^~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/algorithm:1083:1: note: possible target for call
+count(_InputIterator __first, _InputIterator __last, const _Tp& __value_)
+^
+19 errors generated.
+make: *** [src/RegDFA.o] Error 1
+10:30:52 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:25: error: cannot use dot operator on a type
+                        InfixToPostfix.convertToPostfix(STRING);
+                                      ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+10:30:57 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+10:33:36 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:11:7: error: redefinition of 'InfixToPostfix'
+class InfixToPostfix{
+      ^
+../src/InfixToPostfix.h:11:7: note: previous definition is here
+class InfixToPostfix {
+      ^
+1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+10:33:57 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: no matching function for call to 'convertToPostfix'
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.h:17:6: note: candidate function not viable: requires 0 arguments, but 1 was provided
+void convertToPostfix();
+     ^
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+10:58:28 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:01:23 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:15:19: error: use of undeclared identifier 'STRING'
+        convertToPostfix(STRING);
+                         ^
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 2 errors generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:01:28 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:13:17: error: out-of-line definition of 'InfixToPostfix' does not match any declaration in 'InfixToPostfix'
+InfixToPostfix::InfixToPostfix(std::string STRING) {
+                ^~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:15:19: error: too many arguments to function call, expected 0, have 1
+        convertToPostfix(STRING);
+        ~~~~~~~~~~~~~~~~ ^~~~~~
+../src/InfixToPostfix.h:15:2: note: 'convertToPostfix' declared here
+        void convertToPostfix();
+        ^
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 3 errors generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:01:42 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:15:19: error: too many arguments to function call, expected 0, have 1
+        convertToPostfix(STRING);
+        ~~~~~~~~~~~~~~~~ ^~~~~~
+../src/InfixToPostfix.h:15:2: note: 'convertToPostfix' declared here
+        void convertToPostfix();
+        ^
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 2 errors generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:02:16 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+In file included from ../src/RegDFA.cpp:8:
+../src/InfixToPostfix.h:13:17: error: use of undeclared identifier 'std'
+        InfixToPostfix(std::string STRING);
+                       ^
+../src/InfixToPostfix.h:15:24: error: use of undeclared identifier 'std'
+        void convertToPostfix(std::string STRING);
+                              ^
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:15:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+4 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:02:47 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+In file included from ../src/RegDFA.cpp:8:
+../src/InfixToPostfix.h:10:17: warning: using directive refers to implicitly-defined namespace 'std'
+using namespace std;
+                ^
+../src/InfixToPostfix.h:14:17: error: use of undeclared identifier 'std'
+        InfixToPostfix(std::string STRING);
+                       ^
+../src/InfixToPostfix.h:16:24: error: use of undeclared identifier 'std'
+        void convertToPostfix(std::string STRING);
+                              ^
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:16:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+1 warning and 4 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:03:25 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:13:17: error: out-of-line definition of 'InfixToPostfix' does not match any declaration in 'InfixToPostfix'
+InfixToPostfix::InfixToPostfix() {
+                ^~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:03:51 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+In file included from ../src/InfixToPostfix.cpp:8:
+../src/InfixToPostfix.h:15:7: error: member 'InfixToPostfix' has the same name as its class
+        void InfixToPostfix();
+             ^
+../src/InfixToPostfix.h:15:7: error: constructor cannot have a return type
+        void InfixToPostfix();
+        ~~~~ ^~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 3 errors generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:04:07 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:04:27 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:04:47 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:22: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix::convertToPostfix(std::string STRING){
+                     ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:06:46 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:22:24: error: out-of-line definition of 'convertToPostfix' does not match any declaration in 'InfixToPostfix'
+void InfixToPostfix :: convertToPostfix(std::string STRING){
+                       ^~~~~~~~~~~~~~~~
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning and 1 error generated.
+make: *** [src/InfixToPostfix.o] Error 1
+11:07:22 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+In file included from ../src/RegDFA.cpp:8:
+../src/InfixToPostfix.h:15:24: error: use of undeclared identifier 'std'
+        void convertToPostfix(std::string STRING);
+                              ^
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:15:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+3 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:08:05 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:15:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:08:10 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:23:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:16:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:09:10 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:16:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:09:55 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:16:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:11:09 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/InfixToPostfix.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/InfixToPostfix.d" -MT"src/InfixToPostfix.d" -o "src/InfixToPostfix.o" "../src/InfixToPostfix.cpp"
+../src/InfixToPostfix.cpp:24:14: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+        for(char& c : STRING) {
+                    ^
+1 warning generated.
+Finished building: ../src/InfixToPostfix.cpp
+ 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:16:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:11:14 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:11: error: use of undeclared identifier 'convertToPostfix'; did you mean 'InfixToPostfix::convertToPostfix'?
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+                        InfixToPostfix::convertToPostfix
+../src/InfixToPostfix.h:16:7: note: 'InfixToPostfix::convertToPostfix' declared here
+        void convertToPostfix(std::string STRING);
+             ^
+../src/RegDFA.cpp:67:11: error: call to non-static member function without an object argument
+                        convertToPostfix(STRING);
+                        ^~~~~~~~~~~~~~~~
+2 errors generated.
+make: *** [src/RegDFA.o] Error 1
+11:15:40 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+11:16:33 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+11:45:54 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
