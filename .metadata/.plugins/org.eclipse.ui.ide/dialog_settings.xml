@@ -14,18 +14,22 @@
 		</section>
 	</section>
 	<section name="ExternalProjectImportWizard">
-		<item value="true" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
+		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
-			<item value=""/>
+			<item value="/Users/Deverick/Desktop/ColorMatcherTest"/>
+			<item value="/Users/Deverick/Desktop/ColorMatcher"/>
+			<item value="/Users/Deverick/Desktop/TemperatureConverter"/>
+			<item value="/Users/Deverick/Desktop/Android-Malware-master/diary"/>
+			<item value="/Users/Deverick/AndroidStudioProjects/Android-Malware-Testing/diary"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
+			<item value=""/>
 			<item value="/Users/Deverick/Downloads/Lab-BST.zip"/>
 			<item value="/Users/Deverick/Downloads/Lab-StacksQueues.zip"/>
 			<item value="/Users/Deverick/Downloads/Lab-Sorting.zip"/>
 			<item value="/Users/Deverick/Downloads/Lab-Recursion.zip"/>
-			<item value="/Users/Deverick/Desktop/school/Fall 2013/CSCE 156/Lab/Lab6/polymorphism.zip"/>
 		</list>
 	</section>
 	<section name="SaveAsDialogSettings">
@@ -37,9 +41,11 @@
 	</section>
 	<section name="CleanDialogSettings">
 		<item value="484" key="DIALOG_WIDTH"/>
+		<item value="true" key="BUILD_NOW"/>
+		<item value="true" key="BUILD_ALL"/>
 		<item value="151" key="DIALOG_Y_ORIGIN"/>
-		<item value="150" key="DIALOG_X_ORIGIN"/>
-		<item value="354" key="DIALOG_HEIGHT"/>
+		<item value="2076" key="DIALOG_X_ORIGIN"/>
+		<item value="423" key="DIALOG_HEIGHT"/>
 		<item value="false" key="TOGGLE_SELECTED"/>
 	</section>
 	<section name="NewWizardAction">

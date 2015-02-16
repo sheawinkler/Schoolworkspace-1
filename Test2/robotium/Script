@@ -1,0 +1,20 @@
+#!/bin/bash
+#Code Coverage Script:
+#(android:command not found error)
+export ANDROID_HOME=/Users/Deverick/android-sdks
+export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:/Users/Deverick/Documents/workspace/Diary-Test/libs/dropbox-android-sdk-1.6.1:$PATH
+
+#$echo $PATH
+cd ~/Documents/workspace/
+cd Diary
+ant clean
+cd ..
+cd Test2
+ant clean
+cd ..
+/Users/Deverick/android-sdks/tools/android  update project --path ./ --name Diary --target android-16 --subprojects
+cd Test2
+/Users/Deverick/android-sdks/tools/android  update test-project --main ../Diary --path ./
+ant emma debug install test 
+open ~/Documents/workspace/Diary-Test/bin/coverage.html 

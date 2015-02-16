@@ -1,0 +1,203 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarAlwaysDrawVerticalTrack="false"
+    android:scrollbars="none" >
+
+    <ImageView
+        android:id="@+id/scoreBG_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:contentDescription="@string/score_bg_left_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/score_bg_left" />
+
+    <ImageView
+        android:id="@+id/scoreBG_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scoreBG_bottom"
+        android:layout_alignTop="@+id/scoreBG_left"
+        android:layout_toRightOf="@+id/scoreBG_left"
+        android:contentDescription="@string/score_bg_top_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/score_bg_right_top" />
+
+    <ImageView
+        android:id="@+id/scoreBG_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/scoreBG_top"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/scoreBG_top"
+        android:layout_toRightOf="@+id/scoreBG_left"
+        android:contentDescription="@string/score_bg_bottom_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/score_bg_right_bottom" />
+
+    <ImageView
+        android:id="@+id/timeBG_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/scoreBG_left"
+        android:contentDescription="@string/timeBG_right_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_bg_right" />
+
+    <ImageView
+        android:id="@+id/timeBG_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeBG_bottom"
+        android:layout_alignBottom="@+id/scoreBG_top"
+        android:layout_alignTop="@+id/scoreBG_left"
+        android:layout_toLeftOf="@+id/timeBG_right"
+        android:contentDescription="@string/timeBG_top_dscr"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_bg_left_top" />
+
+    <ImageView
+        android:id="@+id/timeBG_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timeBG_top"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/timeBG_top"
+        android:layout_alignTop="@+id/scoreBG_bottom"
+        android:layout_toLeftOf="@+id/timeBG_right"
+        android:contentDescription="@string/timeBG_bottom_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_bg_left_bottom" />
+
+    <ImageView
+        android:id="@+id/bgTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/bgTop_descr"
+        android:src="@drawable/bg_border_top"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/bgBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/scoreBG_left"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/bgBottom_descr"
+        android:src="@drawable/bg_border_bottom"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/bgLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/bgTop"
+        android:layout_above="@+id/bgBottom"
+        android:contentDescription="@string/bgLeft_descr"
+        android:src="@drawable/bg_border_left"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/bgRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/bgTop"
+        android:layout_above="@+id/bgBottom"
+        android:contentDescription="@string/bgRight_descr"
+        android:src="@drawable/bg_border_right"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/bgMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bgTop"
+        android:layout_toRightOf="@+id/bgLeft"
+        android:layout_toLeftOf="@+id/bgRight"
+        android:layout_above="@+id/bgBottom"
+        android:contentDescription="@string/bgMiddle_descr"
+        android:src="@drawable/game_bg_middle"
+        android:scaleType="fitXY" />
+
+    <GridView
+        android:id="@+id/gameGrid"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/bgBottom"
+        android:layout_below="@+id/bgTop"
+        android:layout_toLeftOf="@+id/bgRight"
+        android:layout_toRightOf="@+id/bgLeft"
+        android:columnWidth="32dp"
+        android:horizontalSpacing="0dp"
+        android:numColumns="8"
+        android:verticalSpacing="0dp" >
+    </GridView>
+    
+    <TextView
+        android:id="@+id/score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/scoreBG_top"
+        android:layout_toRightOf="@+id/scoreBG_left"
+        android:text="@string/scoreText"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/score"
+        android:layout_alignBottom="@+id/timeBG_top"
+        android:layout_toLeftOf="@+id/timeBG_right"
+        android:text="@string/timeText"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+    <ImageView
+        android:id="@+id/refresh_button_top_bumper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bgBottom"
+        android:layout_alignLeft="@+id/refreshButton"
+        android:layout_alignRight="@+id/refreshButton"
+        android:layout_alignTop="@+id/scoreBG_left"
+        android:contentDescription="@string/refresh_button_top_bumper_descr"
+        android:src="@drawable/refresh_button_bumper"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/refreshButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/refresh_button_bottom_bumper"
+        android:layout_below="@+id/refresh_button_top_bumper"
+        android:layout_toLeftOf="@+id/timeBG_top"
+        android:layout_toRightOf="@+id/scoreBG_top"
+        android:contentDescription="@string/refreshButton_descr"
+        android:src="@drawable/refresh_button"
+        android:clickable="true"
+        android:onClick ="onRefresh"
+        android:scaleType="fitXY" />
+
+    <ImageView
+        android:id="@+id/refresh_button_bottom_bumper"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/refreshButton"
+        android:layout_alignRight="@+id/refreshButton"
+        android:contentDescription="@string/refresh_button_bottom_bumper_descr"
+        android:src="@drawable/refresh_button_bumper"
+        android:scaleType="fitXY" />
+
+</RelativeLayout>

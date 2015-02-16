@@ -1,0 +1,4 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_restart" android:title="@string/menu_restart"></item>
+    <item android:id="@+id/menu_quit" android:title="@string/menu_quit"></item>
+</menu>

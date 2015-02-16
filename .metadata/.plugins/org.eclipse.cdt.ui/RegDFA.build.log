@@ -1,0 +1,15 @@
+00:44:12 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+
+00:44:12 Build Finished (took 616ms)
+

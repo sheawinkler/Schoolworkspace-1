@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">YARR</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main_reddit">MainRedditActivity</string>
+    <string name="RefreshButtonString">Refresh</string>
+    <string name="title_activity_comment">CommentActivity</string>
+    <string name="back">Back</string>
+    <string name="link">Link</string>
+    <string name="description">Thumbnail</string>
+    <string name="gpsButtonString">Filter By Location</string>
+    <string name="title_activity_gps">GPSActivity</string>
+
+</resources>

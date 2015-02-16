@@ -1,0 +1,20 @@
+#Code Coverage Script:
+#(android:command not found error)
+export ANDROID_HOME=/Users/Deverick/android-skds
+export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home
+export PATH=$ANDROID_HOME/tools:$PATH
+export PATH=$ANDROID_HOME/platform-tools:$PATH
+
+ 
+cd /Users/Deverick/Documents/workspace/
+cd Diary
+ant clean
+cd ..
+cd Diary-Test
+ant clean
+cd ..
+./android update project --path ./ --name Diary --target android-17 --subprojects
+cd Diary-Test
+./android update test-project --main ../Diary --path ./
+ant emma debug install
+ant emma debug install InitialTest

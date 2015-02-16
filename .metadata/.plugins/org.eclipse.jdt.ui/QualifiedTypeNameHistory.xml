@@ -32,4 +32,10 @@
 <fullyQualifiedTypeName name="org.eclipse.swt.layout.RowLayout"/>
 <fullyQualifiedTypeName name="org.eclipse.swt.events.SelectionAdapter"/>
 <fullyQualifiedTypeName name="org.eclipse.swt.events.SelectionEvent"/>
+<fullyQualifiedTypeName name="jpf.android.diary.R"/>
+<fullyQualifiedTypeName name="jpf.android.diary.Diary"/>
+<fullyQualifiedTypeName name="com.robotium.solo.Solo"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.javacodegeeks.kannel.api.SMSManager"/>
 </qualifiedTypeNameHistroy>

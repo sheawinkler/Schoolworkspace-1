@@ -1,0 +1,22 @@
+#!/bin/bash
+#Code Coverage Script:
+#(android:command not found error)
+export ANDROID_HOME=/Users/Deverick/android-skd-macosx
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_25.jdk/Contents/Home
+export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools:$PATH
+
+
+cd ~/Documents/workspace/
+cd Diary
+ant clean
+cd ..
+cd Diary-Test
+ant clean
+cd ..
+#echo $PATH		Verifying Path Location
+#/Users/Deverick/android-sdk-macosx/tools/android list targets
+/Users/Deverick/android-sdk-macosx/tools/android  update project --path ./ --name Diary --target android-21 --subprojects
+cd Diary-Test
+/Users/Deverick/android-sdk-macosx/tools/android  update test-project --main ../Diary --path ./
+ant emma debug install
+ant emma debug install test

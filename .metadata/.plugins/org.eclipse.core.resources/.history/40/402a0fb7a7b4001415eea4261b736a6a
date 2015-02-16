@@ -1,0 +1,51 @@
+//============================================================================
+// Name        : RegDFA.cpp
+// Author      : Deverick Simpson
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include <stack>
+#include <sstream>  // requires standard library
+#include <fstream>  // Note this extra header requirement whenever working with files
+#include <cstdlib>
+using namespace std;
+
+/*stateStatus[0]--a,stateStatus[1]---b,stateStatus[3]--e
+ * stateId refers to the current state
+ * Struct will represent a state node within the NFA'
+ */
+struct{
+	int stateId;
+	char stateStatus[3];
+}nfaStruct;
+
+/*
+ * We will rock socks with a reg expression stack to
+ * parse tree the reg expression.
+ *
+ */
+std::stack<int>parsingTree;
+
+
+
+
+
+
+int main(){
+	char Name[30];
+	cout << "!!!Hello, what is your name!!!" << endl; // prints !!!Hello World!!!
+	cin >> Name;
+
+	ifstream ifs( "/Users/Deverick/Documents/workspace/RegDFA/Libs/input.txt" );       // note no mode needed
+	   if ( ! ifs.is_open() ) {
+		   cout << "Hello,"<< Name << " we have failed to open the file, check the path"<< endl;
+	   }
+	   else {
+		   cout << "Hello, "<< Name <<" All seems to be running smooth..."<< endl;
+	   }
+
+	return 0;
+}

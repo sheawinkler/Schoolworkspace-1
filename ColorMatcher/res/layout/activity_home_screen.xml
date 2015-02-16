@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/titleScreenTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/titleScreenTop_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg_top" />
+
+    <ImageView
+        android:id="@+id/titleScreenLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/titleScreenTop"
+        android:layout_above="@+id/titleScreenBottom"
+        android:contentDescription="@string/titleScreenLeft_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg_left" />
+
+    <ImageView
+        android:id="@+id/titleScreenRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/titleScreenTop"
+        android:layout_above="@+id/titleScreenBottom"
+        android:contentDescription="@string/titleScreenRight_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg_right" />
+
+    <ImageView
+        android:id="@+id/titleScreenBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:contentDescription="@string/titleScreenBottom_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg_bottom" />
+    
+    <ImageView
+        android:id="@+id/titleScreenMiddle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/titleScreenTop"
+        android:layout_above="@+id/titleScreenBottom"
+        android:layout_toLeftOf="@+id/titleScreenRight"
+        android:layout_toRightOf="@+id/titleScreenLeft"
+        android:contentDescription="@string/titleScreenMiddle_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg_middle" />
+    
+    <ImageView
+        android:id="@+id/quitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:clickable="true"
+        android:contentDescription="@string/quitButton_descr"
+        android:onClick="onQuit"
+        android:src="@drawable/quit_tile" />
+
+    <ImageView
+        android:id="@+id/newGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/quitButton"
+        android:layout_alignLeft="@+id/quitButton"
+        android:layout_alignRight="@+id/quitButton"
+        android:layout_marginBottom="14dp"
+        android:clickable="true"
+        android:contentDescription="@string/newGameButton_descr"
+        android:onClick="onNewGame"
+        android:src="@drawable/new_game_tile" />
+
+</RelativeLayout>

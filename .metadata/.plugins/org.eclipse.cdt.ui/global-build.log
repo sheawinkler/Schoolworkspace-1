@@ -1,0 +1,218 @@
+13:29:55 **** Clean-only build of configuration Debug for project RegDFA ****
+make clean 
+rm -rf  ./src/RegDFA.o  ./src/RegDFA.d  RegDFA
+ 
+13:35:10 **** Build of configuration Debug for project hidinginside ****
+make all 
+Building file: ../src/hidinginside.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/hidinginside.d" -MT"src/hidinginside.d" -o "src/hidinginside.o" "../src/hidinginside.cpp"
+Finished building: ../src/hidinginside.cpp
+ 
+Building target: hidinginside
+Invoking: MacOS X C++ Linker
+g++  -o "hidinginside"  ./src/hidinginside.o   
+Finished building target: hidinginside
+ 
+13:35:17 **** Incremental Build of configuration Debug for project hidinginside ****
+make all 
+make: Nothing to be done for `all'.
+13:37:16 **** Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+13:38:51 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+13:39:39 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+13:41:04 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+13:42:53 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+13:45:34 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:36:1: warning: control reaches end of non-void function [-Wreturn-type]
+}
+^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+18:00:32 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:53:23: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+                        for(char& c : STRING) {
+                                    ^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+18:00:55 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:53:23: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
+                        for(char& c : STRING) {
+                                    ^
+1 warning generated.
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+00:38:33 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:68:138: error: expected ';' after expression
+                        for(std::string::iterator it = STRING.end(); it != STRING.begin(); --it) {cout<< "Here is the char in reverse : "<< *it << endl}
+                                                                                                                                                       ^
+                                                                                                                                                       ;
+1 error generated.
+make: *** [src/RegDFA.o] Error 1
+00:40:31 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+00:40:56 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 
+00:41:30 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+../src/RegDFA.cpp:67:42: error: invalid argument type 'iterator' (aka '__wrap_iter<pointer>') to unary expression
+                        for(std::string::iterator it = !STRING.end(); it = STRING.begin(); --it) {
+                                                       ^~~~~~~~~~~~~
+../src/RegDFA.cpp:67:60: warning: using the result of an assignment as a condition without parentheses [-Wparentheses]
+                        for(std::string::iterator it = !STRING.end(); it = STRING.begin(); --it) {
+                                                                      ~~~^~~~~~~~~~~~~~~~
+../src/RegDFA.cpp:67:60: note: place parentheses around the assignment to silence this warning
+                        for(std::string::iterator it = !STRING.end(); it = STRING.begin(); --it) {
+                                                                         ^
+                                                                      (                  )
+../src/RegDFA.cpp:67:60: note: use '==' to turn this assignment into an equality comparison
+                        for(std::string::iterator it = !STRING.end(); it = STRING.begin(); --it) {
+                                                                         ^
+                                                                         ==
+../src/RegDFA.cpp:67:57: error: value of type 'std::__1::__wrap_iter<char *>' is not contextually convertible to 'bool'
+                        for(std::string::iterator it = !STRING.end(); it = STRING.begin(); --it) {
+                                                                      ^~~~~~~~~~~~~~~~~~~
+1 warning and 2 errors generated.
+make: *** [src/RegDFA.o] Error 1
+00:44:12 **** Incremental Build of configuration Debug for project RegDFA ****
+make all 
+Building file: ../src/RegDFA.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
+Finished building: ../src/RegDFA.cpp
+ 
+Building target: RegDFA
+Invoking: MacOS X C++ Linker
+g++  -o "RegDFA"  ./src/RegDFA.o   
+Finished building target: RegDFA
+ 

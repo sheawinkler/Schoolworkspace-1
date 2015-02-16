@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/timeSelect_1_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeSelect_1_bottom"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_1_descr"
+        android:onClick="timeSelectOne"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_1_top_left" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_1_top_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeSelect_1_bottom"
+        android:layout_toRightOf="@+id/timeSelect_1_top_left"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@+id/timeSelect_1_top_left"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_1_descr"
+        android:onClick="timeSelectOne"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_1_top_right" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_1_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeSelect_4_top"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/timeSelect_1_top_right"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_1_descr"
+        android:onClick="timeSelectOne"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_1_bottom" />
+    <ImageView
+        android:id="@+id/timeSelect_2_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/timeSelect_1_top_right"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/timeSelect_1_top_right"
+        android:layout_toLeftOf="@+id/timeSelect_3_top_left"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_2_descr"
+        android:onClick="timeSelectTwo"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_2_top" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_2_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/timeSelect_1_bottom"
+        android:layout_alignTop="@+id/timeSelect_1_bottom"
+        android:layout_toRightOf="@+id/timeSelect_1_bottom"
+        android:layout_toLeftOf="@+id/timeSelect_3_bottom"
+        android:layout_alignRight="@+id/timeSelect_2_top"
+        android:layout_alignLeft="@+id/timeSelect_2_top"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_2_descr"
+        android:onClick="timeSelectTwo"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_2_bottom" />
+    <ImageView
+        android:id="@+id/timeSelect_3_top_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/timeSelect_1_top_left"
+        android:layout_toLeftOf="@+id/timeSelect_3_top_right"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_3_descr"
+        android:onClick="timeSelectThree"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_3_top_left" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_3_top_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/timeSelect_1_top_left"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_3_descr"
+        android:onClick="timeSelectThree"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_3_top_right" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_3_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/timeSelect_1_bottom"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/timeSelect_1_bottom"
+        android:layout_alignLeft="@+id/timeSelect_3_top_left"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_3_descr"
+        android:onClick="timeSelectThree"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_3_bottom" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_4_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeSelect_4_bottom_left"
+        android:layout_alignParentLeft="true"
+        android:layout_alignRight="@+id/timeSelect_1_top_right"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_4_descr"
+        android:onClick="timeSelectFour"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_4_top" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_4_bottom_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/timeSelect_1_top_left"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_4_descr"
+        android:onClick="timeSelectFour"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_4_bottom_left" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_4_bottom_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/timeSelect_1_top_right"
+        android:layout_alignRight="@+id/timeSelect_1_top_right"
+        android:layout_alignTop="@+id/timeSelect_4_bottom_left"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/timeSelect_4_bottom_left"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_4_descr"
+        android:onClick="timeSelectFour"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_4_bottom_right" />
+    <ImageView
+        android:id="@+id/timeSelect_5_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/timeSelect_6_top"
+        android:layout_toRightOf="@+id/timeSelect_4_top"
+        android:layout_alignTop="@+id/timeSelect_4_top"
+        android:layout_alignRight="@+id/timeSelect_2_top"
+        android:layout_alignLeft="@+id/timeSelect_2_top"
+        android:layout_alignBottom="@+id/timeSelect_4_top"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_5_descr"
+        android:onClick="timeSelectFive"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_5_top" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_5_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/timeSelect_6_bottom_right"
+        android:layout_toRightOf="@+id/timeSelect_4_bottom_right"
+        android:layout_alignTop="@+id/timeSelect_4_bottom_left"
+        android:layout_alignRight="@+id/timeSelect_2_top"
+        android:layout_alignLeft="@+id/timeSelect_2_top"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_5_descr"
+        android:onClick="timeSelectFive"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_5_bottom" />
+    <ImageView
+        android:id="@+id/timeSelect_6_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/timeSelect_4_top"
+        android:layout_alignLeft="@+id/timeSelect_3_top_left"
+        android:layout_alignBottom="@+id/timeSelect_4_top"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_6_descr"
+        android:onClick="timeSelectSix"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_6_top" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_6_bottom_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/timeSelect_6_bottom_right"
+        android:layout_alignTop="@+id/timeSelect_4_bottom_left"
+        android:layout_alignLeft="@+id/timeSelect_3_top_left"
+        android:layout_alignRight="@+id/timeSelect_3_top_left"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_6_descr"
+        android:onClick="timeSelectSix"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_6_bottom_left" />
+    
+    <ImageView
+        android:id="@+id/timeSelect_6_bottom_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/timeSelect_4_bottom_left"
+        android:layout_alignLeft="@+id/timeSelect_3_top_right"
+        android:clickable="true"
+        android:contentDescription="@string/timeSelect_6_descr"
+        android:onClick="timeSelectSix"
+        android:scaleType="fitXY"
+        android:src="@drawable/time_select_6_bottom_right" />
+
+    <TextView
+        android:id="@+id/highScore1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/timeSelect_1_bottom"
+        android:layout_alignRight="@+id/timeSelect_1_top_left"
+        android:text="@string/high_score_1" />
+
+    <TextView
+        android:id="@+id/highScore2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/highScore1"
+        android:layout_alignTop="@+id/highScore1"
+        android:layout_centerHorizontal="true"
+        android:text="@string/high_score_2" />
+
+    <TextView
+        android:id="@+id/highScore3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/highScore1"
+        android:layout_alignLeft="@+id/timeSelect_3_top_right"
+        android:layout_alignTop="@+id/highScore1"
+        android:text="@string/high_score_3" />
+
+    <TextView
+        android:id="@+id/highScore4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/timeSelect_4_bottom_left"
+        android:layout_below="@+id/timeSelect_4_top"
+        android:text="@string/high_score_4" />
+
+    <TextView
+        android:id="@+id/highScore5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/highScore4"
+        android:layout_alignTop="@+id/highScore4"
+        android:layout_below="@+id/timeSelect_5_top"
+        android:layout_centerHorizontal="true"
+        android:text="@string/high_score_5" />
+
+    <TextView
+        android:id="@+id/highScore6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/highScore4"
+        android:layout_alignLeft="@+id/timeSelect_6_bottom_right"
+        android:layout_alignTop="@+id/highScore4"
+        android:layout_below="@+id/timeSelect_6_top"
+        android:text="@string/high_score_6" />
+
+</RelativeLayout>

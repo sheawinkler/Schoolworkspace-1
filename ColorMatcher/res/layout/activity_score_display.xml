@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/titleScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="@string/titleScreen_descr"
+        android:scaleType="fitXY"
+        android:src="@drawable/home_bg" />
+    <ImageView
+        android:id="@+id/continueButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp"
+        android:clickable="true"
+        android:contentDescription="@string/continueButton_descr"
+        android:onClick="onContinue"
+        android:src="@drawable/continue_tile" />
+    <ImageView
+        android:id="@+id/finalScoreBG_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/finalScoreBG_middle"
+        android:layout_alignLeft="@+id/continueButton"
+        android:layout_alignRight="@+id/continueButton"
+        android:contentDescription="@string/finalScoreBG_descr"
+        android:src="@drawable/score_display_top" />
+    
+    <ImageView
+        android:id="@+id/finalScoreBG_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/finalScoreBG_bottom"
+        android:layout_alignLeft="@+id/continueButton"
+        android:layout_alignRight="@+id/continueButton"
+        android:contentDescription="@string/finalScoreBG_descr"
+        android:src="@drawable/score_display_middle" />
+    
+    <ImageView
+        android:id="@+id/finalScoreBG_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/continueButton"
+        android:layout_alignLeft="@+id/continueButton"
+        android:layout_alignRight="@+id/continueButton"
+        android:layout_marginBottom="14dp"
+        android:contentDescription="@string/finalScoreBG_descr"
+        android:src="@drawable/score_display_bottom" />
+    <TextView
+        android:id="@+id/finalScoreCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/finalScoreBG_middle"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/finalScore_descr"
+        android:text="@string/default_score"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    <TextView
+        android:id="@+id/finalScoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/finalScoreBG_middle"
+        android:layout_centerHorizontal="true"
+        android:text="@string/finalScoreText"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+</RelativeLayout>

@@ -1,0 +1,6 @@
+Notes
+
+Flow
+TitleScreenActivity.java 
+	-new game-> TimeSelectActivity.java --> ColorMathcerActivity.java
+	-Quit->terminate  

@@ -1,0 +1,7 @@
+(a|b)*a
+aaaa
+bbb
+aba
+bba
+e
+a

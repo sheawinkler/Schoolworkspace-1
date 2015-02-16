@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ColorMatcher</string>
+    
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_color_matcher">ColorMatcher</string>
+    <string name="scoreText">Score: 00000</string>
+    <string name="timeText">Time:  0:00</string>
+    <string name="bgTop_descr">top background piece</string>
+    <string name="bgBottom_descr">bottom background piece</string>
+    <string name="bgLeft_descr">left background piece</string>
+    <string name="bgRight_descr">right background piece</string>
+    <string name="bgMiddle_descr">middle background piece</string>
+    <string name="refreshButton_descr">Refresh Button</string>
+    <string name="refresh_button_top_bumper_descr">Top bumper for Refresh Button</string>
+    <string name="refresh_button_bottom_bumper_descr">Bottom bumper for Refresh Button</string>
+    <string name="timeCount_descr">Time left in game</string>
+    <string name="scoreCount_descr">Total score in game</string>
+    <string name="menu_restart">Restart Game</string>
+    <string name="menu_quit">Quit</string>
+    <string name="newGameButton_descr">New Game Button</string>
+    <string name="quitButton_descr">Quit Button</string>
+    <string name="continueButton_descr">Continue Button</string>
+    <string name="finalScoreBG_descr">Final Score Background</string>
+    <string name="default_score">00000</string>
+    <string name="finalScore_descr">Final Score</string>
+    <string name="finalScoreText">Final Score:</string>
+    <string name="titleScreenTop_descr">Top piece of titleSceen</string>
+    <string name="titleScreenLeft_descr">Left piece of titleScreen</string>
+    <string name="titleScreenRight_descr">Right piece of titleScreen</string>
+    <string name="titleScreenBottom_descr">Bottom piece of titleScreen</string>
+    <string name="titleScreenMiddle_descr">Middle piece of titleScreen</string>
+    <string name="titleScreen_descr">Title Screen</string>
+    <string name="timeSelect_1_descr">One Minute Game</string>
+    <string name="timeSelect_2_descr">Two Minute Game</string>
+    <string name="timeSelect_3_descr">Three Minute Game</string>
+    <string name="timeSelect_4_descr">Four Minute Game</string>
+    <string name="timeSelect_5_descr">Five Minute Game</string>
+    <string name="timeSelect_6_descr">Six Minute Game</string>
+    <string name="high_score_1">0</string>
+    <string name="high_score_2">0</string>
+    <string name="high_score_3">0</string>
+    <string name="high_score_4">0</string>
+    <string name="high_score_5">0</string>
+    <string name="high_score_6">0</string>
+    <string name="score_bg_left_descr">Left piece of scoreBG</string>
+    <string name="score_bg_top_descr">Top right piece of scoreBG</string>
+    <string name="score_bg_bottom_descr">Bottom right piece of scoreBG</string>
+    <string name="timeBG_top_dscr">Top left piece of timeBG</string>
+    <string name="timeBG_bottom_descr">Bottom left piece of timeBG</string>
+    <string name="timeBG_right_descr">Right piece of timeBG</string>
+    <string name="default_final_text">Final Score:\\n00000</string>
+
+</resources>
