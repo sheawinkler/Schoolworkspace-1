@@ -1,0 +1,27 @@
+#include <string>
+#include <Vertex.h>
+using namespace std;
+/*
+ * stateId refers to the current state
+ * Struct will represent a state node within the ADJList
+ */
+struct State{
+	int stateId;
+	bool finalState;
+};
+
+
+Edge::Edge(State vertexT, char weigh){
+	weight = weigh;
+	vertexTo=vertexT;
+}
+
+Vertex::Vertex(){
+	//thisState = NULL;
+	out = NULL;
+}
+
+
+
+
+

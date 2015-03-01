@@ -1,0 +1,26 @@
+#include <string>
+#include <Vertex.h>
+using namespace std;
+
+Edge::Edge(Vertex *vertT, char weigh){
+	weight = weigh;
+	vertexTo=vertT;
+}
+
+Vertex::Vertex(){
+	thisState.stateId= -1;
+	thisState.finalState=false;
+	out = NULL;
+}
+
+
+GraphTable::GraphTable(){
+	numVert =1;
+	numEdges=0;
+	Vertex rootVertex;
+}
+
+void GraphTable::InsertByWeight(Vertex *vertF, Vertex *vertT,char weigh){
+	adjacencies[vertF->thisState.stateId].push_back(Edge(*vertf,*vertTo, weigh))
+
+}

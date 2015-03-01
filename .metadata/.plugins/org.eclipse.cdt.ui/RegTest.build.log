@@ -1,0 +1,16 @@
+09:35:59 **** Incremental Build of configuration Debug for project RegTest ****
+make all 
+Building file: /Users/Deverick/Documents/workspace/RegDFA/src/Vertex.cpp
+Invoking: GCC C++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"imported_src/Vertex.d" -MT"imported_src/Vertex.d" -o "imported_src/Vertex.o" "/Users/Deverick/Documents/workspace/RegDFA/src/Vertex.cpp"
+/Users/Deverick/Documents/workspace/RegDFA/src/Vertex.cpp:25:45: error: no viable overloaded '='
+                        adjacencies[startVert->thisState.stateId]=startVert;
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector:571:13: note: candidate function not viable: no known conversion from 'Vertex *' to 'const std::__1::vector<Edge, std::__1::allocator<Edge> >' for 1st argument
+    vector& operator=(const vector& __x);
+            ^
+1 error generated.
+make: *** [imported_src/Vertex.o] Error 1
+
+09:36:00 Build Finished (took 314ms)
+

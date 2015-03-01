@@ -1,0 +1,16 @@
+
+#include<vector>
+#include<list>
+
+class vertex{
+private:
+public:
+	list<Vertex> Adj
+
+};
+
+void addEdgeByWeight(){
+
+}
+
+

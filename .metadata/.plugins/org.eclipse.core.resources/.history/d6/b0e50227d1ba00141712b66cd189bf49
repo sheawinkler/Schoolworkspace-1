@@ -1,0 +1,18 @@
+/*
+ * funcTest.cpp
+ *
+ *  Created on: Feb 22, 2015
+ *      Author: Deverick
+ */
+
+
+#include <gtest/gtest.h>
+#include "InfixToPostfix.h"
+
+TEST(precedenceTest, allChars){
+	EXPECT_TRUE(higherPrecedence('*','('));
+	EXPECT_TRUE();
+	EXPECT_TRUE();
+	EXPECT_TRUE();
+
+}

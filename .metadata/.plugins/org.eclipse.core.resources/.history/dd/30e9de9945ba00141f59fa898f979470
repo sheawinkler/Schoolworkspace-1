@@ -1,0 +1,13 @@
+/*
+ * gtest_main.cpp
+ *
+ *  Created on: Feb 21, 2015
+ *      Author: Deverick
+ */
+#include <stdio.h>
+# include "../Libs/gtest/gtest.h"
+# include "InfixToPostfix.h"
+
+/*TEST(){
+
+}*/

@@ -9,12 +9,16 @@
 #define INFIXTOPOSTFIX_H_
 #include <string>
 
+using namespace std;
+
 class InfixToPostfix {
 public:
 	InfixToPostfix();
 	virtual ~InfixToPostfix();
-	void convertToPostfix(std::string STRING);
-
+	std::string addConcat(std::string STRING);
+	int returnPrecedence(char inputChar);
+	int higherPrecedence(char inputChar, char comparingChar);
+	std::string convertToPostfix(std::string STRING);
 private:
 
 };

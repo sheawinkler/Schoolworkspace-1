@@ -1,0 +1,29 @@
+#include<vector>
+#include<list>
+#include<RegDFA.h>
+
+
+class vertex{
+private:
+public:
+	list<Vertex> Adj
+
+};
+
+
+class Edge{
+public:
+	State vertex;
+private:
+	char weight;
+};
+
+
+void addEmptyEdge(){
+
+}
+void addEdgeByWeight(){
+
+}
+
+

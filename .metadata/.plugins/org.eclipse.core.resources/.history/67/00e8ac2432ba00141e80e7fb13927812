@@ -1,0 +1,28 @@
+/*
+ * RegDFA.h
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+
+#ifndef REGDFA_H_
+#define REGDFA_H_
+#include <string>
+
+using namespace std;
+
+class RegDFA {
+public:
+	InfixToPostfix();
+	virtual ~InfixToPostfix();
+
+	std::string convertToPostfix(std::string STRING);
+	std::string addConcat(std::string STRING);
+	int returnPrecedence(char inputChar);
+	int higherPrecedence(char inputChar, char comparingChar);
+private:
+
+};
+
+
+#endif /* INFIXTOPOSTFIX_H_ */

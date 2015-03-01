@@ -1,0 +1,26 @@
+#include <string>
+#include <Vertex.h>
+using namespace std;
+
+Edge::Edge(Vertex vertT, char weigh){
+	weight = weigh;
+	vertexTt=vertexT;
+}
+
+Vertex::Vertex(){
+	thisState.stateId= -1;
+	thisState.finalState=false;
+	out = NULL;
+}
+
+
+GraphTable::GraphTable(){
+	numVert =1;
+	numEdges=0;
+	Vertex rootVertex;
+}
+
+void GraphTable::ByWeight(Vertex vertF, Vertex vertT,char weigh){
+
+
+}

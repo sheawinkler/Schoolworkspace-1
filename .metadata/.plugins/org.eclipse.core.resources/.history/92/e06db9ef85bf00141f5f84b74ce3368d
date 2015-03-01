@@ -1,0 +1,31 @@
+/*
+ * RegDFA.h
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+
+#ifndef REGDFA_H_
+#define REGDFA_H_
+#include <string>
+
+using namespace std;
+
+class RegDFA {
+public:
+	RegDFA();
+	struct State;
+	virtual ~RegDFA();
+	void fileParser();
+	State createState(char c);
+	void addEmptyEdge(State emptytransition, State toState);
+	void kleenEdge(stack<State> fragStack);
+	void concatEdge(stack<State> fragStack);
+	void orEdge(stack<State> fragStack);
+	void toNFA(string Postfix);
+private:
+
+};
+
+
+#endif /* REGDFA_H_ */

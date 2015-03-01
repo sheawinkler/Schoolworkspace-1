@@ -1,0 +1,47 @@
+#include<vector>
+#include<list>
+
+struct State{
+	int stateId;
+	bool finalState;
+
+};
+
+class vertex{
+private:
+
+public:
+
+};
+
+
+class Edge{
+private:
+	char weight;
+public:
+	State vertex;
+
+	State returnVertex(){
+		return vertex;
+	}
+
+	char returnWeight(){
+		return weight;
+	}
+
+};
+
+struct graph{
+	//list of stateNotes
+};
+
+
+void addEmptyEdge(){
+
+}
+
+void addEdgeByWeight(){
+
+}
+
+

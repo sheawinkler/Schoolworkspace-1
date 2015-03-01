@@ -1,0 +1,6 @@
+11:22:45 **** Incremental Build of configuration Debug for project RegDFA-Test ****
+make all 
+make: Nothing to be done for `all'.
+
+11:22:45 Build Finished (took 61ms)
+

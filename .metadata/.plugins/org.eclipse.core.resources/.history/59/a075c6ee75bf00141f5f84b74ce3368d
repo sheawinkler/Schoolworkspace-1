@@ -1,0 +1,35 @@
+#include<vector>
+#include<list>
+struct State{
+	int stateId;
+	bool finalState;
+
+};
+
+
+class vertex{
+private:
+
+public:
+	list<Vertex> Adj;
+
+};
+
+
+class Edge{
+
+public:
+
+private:
+	char weight;
+};
+
+
+void addEmptyEdge(){
+
+}
+void addEdgeByWeight(){
+
+}
+
+

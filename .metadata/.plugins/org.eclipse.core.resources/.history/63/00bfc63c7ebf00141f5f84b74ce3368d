@@ -1,0 +1,35 @@
+#include<vector>
+#include<list>
+
+using namespace std;
+
+struct State{
+	int stateId;
+	bool finalState;
+};
+
+
+Edge::Edge(){
+
+}
+Edge::Edge(State vertexFrom,State vertexTo, char weight){
+
+}
+
+class Vertex{
+	State thisState;
+	Edge *out;
+};
+
+
+
+struct graph{
+
+	//list of stateNotes
+	//Space is required between angled brackets
+	std::vector< std::vector<Edge> > adjacencies;
+	//adjacencies[this].push_back(Edge(vertexFrom,vertexTo, weight))
+};
+
+
+

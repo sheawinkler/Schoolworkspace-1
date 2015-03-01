@@ -1,0 +1,16 @@
+/*
+ * Vertex.h
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+
+#ifndef VERTEX_H_
+#define VERTEX_H_
+#include <string>
+
+using namespace std;
+
+
+
+#endif /* VERTEX_H_ */

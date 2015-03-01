@@ -1,15 +1,16 @@
-11:45:54 **** Incremental Build of configuration Debug for project RegDFA ****
+09:35:59 **** Incremental Build of configuration Debug for project RegDFA ****
 make all 
-Building file: ../src/RegDFA.cpp
+Building file: ../src/Vertex.cpp
 Invoking: GCC C++ Compiler
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/RegDFA.d" -MT"src/RegDFA.d" -o "src/RegDFA.o" "../src/RegDFA.cpp"
-Finished building: ../src/RegDFA.cpp
- 
-Building target: RegDFA
-Invoking: MacOS X C++ Linker
-g++  -o "RegDFA"  ./src/InfixToPostfix.o ./src/RegDFA.o   
-Finished building target: RegDFA
- 
+g++ -I"/Users/Deverick/Documents/workspace/RegDFA/src" -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Vertex.d" -MT"src/Vertex.d" -o "src/Vertex.o" "../src/Vertex.cpp"
+../src/Vertex.cpp:25:45: error: no viable overloaded '='
+                        adjacencies[startVert->thisState.stateId]=startVert;
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1/vector:571:13: note: candidate function not viable: no known conversion from 'Vertex *' to 'const std::__1::vector<Edge, std::__1::allocator<Edge> >' for 1st argument
+    vector& operator=(const vector& __x);
+            ^
+1 error generated.
+make: *** [src/Vertex.o] Error 1
 
-11:45:55 Build Finished (took 818ms)
+09:35:59 Build Finished (took 563ms)
 

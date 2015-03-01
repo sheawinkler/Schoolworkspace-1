@@ -1,0 +1,36 @@
+/*
+ * testing.cpp
+ *
+ *  Created on: Feb 22, 2015
+ *      Author: Deverick
+ */
+
+#include "gtest/gtest.h"
+#include "InfixToPostfix.h"
+
+
+TEST(precedenceTest, allChars){
+	InfixToPostfix test;
+	EXPECT_TRUE(test.higherPrecedence('*','('));
+	EXPECT_TRUE(test.higherPrecedence('*','.'));
+	EXPECT_TRUE(test.higherPrecedence('.','('));
+	EXPECT_TRUE(test.higherPrecedence('|','('));
+EXPECT_TRUE('1');
+}
+
+
+TEST(concatTest, simpleCombo){
+	InfixToPostfix test;
+	EXPECT_EQ("a.b",test.addConcat("ab"));
+	EXPECT_NE("ab",test.addConcat("a.b"));
+}
+
+TEST(convertToPostFix){
+
+}
+
+GTEST_API_ int main(int argc, char **argv) {
+
+  ::testing::InitGoogleTest(&argc, argv);
+  return RUN_ALL_TESTS();
+}

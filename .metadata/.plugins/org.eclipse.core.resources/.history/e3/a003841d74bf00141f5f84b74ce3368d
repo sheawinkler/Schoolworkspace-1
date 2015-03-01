@@ -1,0 +1,30 @@
+#include<vector>
+#include<list>
+
+
+
+
+class vertex{
+private:
+public:
+	list<Vertex> Adj
+
+};
+
+
+class Edge{
+
+	State vertex;s
+private:
+	char weight;
+};
+
+
+void addEmptyEdge(){
+
+}
+void addEdgeByWeight(){
+
+}
+
+

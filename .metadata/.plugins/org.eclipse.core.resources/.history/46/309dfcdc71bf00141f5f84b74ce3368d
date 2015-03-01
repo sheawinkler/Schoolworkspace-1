@@ -1,0 +1,9 @@
+class vertex{
+private:
+public:
+	list<Vertex> Adj
+
+
+
+
+};

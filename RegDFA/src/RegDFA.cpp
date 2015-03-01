@@ -8,52 +8,121 @@
 #include "InfixToPostfix.h"
 #include <iostream>
 #include <stack>
+#include <map>
 #include <string>
 #include <vector>
 #include <sstream>  // requires standard library
 #include <fstream>  // Note this extra header requirement whenever working with files
 #include <cstdlib>
+#include "Vertex.h"
 using namespace std;
 
-/*stateStatus[0]--a,stateStatus[1]---b,stateStatus[3]--e
- * stateId refers to the current state
- * Struct will represent a state node within the NFA'
- */
-struct nfaStruct{
-	int stateId;
-	char stateStatus[3];
-	bool finalState;
+
+
+struct nfaFrag{
+	//points to start state for frag
+	State *start;
 };
 
+
+//State createState(){
+//	State packagedState;
+//	packagedState.stateId=-1;
+//	packagedState.finalState=false;
+//	return packagedState;
+//}
+
+void createTransitionState(){
+
+}
+
+void addEmptyEdge(State emptytransition, State toState){
+
+}
+
+void concatEdge(stack<State> fragStack){
+
+
+}
+
+void kleeneEdge(stack<State> fragStack){
+	   State tempState = fragStack.top();
+	   fragStack.pop();
+	   State tempState1 = fragStack.top();
+	   fragStack.pop();
+}
+
+void orEdge(stack<State> fragStack){
+
+}
+
 /*
- * We will rock socks with a reg expression stack to
- * parse tree the reg expression.
  *
+ * Thompsons Construction Algorithm
+ * http://swtch.com/~rsc/regexp/regexp1.html
  */
-stack<int>parsingTree;
-
-
-void emptyEdge(){
-
+void toNFA(string Postfix){
+	GraphTable gTable;
+	//May actually be adjacency List
+	std::stack<State> stackOFrags;
+	//WILL NEED TO CHANGE FOR CSE STANDARDS!!
+	int id =-1;
+	for(char& c : Postfix) {
+		   switch ( c ) {
+		   	   case 'a':{
+		   		   //StartingVertex
+		   		   Vertex* startVertex=NULL;
+		   		   startVertex->thisState.stateId=++id;
+		   		   startVertex->thisState.rootState=true;
+		   		   //EndingVertex
+		   		   Vertex* endVertex=NULL;
+		   		   endVertex->thisState.stateId=++id;
+		   		   endVertex->thisState.finalState=true;
+		   		   //startVertex->thisState  and startVertex->out
+		   		   gTable.InsertEdgeByWeight(startVertex,endVertex,c);
+		   		   gTable.numVert += 2;
+		   		   gTable.numEdges++;
+		   		 //  stackOFrags.push( createState());
+		   		 break;
+		   	   }
+		   	   case 'b':{
+		   		   Vertex* startVertex=NULL;
+		   		   startVertex->thisState.rootState=true;
+		   		   startVertex->thisState.stateId=++id;
+		   		   Vertex *endVertex=NULL;
+		   		   endVertex->thisState.finalState=true;
+		   		   endVertex->thisState.stateId=++id;
+		   		   gTable.InsertEdgeByWeight(startVertex,endVertex,c);
+		   		   gTable.numVert += 2;
+		   	       gTable.numEdges++;
+		   		//   stackOFrags.push(createState());
+		   		 break;
+		   	   }
+		   	   case '*':{
+		   		   kleeneEdge(stackOFrags);
+		   		 break;
+		   	   }
+		   	   case '|':{
+		   		   orEdge(stackOFrags);
+		   		 break;
+		   	   }
+		   	   case '.':
+		   		   concatEdge(stackOFrags);
+		   		 break;
+		   	   default:
+		   		 break;
+		  }
+	}
 }
 
-void concatEdge(){
 
-}
 
-void kleeneEdge(){
-
-}
-
-void orEdge(){
-
-}
-
-void parser(){
+void fileparser(){
 	string STRING;
 	    ifstream infile;
 	    int bIndex=0;
 	    string previousLine="";
+	   //Change to match homework readme
 	    infile.open ("/Users/Deverick/Documents/workspace/RegDFA/Libs/input.txt");
 
 	    while(!infile.eof()) // To get you all the lines.
@@ -61,16 +130,21 @@ void parser(){
 	        getline(infile,STRING); // Saves the line in STRING.
 	        //Parsing RegEx
 	        if(bIndex==0){
-	        	cout<<"First char is the REGEX is "<<endl;
-	        	//Calling InfixToPostfix File
+	        	//Calling InfixToPostfix File returning a queue
 	        	InfixToPostfix sampleTest;
-	        	sampleTest.convertToPostfix(STRING);
-	        }else{
-	        //Testing String Input against cases
-	        	cout<<"The test case is: "<<endl;
+	        	//converToPostfix is a string===remove string creation, wasting space
+	        	string postfix = sampleTest.convertToPostfix(sampleTest.addConcat(STRING));
+	        	int lengthOF = postfix.size();
+	        	toNFA(postfix);
 
 	        }
-	        cout<<STRING<<endl; // Prints our STRING.
+	        //ONE EXTRA TEST CASE IS BEING RAN~~REMOVE--I added 1 to check on bIndex..check that
+	        //Testing String Input against cases
+	        //cout<<"The test case is: "<<endl;
+	        if(bIndex>1){
+	        	// cout<<STRING<<endl; // Prints our STRING.
+	        }
+
 	        bIndex++;
 	    }
 	    infile.close();
@@ -92,9 +166,8 @@ int main(){
 	   }
 	   else {
 		   cout << "Hello, "<< Name <<" All seems to be running smooth...Here's the parsing of the file"<< endl;
-		   parser();
+		   fileparser();
 	   }
 	   cout<< "Closing Down"<< endl;
 	return 0;
-
 }

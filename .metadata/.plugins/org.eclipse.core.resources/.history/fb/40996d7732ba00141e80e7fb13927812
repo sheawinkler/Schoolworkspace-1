@@ -1,0 +1,27 @@
+/*
+ * RegDFA.h
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+
+#ifndef REGDFA_H_
+#define REGDFA_H_
+#include <string>
+
+using namespace std;
+
+class RegDFA {
+public:
+	RegDFA();
+	virtual ~RegDFA();
+	void fileParser();
+	void emptyEdge();
+	void kleenEdge();
+	void concatEdge();
+private:
+
+};
+
+
+#endif /* REGDFA_H_ */

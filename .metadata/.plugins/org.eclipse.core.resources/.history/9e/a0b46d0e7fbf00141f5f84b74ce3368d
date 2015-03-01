@@ -1,0 +1,25 @@
+#include<vector>
+#include<list>
+
+using namespace std;
+
+struct State{
+	int stateId;
+	bool finalState;
+};
+
+
+Edge::Edge(State vertexF,State vertexT, char weigh){
+	weight = weigh;
+	vertexFrom = vertexF;
+	vertexTo=vertexT;
+}
+
+Vertex::Vertex(){
+
+}
+
+
+
+
+

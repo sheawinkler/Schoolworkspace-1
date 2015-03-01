@@ -1,0 +1,6 @@
+13:30:49 **** Incremental Build of configuration Debug for project RegDFATesting ****
+make all 
+make: Nothing to be done for `all'.
+
+13:30:49 Build Finished (took 58ms)
+

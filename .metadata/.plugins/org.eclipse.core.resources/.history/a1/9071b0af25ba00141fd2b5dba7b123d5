@@ -1,0 +1,13 @@
+#include "InfixToPostfix.h"
+#include <iostream>
+#include <cstdlib>
+//#include "RegDFA.h"
+using namespace std;
+
+int main(){
+	cout<<"Here is a Test sample of the environment";
+
+	InfixToPostfix testPost;
+	cout<<testPost.returnPrecedence('(')<<endl;
+
+}
