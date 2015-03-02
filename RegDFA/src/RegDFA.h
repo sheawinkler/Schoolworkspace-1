@@ -23,6 +23,8 @@ public:
 	void concatEdge(stack<State> fragStack);
 	void orEdge(stack<State> fragStack);
 	void toNFA(string Postfix);
+	Vertex* createStart();
+	Vertex* createFinal();
 private:
 
 };

@@ -39,12 +39,17 @@ public:
 	char returnWeight(){
 		return weight;
 	}
+
+	void makeFalse();
+
+
 };
 
 class Vertex{
 public:
 	State thisState;
 	Edge *out;
+	Edge *out2;
 	Vertex();
 };
 

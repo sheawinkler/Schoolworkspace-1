@@ -3,11 +3,12 @@
 // Author      : Deverick Simpson
 // Version     :
 // Copyright   : Your copyright notice
-// Description : Hello World in C++, Ansi-style
+// Description : Reg To DFA in C++, Ansi-style
 //============================================================================
 #include "InfixToPostfix.h"
 #include <iostream>
 #include <stack>
+#include <utility> //std::pair
 #include <map>
 #include <string>
 #include <vector>
@@ -15,107 +16,166 @@
 #include <fstream>  // Note this extra header requirement whenever working with files
 #include <cstdlib>
 #include "Vertex.h"
+#include <set>
 using namespace std;
 
+//I really dont want this to be global
+int id =-1;
+char empty = '#';
 
+//
+//struct nfaFrag{
+//	//points to start state for frag
+//	State *start;
+//};
 
-struct nfaFrag{
-	//points to start state for frag
-	State *start;
-};
-
-
-//State createState(){
-//	State packagedState;
-//	packagedState.stateId=-1;
-//	packagedState.finalState=false;
-//	return packagedState;
-//}
-
-void createTransitionState(){
-
+Vertex* createStart(){
+	   //StartingVertex
+	   Vertex* startVertex=NULL;
+	   startVertex->thisState.stateId=++id;
+	   startVertex->thisState.rootState=true;
+	   return startVertex;
 }
 
-void addEmptyEdge(State emptytransition, State toState){
-
+Vertex* createFinal(){
+   //EndingVertex
+   Vertex* endVertex=NULL;
+   endVertex->thisState.stateId=++id;
+   endVertex->thisState.finalState=true;
 }
-
-void concatEdge(stack<State> fragStack){
-
-
-}
-
-void kleeneEdge(stack<State> fragStack){
-	   State tempState = fragStack.top();
-	   fragStack.pop();
-	   State tempState1 = fragStack.top();
-	   fragStack.pop();
-}
-
-void orEdge(stack<State> fragStack){
-
-}
-
 /*
  *
  * Thompsons Construction Algorithm
  * http://swtch.com/~rsc/regexp/regexp1.html
+ * -------------------------------------------------------------------------------------
  */
 void toNFA(string Postfix){
 	GraphTable gTable;
-	//May actually be adjacency List
-	std::stack<State> stackOFrags;
+
+
+	//Root Node and the ID of the finalState
+	std::stack<  std::pair<Vertex,Vertex> > stateHistory;
 	//WILL NEED TO CHANGE FOR CSE STANDARDS!!
-	int id =-1;
+
 	for(char& c : Postfix) {
 		   switch ( c ) {
 		   	   case 'a':{
-		   		   //StartingVertex
-		   		   Vertex* startVertex=NULL;
-		   		   startVertex->thisState.stateId=++id;
-		   		   startVertex->thisState.rootState=true;
-		   		   //EndingVertex
-		   		   Vertex* endVertex=NULL;
-		   		   endVertex->thisState.stateId=++id;
-		   		   endVertex->thisState.finalState=true;
+		   		   //Vertex Construction
+		   		   Vertex* rootNode = createStart();
+		   		   Vertex* endNode = createFinal();
+		   		   Edge tempEdge = Edge(endNode,c);
+		   		   *rootNode->out = tempEdge;
+
+		   		   //Save State on stack for Operator
+		   		   template<class Vertex, class Vertex>
+		   		   class pair{
+		   		   public:
+		   			   Vertex first;
+		   			   Vertex second;
+		   			   pair(Vertex first, Vertex second)
+		   		   };
+
+		   		    std::pair<Vertex,Vertex> newPair = std::make_pair(rootNode,endNode);
+		   		    stateHistory.push(newPair);
+
+		   		   //Figure out your table schema
 		   		   //startVertex->thisState  and startVertex->out
-		   		   gTable.InsertEdgeByWeight(startVertex,endVertex,c);
+		   		   gTable.InsertEdgeByWeight(rootNode,endNode,c);
 		   		   gTable.numVert += 2;
 		   		   gTable.numEdges++;
-		   		 //  stackOFrags.push( createState());
 		   		 break;
 		   	   }
 		   	   case 'b':{
-		   		   Vertex* startVertex=NULL;
-		   		   startVertex->thisState.rootState=true;
-		   		   startVertex->thisState.stateId=++id;
-		   		   Vertex *endVertex=NULL;
-		   		   endVertex->thisState.finalState=true;
-		   		   endVertex->thisState.stateId=++id;
-		   		   gTable.InsertEdgeByWeight(startVertex,endVertex,c);
+		   		   Vertex* rootNode1 = createStart();
+		   		   Vertex* endNode1 = createFinal();
+		   		   Edge tempEdge = Edge(endNode1,c);
+		   		   *rootNode1->out = tempEdge;
+
+		   		   std::pair<Vertex,Vertex> newPair = std::make_pair(rootNode1,endNode1);
+		   		   stateHistory.push(newPair);
+
+		   		   //Inserting Into Table
+		   		   gTable.InsertEdgeByWeight(rootNode1,endNode1,c);
 		   		   gTable.numVert += 2;
 		   	       gTable.numEdges++;
-		   		//   stackOFrags.push(createState());
 		   		 break;
 		   	   }
 		   	   case '*':{
-		   		   kleeneEdge(stackOFrags);
+
 		   		 break;
 		   	   }
 		   	   case '|':{
-		   		   orEdge(stackOFrags);
+		   		   Vertex* rootNode2 = createStart();
+		   		   Vertex* endNode2 = createFinal();
+
+		   		   Vertex* nodeA =  &stateHistory.top();
+		   		   stateHistory.pop();
+
+		   	   	   Vertex* nodeB = &stateHistory.top();
+		   	       stateHistory.pop();
+
+
+		   	       Edge firstEdge = Edge(nodeA,empty);
+		   	       Edge secondEdge = Edge(nodeB,empty);
+		   	       //rootNode2->out = &firstEdge; diff between *rootNode2->out = firstEdge;
+
+		   	       //New Root node attached
+		   	       rootNode2->thisState.stateId = ++id;
+		   	       rootNode2->out = &firstEdge;
+		   	       rootNode2->out2 = &secondEdge;
+
+		   	       //Remove old root and final state markers
+		   	       nodeA->thisState.rootState=false;
+		   	       nodeB->thisState.rootState=false;
+
+		   	       //Final state False
+		   	       //Also need to save index on this swap
+		   	       nodeA->out->makeFalse();
+		   	       //Prob dont need  these
+		   	       nodeA->out2->makeFalse();
+
+		   	       nodeB->out->makeFalse();
+		   	       //Prob dont need  these
+		   	       nodeB->out2->makeFalse();
+
+		   	       //Add new Final Node
+		   	       //Maintain consistent stateId
+		   	       endNode2->thisState.stateId = ++id;
+		   	       Edge finalEdge = Edge(endNode2,empty);
+		   	       Edge finalEdge1 = Edge(endNode2,empty);
+
+		   	       nodeA->out = &finalEdge;
+		   	       nodeB->out = &finalEdge;
+
+		   	       stateHistory.push(*rootNode2);
+		   	       //Add to Graph Table
+		   	      gTable.InsertEdgeByWeight(rootNode2,nodeA,empty);
+		   	      gTable.InsertEdgeByWeight(rootNode2,nodeB,empty);
+		   	      gTable.InsertEdgeByWeight(nodeA,endNode2,empty);
+		   	      gTable.InsertEdgeByWeight(nodeB,endNode2,empty);
 		   		 break;
 		   	   }
-		   	   case '.':
-		   		   concatEdge(stackOFrags);
+		   	   case '.':{
+		   		   Vertex* nodeA =  &stateHistory.top();
+		   		   stateHistory.pop();
+
+		   	   	   Vertex* nodeB = &stateHistory.top();
+		   	       stateHistory.pop();
+
+		   	     //  nodeB->out =
 		   		 break;
-		   	   default:
+		   	   }
+		   	   default:{
 		   		 break;
+		   	   }
 		  }
 	}
 }
 
-
+/*
+ * File Parsing and Main Function Call
+ * ----------------------------------------------------------------------------------
+ */
 
 void fileparser(){
 	string STRING;
@@ -135,7 +195,8 @@ void fileparser(){
 	        	//converToPostfix is a string===remove string creation, wasting space
 	        	string postfix = sampleTest.convertToPostfix(sampleTest.addConcat(STRING));
 	        	int lengthOF = postfix.size();
-	        	toNFA(postfix);
+	        	cout <<"Here is the postfix expression "<< postfix << endl;
+	        	//toNFA(postfix);
 
 	        }
 	        //ONE EXTRA TEST CASE IS BEING RAN~~REMOVE--I added 1 to check on bIndex..check that

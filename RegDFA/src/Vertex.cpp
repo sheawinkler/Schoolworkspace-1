@@ -12,8 +12,12 @@ Vertex::Vertex(){
 	thisState.finalState=false;
 	thisState.rootState=false;
 	out = NULL;
+	out2 = NULL;
 }
 
+void Edge:: makeFalse(){
+	vertexTo->thisState.finalState=false;
+}
 
 GraphTable::GraphTable(){
 	numVert =0;
@@ -22,7 +26,7 @@ GraphTable::GraphTable(){
 }
 
 void GraphTable::InsertVert(Vertex *startVert){
-			adjacencies[startVert->thisState.stateId]=startVert;
+			//adjacencies[startVert->thisState.stateId]=startVert;
 
 }
 
@@ -48,7 +52,7 @@ void GraphTable::InsertEdgeByWeight(Vertex *vertF,Vertex *vertT, char weigh){
 }
 
 void GraphTable::PrintTable(){
-	for(int i=0;i<adjacencies.size();i++){
-		//std::cout<< adjacencies[i]<<"State ID and "<< "gs" <<end;
-	}
+//	for(int i=0;i<adjacencies.size();i++){
+//		//std::cout<< adjacencies[i]<<"State ID and "<< "gs" <<end;
+//	}
 }

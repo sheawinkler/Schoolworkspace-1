@@ -9413,3 +9413,732 @@ Binding(ALT+CTRL+H,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.cdt.ui.cViewScope,,cocoa,system)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2015-03-01 14:50:26.894
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 98272: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:234)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.Exception: Unable to find Mach task port for process-id 98272: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 14:50:26.896
+!MESSAGE Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 98272: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+!STACK 0
+java.lang.Exception: Unable to find Mach task port for process-id 98272: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2015-03-01 15:28:56.987
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 99553: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:234)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.Exception: Unable to find Mach task port for process-id 99553: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 15:28:56.988
+!MESSAGE Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 99553: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+!STACK 0
+java.lang.Exception: Unable to find Mach task port for process-id 99553: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2015-03-01 16:05:44.533
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2015-03-01 16:05:44.533
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Memory View Enhancements Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Debugger Services Framework (DSF) Examples" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ GCC Cross Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Unit Testing Support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Visual C++ Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ LLVM-Family Compiler Build Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Remote Launch (Requires RSE Remote System Explorer)" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Autotools support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Autotools support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Memory View Enhancements" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Development Tools SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Qt Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Berkeley UPC (Unified Parallel C) Toolchain Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Unit Testing Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ C99 LR Parser" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ C99 LR Parser SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Visualizer Framework" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ IBM XLC Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ GDB Hardware Debugging" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Multicore Visualizer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ IBM XLC Compiler Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.533
+!MESSAGE "C/C++ Miscellaneous Utilities" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2015-03-01 16:05:44.541
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2015-03-01 16:05:44.541
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Memory View Enhancements Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Debugger Services Framework (DSF) Examples" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ GCC Cross Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Unit Testing Support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Visual C++ Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ LLVM-Family Compiler Build Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Remote Launch (Requires RSE Remote System Explorer)" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Autotools support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Autotools support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Memory View Enhancements" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Development Tools SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Qt Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Berkeley UPC (Unified Parallel C) Toolchain Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Unit Testing Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ C99 LR Parser" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ C99 LR Parser SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Visualizer Framework" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ IBM XLC Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ GDB Hardware Debugging" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Multicore Visualizer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ IBM XLC Compiler Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.541
+!MESSAGE "C/C++ Miscellaneous Utilities" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2015-03-01 16:05:44.574
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2015-03-01 16:05:44.574
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Memory View Enhancements Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Debugger Services Framework (DSF) Examples" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ GCC Cross Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Unit Testing Support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Visual C++ Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ LLVM-Family Compiler Build Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Remote Launch (Requires RSE Remote System Explorer)" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Autotools support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Autotools support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Memory View Enhancements" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Development Tools SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Qt Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.574
+!MESSAGE "C/C++ Berkeley UPC (Unified Parallel C) Toolchain Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Unit Testing Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ C99 LR Parser" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ C99 LR Parser SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Visualizer Framework" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ IBM XLC Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ GDB Hardware Debugging" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Multicore Visualizer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ IBM XLC Compiler Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Miscellaneous Utilities" will be ignored because it is already installed.
+
+!ENTRY org.eclipse.equinox.p2.operations 4 0 2015-03-01 16:05:44.575
+!MESSAGE Operation details
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 4 10050 2015-03-01 16:05:44.575
+!MESSAGE Cannot complete the request.  See the error log for details.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Development Tools" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Memory View Enhancements Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Debugger Services Framework (DSF) Examples" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ GCC Cross Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Unit Testing Support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Visual C++ Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ LLVM-Family Compiler Build Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Remote Launch (Requires RSE Remote System Explorer)" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Autotools support Source" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Autotools support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Memory View Enhancements" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Development Tools SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Qt Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Berkeley UPC (Unified Parallel C) Toolchain Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Unit Testing Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ C99 LR Parser" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ C99 LR Parser SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ UPC (Unified Parallel C) Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Visualizer Framework" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ IBM XLC Compiler Support" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ GDB Hardware Debugging" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ Multicore Visualizer" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.575
+!MESSAGE "C/C++ IBM XLC Compiler Support SDK" will be ignored because it is already installed.
+!SUBENTRY 1 org.eclipse.equinox.p2.operations 2 10005 2015-03-01 16:05:44.576
+!MESSAGE "C/C++ Miscellaneous Utilities" will be ignored because it is already installed.
+!SESSION 2015-03-01 18:42:31.553 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product -keyring /Users/Deverick/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.standard.product -keyring /Users/Deverick/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-01 18:42:43.150
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2015-03-01 18:44:04.794
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 6447: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:234)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.Exception: Unable to find Mach task port for process-id 6447: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 18:44:04.795
+!MESSAGE Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 6447: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+!STACK 0
+java.lang.Exception: Unable to find Mach task port for process-id 6447: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2015-03-01 19:15:36.396
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 7501: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:234)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.Exception: Unable to find Mach task port for process-id 7501: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 19:15:36.396
+!MESSAGE Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 7501: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+!STACK 0
+java.lang.Exception: Unable to find Mach task port for process-id 7501: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2015-03-01 19:27:55.412
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 8084: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:234)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.Exception: Unable to find Mach task port for process-id 8084: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 19:27:55.412
+!MESSAGE Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 8084: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+!STACK 0
+java.lang.Exception: Unable to find Mach task port for process-id 8084: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+!SESSION 2015-03-01 19:32:23.437 -----------------------------------------------
+eclipse.buildId=4.3.2.M20140221-1700
+java.version=1.6.0_65
+java.vendor=Apple Inc.
+BootLoader constants: OS=macosx, ARCH=x86, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product -keyring /Users/Deverick/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86 -product org.eclipse.epp.package.standard.product -keyring /Users/Deverick/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.core.net 1 0 2015-03-01 19:32:30.193
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2015-03-01 19:35:19.189
+!MESSAGE Error in final launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 8298: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:115)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:234)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+Caused by: java.lang.Exception: Unable to find Mach task port for process-id 8298: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 19:35:19.190
+!MESSAGE Failed to execute MI command:
+-exec-run
+Error message from debugger back end:
+Unable to find Mach task port for process-id 8298: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+!STACK 0
+java.lang.Exception: Unable to find Mach task port for process-id 8298: (os/kern) failure (0x5).\n (please check gdb is codesigned - see taskgated(8))
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:925)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:754)
+
+!ENTRY org.eclipse.ui 4 4 2015-03-01 19:37:27.351
+!MESSAGE Unable to find Action Set: org.eclipse.mylyn.context.ui.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2015-03-01 19:37:27.352
+!MESSAGE Unable to find Action Set: org.eclipse.mylyn.doc.actionSet
+
+!ENTRY org.eclipse.ui 4 4 2015-03-01 19:37:27.352
+!MESSAGE Unable to find Action Set: org.eclipse.mylyn.tasks.ui.navigation
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2015-03-01 19:40:16.417
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@891d67): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 19:40:16.417
+!MESSAGE Interrupt failed.
+
+!ENTRY org.eclipse.cdt.dsf 4 10004 2015-03-01 19:40:16.427
+!MESSAGE Invalid breakpoint parameter(s)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 19:40:16.427
+!MESSAGE Invalid breakpoint parameter(s)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2015-03-01 19:42:30.549
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@bd1f19): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 19:42:30.550
+!MESSAGE Interrupt failed.
+
+!ENTRY org.eclipse.cdt.dsf 4 10004 2015-03-01 19:42:30.556
+!MESSAGE Invalid breakpoint parameter(s)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 19:42:30.556
+!MESSAGE Invalid breakpoint parameter(s)
+
+!ENTRY org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for F3:
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.editor,Open Declaration,
+		Open an editor on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@89b558,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@e0c99c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F3,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.opendecl,Open Declaration,
+		Open an editor on the selected element's declaration(s),
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@e0c99c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for COMMAND+SHIFT+T:
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1d44625,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@149366f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(COMMAND+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.opentype,Open Element,
+		Open an element in an Editor,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@149366f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for COMMAND+G:
+Binding(COMMAND+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace,Declaration in Workspace,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@194e03b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@10d53bd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(COMMAND+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.finddecl,Declaration,
+		Search for declarations of the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@10d53bd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for F4:
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1f49edb,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@e96d14,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(F4,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.type.hierarchy,Open Type Hierarchy,
+		Open a type hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@e96d14,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for ALT+COMMAND+R:
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@f8572f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23f416,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,cocoa,system)
+Binding(ALT+COMMAND+R,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.text.rename.element,Rename - Refactoring ,
+		Rename the selected element,
+		Category(org.eclipse.cdt.ui.category.refactoring,Refactor - C++,C/C++ Refactorings,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23f416,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,cocoa,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for ALT+COMMAND+I:
+Binding(ALT+COMMAND+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6de4f0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(ALT+COMMAND+I,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.include.browser,Open Include Browser,
+		Open an include browser on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@6de4f0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+Binding(ALT+COMMAND+I,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.inline,Inline,
+		Inline a constant, local variable or method,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@d171d0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,cocoa,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for COMMAND+SHIFT+H:
+Binding(COMMAND+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@873f52,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14e24dd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(COMMAND+SHIFT+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.navigate.open.type.in.hierarchy,Open Type in Hierarchy,
+		Open a type in the type hierarchy view,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14e24dd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for COMMAND+SHIFT+G:
+Binding(COMMAND+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace,References in Workspace,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.search.ui.category.search,Search,Search command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@1565e27,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13f70e0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,,system)
+Binding(COMMAND+SHIFT+G,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.search.findrefs,References,
+		Search for references to the selected element in the workspace,
+		Category(org.eclipse.cdt.ui.category.source,C/C++ Source,C/C++ Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@13f70e0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-03-01 21:01:30.106
+!MESSAGE A conflict occurred for ALT+CTRL+H:
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.open.call.hierarchy,Open Call Hierarchy,
+		Open a call hierarchy on the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@b9434,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2eef47,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cEditorScope,,cocoa,system)
+Binding(ALT+CTRL+H,
+	ParameterizedCommand(Command(org.eclipse.cdt.ui.edit.open.call.hierarchy,Open Call Hierarchy,
+		Open the call hierarchy for the selected element,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@2eef47,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.cdt.ui.cViewScope,,cocoa,system)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2015-03-01 21:01:31.949
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: /Users/Deverick/Documents/workspace/RegDFA/Debug/RegDFA not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:128)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:289)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:144)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2015-03-01 21:01:31.949
+!MESSAGE /Users/Deverick/Documents/workspace/RegDFA/Debug/RegDFA not found
+!STACK 0
+java.io.FileNotFoundException: /Users/Deverick/Documents/workspace/RegDFA/Debug/RegDFA not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:128)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:289)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:144)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:107)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:95)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:858)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:707)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1018)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$8.run(DebugUIPlugin.java:1222)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:53)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2015-03-01 21:12:11.520
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@1d1db5a): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 21:12:11.520
+!MESSAGE Interrupt failed.
+
+!ENTRY org.eclipse.cdt.dsf 4 10004 2015-03-01 21:12:11.525
+!MESSAGE Invalid breakpoint parameter(s)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 21:12:11.525
+!MESSAGE Invalid breakpoint parameter(s)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2015-03-01 21:24:41.471
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.mi.service.MIRunControl$9@702750): Status ERROR: org.eclipse.cdt.dsf.gdb code=10004 Interrupt failed. null' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 21:24:41.471
+!MESSAGE Interrupt failed.
+
+!ENTRY org.eclipse.cdt.dsf 4 10004 2015-03-01 21:24:41.475
+!MESSAGE Invalid breakpoint parameter(s)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2015-03-01 21:24:41.475
+!MESSAGE Invalid breakpoint parameter(s)
