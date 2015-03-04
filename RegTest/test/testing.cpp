@@ -7,6 +7,8 @@
 
 #include "gtest/gtest.h"
 #include "InfixToPostfix.h"
+#include "Vertex.h"
+#include "RegDFA.h"
 
 
 TEST(precedenceTest, allChars){
@@ -37,6 +39,31 @@ TEST(convertToPostfix, simpleCombo){
 	EXPECT_EQ("ab.ba.|",test.convertToPostfix("(a.b|b.a)"));
 	EXPECT_EQ("a*b.ba.|",test.convertToPostfix("((a*.b)|(b.a))"));
 }
+
+
+TEST(testingVertexandEdge, simpleVertexCreate){
+	Vertex vertexTest;
+	vertexTest.thisState.stateId =5;
+	Vertex vertexTest2;
+	vertexTest2.thisState.finalState=true;
+	vertexTest2.thisState.stateId =4;
+
+	Edge edgeTest = Edge(vertexTest2,'c');
+	vertexTest.out = &edgeTest;
+	EXPECT_EQ('c',vertexTest.out->returnWeight());
+
+	//ACCESSING EDGES STATE ID
+	Vertex* val =vertexTest.out->returnToVertex();
+	EXPECT_EQ(4,val->thisState.stateId);
+	cout<<"HELLO value is "<<val->thisState.stateId <<endl;
+
+//	GraphTable gTables;
+//	gTables.InsertEdgeByWeight(vertexTest, vertexTest2, 'c');
+//	gTables.PrintTable();
+
+}
+
+
 
 GTEST_API_ int main(int argc, char **argv) {
 

@@ -1,8 +1,0 @@
-(a*.b)
-(ab*a|bab)ab*
-aaaa
-bbb
-aba
-bba
-e
-a

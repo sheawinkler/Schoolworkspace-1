@@ -1,0 +1,51 @@
+#include <string>
+#include "Vertex.h"
+#include <iostream>
+using namespace std;
+
+
+Vertex::Vertex(){
+
+	thisState();
+	out = NULL;
+	out2 = NULL;
+}
+
+
+Vertex::~Vertex() {
+	// TODO Auto-generated destructor stub
+
+
+}
+
+
+//-------------------------------GRAPH TABLE----------------------------------------
+GraphTable::GraphTable(){
+	numVert =0;
+	numEdges=0;
+	std::vector< std::vector<Edge> > adjacencies;
+}
+
+
+
+//adjacencies[v][e]
+void GraphTable::InsertEdgeByWeight(Vertex vertF,Vertex vertT, char weigh){
+	//Connecting Edge vertF -----> vertT via weigh
+	   Edge tempEdge = Edge(vertT,weigh);
+	   //Is this right?
+	   //vertF->out = &tempEdge;
+	   //This is how I'd want to run this
+	  // adjacencies[vertF->thisState.stateId]=vertF;
+	   //Mathching stateID to adjacency index [v][e]--[weight]
+	  // adjacencies[vertF.thisState->stateId].push_back(tempEdge);
+}
+
+void GraphTable::PrintTable(){
+//	for(int i=0;i<adjacencies[i].size();i++){
+//		std::cout<< " The State ID  "<< i <<"contains the following Nodes"<<std::endl;
+//		for(int j=0;j<adjacencies[i][j].size();j++){
+//			Vertex* tempVert = adjacencies[i][j].returnToVertex();
+//			std::cout<< "-->"<<tempVert->thisState.stateId<<"[weight: "<<adjacencies[i]<<"]"<<endl;
+//		}
+//	}
+}

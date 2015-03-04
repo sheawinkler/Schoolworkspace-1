@@ -17,14 +17,17 @@ public:
 	struct State;
 	virtual ~RegDFA();
 	void fileParser();
-	State createState(char c);
-	void addEmptyEdge(State emptytransition, State toState);
-	void kleenEdge(stack<State> fragStack);
-	void concatEdge(stack<State> fragStack);
-	void orEdge(stack<State> fragStack);
 	void toNFA(string Postfix);
-	Vertex* createStart();
-	Vertex* createFinal();
+	void charTransition(char c);
+	Vertex createStart();
+	Vertex createFinal();
+	void kleene();
+	void orSelection();
+	void concatState();
+
+
+
+
 private:
 
 };

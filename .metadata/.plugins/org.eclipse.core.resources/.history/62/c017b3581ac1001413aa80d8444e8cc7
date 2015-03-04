@@ -1,0 +1,16 @@
+#include <string>
+#include "Vertex.h"
+#include <iostream>
+using namespace std;
+
+
+Edge::Edge(Vertex vertT, char weigh){
+	weight = weigh;
+	vertexTwo=&vertT;
+}
+
+void Edge:: makeFinalFalse(){
+	vertexTo->thisState.finalState=false;
+}
+
+

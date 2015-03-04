@@ -12,10 +12,7 @@
 #include <map>
 #include <stack>
 
-
 using namespace std;
-
-
 std::map<char, int> precedenceMap;
 
 InfixToPostfix::InfixToPostfix() {
@@ -28,16 +25,12 @@ InfixToPostfix::InfixToPostfix() {
 	//precedenceMap.erase("");
 	//std::cout<<"The map size is"<<precedenceMap.size()<<std::endl;
 }
-
-
-
 InfixToPostfix::~InfixToPostfix() {
 	// TODO Auto-generated destructor stub
 
 
 }
 
-//
 string InfixToPostfix :: addConcat(std::string STRING){
 	string concatREG;
 	//Check statement
@@ -93,11 +86,8 @@ int InfixToPostfix:: higherPrecedence(char inputChar, char comparingChar){
 //Need to return the Postfix string
 string InfixToPostfix :: convertToPostfix(std::string STRING){
 	std::deque<char> outputQueue;
-	//std::queue<char> outputQueue;
 	//To push operators
 	std::stack<char> operatorStack;
-
-
 	//WILL NEED TO CHANGE FOR CSE STANDARDS!!
 	for(char& c : STRING) {
 		   switch ( c ) {
@@ -121,7 +111,7 @@ string InfixToPostfix :: convertToPostfix(std::string STRING){
 				   	 operatorStack.pop();
 			   }
 			   if(operatorStack.size()==0){
-				   cout<<"Mismatched parenthesis detected.";
+				   cout<<"Mismatched parenthesis detected."<<endl;
 			   }
 			   //Removing contributing '(' char
 			   operatorStack.pop();
@@ -143,7 +133,6 @@ string InfixToPostfix :: convertToPostfix(std::string STRING){
 			   	 break;
 		   }
 	}
-
 	while(operatorStack.size()>0){
 	   	 outputQueue.push_back(operatorStack.top());
 	   	 operatorStack.pop();
@@ -158,7 +147,6 @@ string InfixToPostfix :: convertToPostfix(std::string STRING){
 		cout<<"There are still items on the stack, mismatch occurred"<<endl;
 	}
 	return output_string;
-
 }
 
 

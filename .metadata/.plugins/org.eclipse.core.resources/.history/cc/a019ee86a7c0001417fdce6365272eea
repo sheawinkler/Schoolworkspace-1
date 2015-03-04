@@ -1,0 +1,35 @@
+/*
+ * RegDFA.h
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+
+#ifndef REGDFA_H_
+#define REGDFA_H_
+#include <string>
+
+using namespace std;
+
+class RegDFA {
+public:
+	RegDFA();
+	struct State;
+	virtual ~RegDFA();
+	void fileParser();
+	void toNFA(string Postfix);
+	void charTransition(char c);
+	Vertex* createStart();
+	Vertex* createFinal();
+private:
+
+};
+
+template <class Vertex,class Vertex>
+  pair<Vertex,Vertex> make_pair (Vertex x, Vertex y)
+  {
+    return ( pair<Vertex,Vertex>(x,y) );
+  }
+
+
+#endif /* REGDFA_H_ */

@@ -1,0 +1,21 @@
+#include "Vertex.h"
+
+class Edge{
+private:
+	char weight;
+public:
+	Vertex *vertexTo;
+	//CONSTRUCTOR
+	//Edge(Vertex *vertexTo, char weight);
+	Edge(Vertex vertexTo, char weight);
+
+	//GETTER METHODS maybe a set
+	Vertex* returnToVertex(){
+		return vertexTo;
+	}
+	char returnWeight(){
+		return weight;
+	}
+	void makeFinalFalse();
+
+};

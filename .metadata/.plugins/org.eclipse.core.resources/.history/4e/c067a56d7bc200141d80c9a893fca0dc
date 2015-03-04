@@ -1,0 +1,76 @@
+#include <string>
+#include "Vertex.h"
+#include <iostream>
+using namespace std;
+
+
+
+Vertex::Vertex(void){
+	thisState;
+	out = NULL;
+	out2 = NULL;
+}
+
+
+Vertex::~Vertex() {
+	// TODO Auto-generated destructor stub
+
+
+}
+
+
+//-------------------------------GRAPH TABLE----------------------------------------
+GraphTable::GraphTable(){
+	numVert =0;
+	numEdges=0;
+	//vector< vector<Edge> > adj(v, vector<Edge>());  ---This may be the way to use the edges
+	//std::vector< std::vector<Edge*> > adjacencies;
+	//std::vector<Edge*> temp;
+
+
+//	Vertex temporary;
+//	Edge* reserveEdge = new Edge(temporary, 'c');
+//	temporary.out = reserveEdge;
+//	std::vector<Edge*> saving;
+//	saving.push_back(reserveEdge);
+//	saving.clear();
+//	saving.reserve(1);
+//	temp.clear();
+//	temp.reserve(1);
+//	adjacencies.clear();
+//	adjacencies.reserve(1);
+//	adjacencies.push_back(saving);
+}
+
+
+//adjacencies[v][e]
+void GraphTable::InsertEdgeByWeight(Vertex vertF,Vertex vertT, char weigh){
+	//Connecting Edge vertF -----> vertT via weigh
+	Edge* tempEdge = new Edge(vertT,weigh);
+	   //Mathching stateID to adjacency index [v][e]--[weight]
+		temp.push_back(tempEdge);
+		//vertF.thisState.stateId
+	   adjacencies[vertF.thisState.stateId].push_back(tempEdge);
+
+}
+
+//adjacencies[v][e]
+void GraphTable::InsertEdgeByWeight(Vertex* vertF,Vertex vertT, char weigh){
+	//Connecting Edge vertF -----> vertT via weigh
+	Edge* tempEdge = new Edge(vertT,weigh);
+	   //Mathching stateID to adjacency index [v][e]--[weight]
+		temp.push_back(tempEdge);
+		//vertF.thisState.stateId
+	   adjacencies[vertF->thisState.stateId].push_back(tempEdge);
+
+}
+
+void GraphTable::PrintTable(){
+//	for(int i=0;i<adjacencies[i].size();i++){
+//		std::cout<< " The State ID  "<< i <<"contains the following Nodes"<<std::endl;
+//		for(int j=0;j<adjacencies[i][j].size();j++){
+//			Vertex* tempVert = adjacencies[i][j].returnToVertex();
+//			std::cout<< "-->"<<tempVert->thisState.stateId<<"[weight: "<<adjacencies[i]<<"]"<<endl;
+//		}
+//	}
+}

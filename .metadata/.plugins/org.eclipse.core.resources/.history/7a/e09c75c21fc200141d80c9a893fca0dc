@@ -1,0 +1,283 @@
+//============================================================================
+// Name        : RegDFA.cpp
+// Author      : Deverick Simpson
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Reg To DFA in C++, Ansi-style
+//============================================================================
+#include "InfixToPostfix.h"
+#include <iostream>
+#include <stack>
+#include <utility> //std::pair
+#include <map>
+#include <string>
+#include <vector>
+#include <sstream>  // requires standard library
+#include <fstream>  // Note this extra header requirement whenever working with files
+#include <cstdlib>
+#include "Vertex.h"
+#include <set>
+using namespace std;
+
+//I really dont want this to be global
+int id =-1;
+char empty = '#';
+GraphTable gTable;
+//Root Node and the ID of the finalState
+std::stack<  std::pair<Vertex,Vertex> > stateHistory;
+
+
+Vertex createStart(){
+	   //StartingVertex
+	   Vertex startVertex;
+	   startVertex.thisState.stateId=++id;
+	   startVertex.thisState.rootState=true;
+	   startVertex.thisState.finalState=false;
+	   return startVertex;
+}
+
+Vertex createFinal(){
+   //EndingVertex
+   Vertex endVertex;
+   endVertex.thisState.stateId=++id;
+   endVertex.thisState.rootState=false;
+   endVertex.thisState.finalState=true;
+   return endVertex;
+}
+
+void charTransition(char c){
+	   //Vertex Construction
+	   Vertex rootNode = createStart();
+	   Vertex endNode = createFinal();
+	   Edge tempEdge = Edge(endNode,c);
+	   rootNode.out = &tempEdge;
+
+
+	   //Save State on stack for Operator
+	    std::pair<Vertex,Vertex> newPair;
+
+	    newPair= make_pair(rootNode,endNode);
+	    stateHistory.push(newPair);
+
+	   //Figure out your table schema
+	   //startVertex->thisState  and startVertex->out
+	   gTable.InsertEdgeByWeight(rootNode,endNode,c);
+	   gTable.numVert += 2;
+	   gTable.numEdges++;
+}
+
+void concatState(){
+	   //Vertex Construction
+	   Vertex rootNode = createStart();
+	   Vertex endNode = createFinal();
+
+	   //Pop last two off stack
+	   std::pair<Vertex,Vertex> tempPair = stateHistory.top();
+ 	   Vertex nodeB = std::get<0>(tempPair);
+	   stateHistory.pop();
+	   //Remove as Start State and add as Final State
+	   nodeB.thisState.rootState =false;
+
+	   //Pop first two off stack--Retrieving Pair from Stack  pair<start,end>
+	   std::pair<Vertex,Vertex> tempPair2 = stateHistory.top();
+	   //This is the 1st precedent State..
+	   Vertex nodeA = std::get<0>(tempPair2);
+	   stateHistory.pop();
+
+	   //CHECK IF THIS CAN BE CALLING THE ADDRESS
+	   //CONCAT rootNode to nodeA
+	   Edge concatRootEdge = Edge(nodeA,empty);
+	   rootNode.out = &concatRootEdge;
+
+	   //CONCAT nodeA TO nodeB
+	   Edge concatMiddleEdge = Edge(nodeB,empty);
+	   nodeA.out->dangling = &concatMiddleEdge;
+
+	   //CONCAT nodeB.out->dangling  to endNode
+	   Edge concatFinalEdge = Edge(endNode,empty);
+	   //Dangling is the Edge----.out contains the node --->dangling
+	   nodeB.out->dangling = &concatFinalEdge;
+
+
+	   //ALL CONNECTIONS MADE---CHANGING PERMISSIONS
+	   nodeA.thisState.rootState =false;
+	   nodeA.out->makeFinalFalse();
+	   nodeB.out->makeFinalFalse();
+
+	   nodeA.out->dangling->makeFinalFalse();
+	   nodeB.out->dangling->makeFinalFalse();
+
+	   //Insert into Graph
+	   gTable.InsertEdgeByWeight(rootNode, nodeA, empty);
+	   //THIS MAY OR MAY NOT BE RIGHT!!
+	   gTable.InsertEdgeByWeight(nodeA.out->returnToVertex(),nodeB, empty);
+
+	   gTable.InsertEdgeByWeight(nodeB.out->returnToVertex(),endNode, empty);
+	   //add gTable.numVert
+	   //add gtable.numEdges
+}
+
+void kleene(){
+//	   //Vertex Construction
+//	   Vertex rootNode = createStart();
+//	   Vertex endNode = createFinal();
+//
+//   	   //Pop last off stack
+//	   Vertex* nodeA =  &stateHistory.top();
+//	   stateHistory.pop();
+//
+//   	   //Add Transitions
+//
+//
+//   	   //Add to graph
+}
+
+/*
+ * firstNode is the intermittent node
+ * secondNode is the other intermittent node
+ */
+void orSelection(){
+	   Vertex rootNodeOr = createStart();
+	   Vertex endNodeOr = createFinal();
+
+	   //Second Node popped on
+	   std::pair<Vertex,Vertex> OrPair = stateHistory.top();
+	   //Can still pop end node****Vertex nodeB = std::get<1>(tempPair3);
+	   Vertex secondNode = std::get<0>(OrPair);
+	   stateHistory.pop();
+
+	   //First Node popped off
+	   std::pair<Vertex,Vertex> OrPair1 = stateHistory.top();
+	   //Can still use end Node****Vertex endingNode = std::get<1>(tempPair3);
+	   Vertex firstNode = std::get<0>(OrPair1);
+	   stateHistory.pop();
+
+	   //Add Edge creation
+	   Edge secondEdge = Edge(secondNode,empty);
+	   Edge firstEdge = Edge(firstNode,empty);
+
+
+	   //New Root node attached
+	   rootNodeOr.out = &firstEdge;
+	   rootNodeOr.out2 = &secondEdge;
+
+	   //Remove old root and final state markers
+	   secondNode.thisState.rootState=false;
+	   secondNode.out->makeFinalFalse();
+	   secondNode.out2->makeFinalFalse();
+
+	   firstNode.thisState.rootState=false;
+	   firstNode.out->makeFinalFalse();
+	   firstNode.out2->makeFinalFalse();
+
+	   //Add new Final Node
+	   Edge finalEdge = Edge(endNodeOr,empty);
+
+	   //Connect Final Node
+	   secondNode.out = &finalEdge;
+	   firstNode.out = &finalEdge;
+
+	   //Add to Graph Table
+	  gTable.InsertEdgeByWeight(rootNodeOr,firstNode,empty);
+	  gTable.InsertEdgeByWeight(rootNodeOr,secondNode,empty);
+	  gTable.InsertEdgeByWeight(secondNode.out->returnToVertex(),endNodeOr,empty);
+	  gTable.InsertEdgeByWeight(firstNode.out->returnToVertex(),endNodeOr,empty);
+}
+/*
+ *
+ * Thompsons Construction Algorithm
+ * http://swtch.com/~rsc/regexp/regexp1.html
+ * -------------------------------------------------------------------------------------
+ */
+void toNFA(string Postfix){
+	//WILL NEED TO CHANGE FOR CSE STANDARDS!!
+	for(char& c : Postfix) {
+		   switch ( c ) {
+		   	   case 'a':{
+		   		   charTransition(c);
+		   		 break;
+		   	   }
+		   	   case 'b':{
+		   		   charTransition(c);
+		   		 break;
+		   	   }
+		   	   case '*':{
+		   		   // kleene();
+		   		 break;
+		   	   }
+		   	   case '|':{
+		   		  // orSelection();
+		   		   break;
+		   	   }
+		   	   case '.':{
+		   		   //concatState();
+		   		 break;
+		   	   }
+		   	   default:{
+		   		   //Should probably have some default setting this boots to
+		   		 break;
+		   	   }
+		  }
+	}
+}
+
+/*
+ * File Parsing and Main Function Call
+ * ----------------------------------------------------------------------------------
+ */
+
+void fileparser(){
+	string STRING;
+	    ifstream infile;
+	    int bIndex=0;
+	    string previousLine="";
+	   //Change to match homework readme
+	    infile.open ("/Users/Deverick/Documents/workspace/RegDFA/Libs/input.txt");
+
+	    while(!infile.eof()) // To get you all the lines.
+	    {
+	        getline(infile,STRING); // Saves the line in STRING.
+	        //Parsing RegEx
+	        if(bIndex==0){
+	        	//Calling InfixToPostfix File returning a queue
+	        	InfixToPostfix sampleTest;
+	        	//converToPostfix is a string===remove string creation, wasting space
+	        	string postfix = sampleTest.convertToPostfix(sampleTest.addConcat(STRING));
+	        	int lengthOF = postfix.size();
+	        	cout <<"Here is the postfix expression "<< postfix << endl;
+	        	toNFA(postfix);
+
+	        }
+	        //ONE EXTRA TEST CASE IS BEING RAN~~REMOVE--I added 1 to check on bIndex..check that
+	        //Testing String Input against cases
+	        //cout<<"The test case is: "<<endl;
+	        if(bIndex>1){
+	        	// cout<<STRING<<endl; // Prints our STRING.
+	        }
+
+	        bIndex++;
+	    }
+	    infile.close();
+	    cout<<"We are here "<<endl;
+	    //Need to return a parsing stack to manipulate the regex to a NFA
+}
+
+
+
+
+
+int main(){
+	char Name[30];
+	cout << "!!!Hello, what is your name!!!" << endl; // prints !!!Hello World!!!
+	cin >> Name;
+	ifstream ifs( "/Users/Deverick/Documents/workspace/RegDFA/Libs/input.txt" );       // note no mode needed
+	   if ( ! ifs.is_open() ) {
+		   cout << "Hello,"<< Name << " we have failed to open the file, check the path"<< endl;
+	   }
+	   else {
+		   cout << "Hello, "<< Name <<" All seems to be running smooth...Here's the parsing of the file"<< endl;
+		   fileparser();
+	   }
+	   cout<< "Closing Down"<< endl;
+	return 0;
+}

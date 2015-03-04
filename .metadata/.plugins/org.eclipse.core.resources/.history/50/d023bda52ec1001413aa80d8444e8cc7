@@ -1,0 +1,38 @@
+/*
+ * Edge.h
+ *
+ *  Created on: Feb 16, 2015
+ *      Author: Deverick
+ */
+#ifndef EDGE_H_
+#define EDGE_H_
+#include <string>
+#include <vector>
+#include "Vertex.h"
+
+
+class Vertex;
+
+class Edge{
+private:
+	char weight;
+public:
+	Vertex *vertexTo;
+	//CONSTRUCTOR
+	Edge(Vertex vertT, char weight);
+
+	//GETTER METHODS maybe a set
+	Vertex* returnToVertex(){
+		return vertexTo;
+	}
+	char returnWeight(){
+		return weight;
+	}
+	void makeFinalFalse();
+
+};
+
+
+
+
+#endif /* EDGE_H_ */
