@@ -19,8 +19,8 @@ public:
 	void fileParser();
 	void toNFA(string Postfix);
 	void charTransition(char c);
-	Vertex createStart();
-	Vertex createFinal();
+	Vertex* createStart();
+	Vertex* createFinal();
 	void kleene();
 	void orSelection();
 	void concatState();

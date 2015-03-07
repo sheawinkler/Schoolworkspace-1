@@ -16,6 +16,7 @@
 #include <fstream>  // Note this extra header requirement whenever working with files
 #include <cstdlib>
 #include "Vertex.h"
+#include "GraphTable.h"
 #include <set>
 using namespace std;
 
@@ -24,96 +25,97 @@ int id =-1;
 char empty = '#';
 GraphTable gTable;
 //Root Node and the ID of the finalState
-std::stack<  std::pair<Vertex,Vertex> > stateHistory;
+std::stack<  std::pair<Vertex*,Vertex*> > *stateHistory;
 
 
-Vertex createStart(){
+Vertex* createStart(){
 	   //StartingVertex
-	   Vertex startVertex;
-	   startVertex.thisState.stateId=++id;
-	   startVertex.thisState.rootState=true;
-	   startVertex.thisState.finalState=false;
+	   Vertex* startVertex = new Vertex();
+	   startVertex->thisState.stateId=++id;
+	   startVertex->thisState.rootState=true;
+	   startVertex->thisState.finalState=false;
 	   return startVertex;
 }
 
-Vertex createFinal(){
+Vertex* createFinal(){
    //EndingVertex
-   Vertex endVertex;
-   endVertex.thisState.stateId=++id;
-   endVertex.thisState.rootState=false;
-   endVertex.thisState.finalState=true;
+   Vertex* endVertex= new Vertex();
+   endVertex->thisState.stateId=++id;
+   endVertex->thisState.rootState=false;
+   endVertex->thisState.finalState=true;
    return endVertex;
 }
 
 void charTransition(char c){
 	   //Vertex Construction
-	   Vertex rootNodeChar = createStart();
-	   Vertex endNodeChar = createFinal();
-	   Edge tempEdge = Edge(endNodeChar,c);
-	   rootNodeChar.out = &tempEdge;
+	   Vertex* rootNodeChar = createStart();
+	   Vertex* endNodeChar = createFinal();
+	   Edge* tempEdge = new Edge(endNodeChar,c);
+	   rootNodeChar->out = tempEdge;
 
 
 	   //Save State on stack for Operator
-	    std::pair<Vertex,Vertex> charPair;
-	    charPair= make_pair(rootNodeChar,endNodeChar);
-	    stateHistory.push(charPair);
+	    std::pair<Vertex*,Vertex*> charPair;
+	    charPair = make_pair(rootNodeChar, endNodeChar);
+	    stateHistory->push((std::pair<Vertex*,Vertex*>)charPair);
 
 	   //Figure out your table schema
 	   //startVertex->thisState  and startVertex->out
 	   gTable.InsertEdgeByWeight(rootNodeChar,endNodeChar,c);
 	   gTable.numVert += 2;
 	   gTable.numEdges++;
+
 }
 
 //Change to End Node transition
 void concatState(){
 	   //Vertex Construction
-	   Vertex rootNode = createStart();
-	   Vertex endNode = createFinal();
+	   Vertex* rootNode = createStart();
+	   Vertex* endNode = createFinal();
 
 	   //Pop last two off stack
-	   std::pair<Vertex,Vertex> tempPair = stateHistory.top();
-	   Vertex nodeBFinal = std::get<1>(tempPair);
- 	   Vertex nodeB = std::get<0>(tempPair);
-	   stateHistory.pop();
+	   std::pair<Vertex*,Vertex*> tempPair = stateHistory->top();
+	   Vertex* nodeBFinal = std::get<1>(tempPair);
+ 	   Vertex* nodeB = std::get<0>(tempPair);
+	   stateHistory->pop();
 	   //Remove as Start State and add as Final State
-	   nodeB.thisState.rootState =false;
+	   nodeB->thisState.rootState =false;
 
 	   //Pop first two off stack--Retrieving Pair from Stack  pair<start,end>
-	   std::pair<Vertex,Vertex> tempPair2 = stateHistory.top();
-	   Vertex nodeAFinal = std::get<1>(tempPair2);
+	   std::pair<Vertex*,Vertex*> tempPair2 = stateHistory->top();
+	   Vertex* nodeAFinal = std::get<1>(tempPair2);
 	   //This is the nodeA -----> nodeB..
-	   Vertex nodeA = std::get<0>(tempPair2);
-	   stateHistory.pop();
+	   Vertex* nodeA = std::get<0>(tempPair2);
+	   stateHistory->pop();
 
 	   //CHECK IF THIS CAN BE CALLING THE ADDRESS
 	   //CONCAT rootNode.out->edge to nodeA
-	   Edge concatRootEdge = Edge(nodeA,empty);
-	   rootNode.out = &concatRootEdge;
+	   Edge* concatRootEdge = new Edge(nodeA,empty);
+	   rootNode->out = concatRootEdge;
 
 	   //CONCAT nodeAFinal TO nodeB
-	   Edge concatMiddleEdge = Edge(nodeB,empty);
-	   nodeAFinal.thisState.finalState = false;
-	   nodeAFinal.thisState.rootState = false;
-	   nodeAFinal.out = &concatMiddleEdge;
+	   Edge* concatMiddleEdge =  new Edge(nodeB,empty);
+	   nodeAFinal->thisState.finalState = false;
+	   nodeAFinal->thisState.rootState = false;
+	   nodeAFinal->out = concatMiddleEdge;
 
 	   //CONCAT nodeBFinal  to endNode
-	   Edge concatFinalEdge = Edge(endNode,empty);
+	   Edge* concatFinalEdge = new Edge(endNode,empty);
 	   //Dangling is the Edge----.out contains the node --->dangling
-	   nodeBFinal.thisState.finalState = false;
-	   nodeBFinal.thisState.rootState = false;
-	   nodeBFinal.out = &concatFinalEdge;
+	   nodeBFinal->thisState.finalState = false;
+	   nodeBFinal->thisState.rootState = false;
+	   nodeBFinal->out = concatFinalEdge;
 
 	   //ALL CONNECTIONS MADE---CHANGING PERMISSIONS
-	   nodeA.thisState.rootState =false;
-	   nodeB.thisState.rootState =false;
-	   nodeA.out->makeFinalFalse();
-	   nodeB.out->makeFinalFalse();
+	   nodeA->thisState.rootState =false;
+	   nodeB->thisState.rootState =false;
+	   nodeA->out->makeFinalFalse();
+	   nodeB->out->makeFinalFalse();
 
 	   //Save State on stack for Operator
-	    std::pair<Vertex,Vertex> concatFinalPair;
+	    std::pair<Vertex*,Vertex*> concatFinalPair;
 	    concatFinalPair= make_pair(rootNode,endNode);
-	    stateHistory.push(concatFinalPair);
+	    stateHistory->push(concatFinalPair);
 
 	   //Insert into Graph
 	   gTable.InsertEdgeByWeight(rootNode, nodeA, empty);
@@ -128,38 +130,38 @@ void concatState(){
 
 void kleene(){
 	   //Vertex Default Construction
-	   Vertex startVertexKleene = createStart();
-	   Vertex endVertexKleene = createFinal();
+	   Vertex* startVertexKleene = createStart();
+	   Vertex* endVertexKleene = createFinal();
 	   /*
 	    * Popped last off stack
 	    */
-	   std::pair<Vertex,Vertex> kleenePaire = stateHistory.top();
+	   std::pair<Vertex*,Vertex*> kleenePaire = stateHistory->top();
 	   //Start Node
-	   Vertex kleeneStartNode = std::get<0>(kleenePaire);
+	   Vertex* kleeneStartNode = std::get<0>(kleenePaire);
 	   //End Node
-	   Vertex kleeneEndNode = std::get<1>(kleenePaire);
-	   stateHistory.pop();
+	   Vertex* kleeneEndNode = std::get<1>(kleenePaire);
+	   stateHistory->pop();
 
 	   //Going to New final state
-	   Edge kleeneEdge = Edge(endVertexKleene,empty);
-	   Edge kleeneStartEdge = Edge(kleeneStartNode,empty);
+	   Edge* kleeneEdge = new Edge(endVertexKleene,empty);
+	   Edge* kleeneStartEdge = new Edge(kleeneStartNode,empty);
 
    	   //Add Transitions
-	   kleeneEndNode.out = &kleeneEdge;
-	   kleeneEndNode.out2 = &kleeneStartEdge;
+	   kleeneEndNode->out = kleeneEdge;
+	   kleeneEndNode->out2 = kleeneStartEdge;
 
-	   startVertexKleene.out = &kleeneEdge;
-	   startVertexKleene.out2 = &kleeneStartEdge;
+	   startVertexKleene->out = kleeneEdge;
+	   startVertexKleene->out2 = kleeneStartEdge;
 
 
 	   //ALL CONNECTIONS MADE---CHANGING PERMISSIONS
-	   kleeneEndNode.thisState.rootState =false;
-	   kleeneEndNode.out->makeFinalFalse();
+	   kleeneEndNode->thisState.rootState =false;
+	   kleeneEndNode->out->makeFinalFalse();
 
 	   //Save State on stack for Operator
-	    std::pair<Vertex,Vertex> kleeneFinalPair;
+	    std::pair<Vertex*,Vertex*> kleeneFinalPair;
 	    kleeneFinalPair= make_pair(startVertexKleene,endVertexKleene);
-	    stateHistory.push(kleeneFinalPair);
+	    stateHistory->push(kleeneFinalPair);
 
    	   //Add to graph
 	   gTable.InsertEdgeByWeight(kleeneEndNode, endVertexKleene, empty);
@@ -178,54 +180,54 @@ void kleene(){
  * secondNode is the other intermittent node
  */
 void orSelection(){
-	   Vertex rootNodeOr = createStart();
-	   Vertex endNodeOr = createFinal();
+	   Vertex* rootNodeOr = createStart();
+	   Vertex* endNodeOr = createFinal();
 
 	   //Second Pair popped off
-	   std::pair<Vertex,Vertex> OrPair = stateHistory.top();
+	   std::pair<Vertex*,Vertex*> OrPair = stateHistory->top();
 	   //Final State
-	   Vertex secondEndVertex = std::get<1>(OrPair);
-	   secondEndVertex.thisState.finalState = false;
+	   Vertex* secondEndVertex = std::get<1>(OrPair);
+	   secondEndVertex->thisState.finalState = false;
 	   //First State
-	   Vertex secondNode = std::get<0>(OrPair);
-	   stateHistory.pop();
+	   Vertex* secondNode = std::get<0>(OrPair);
+	   stateHistory->pop();
 
 	   //First Pair popped off
-	   std::pair<Vertex,Vertex> OrPair1 = stateHistory.top();
+	   std::pair<Vertex*,Vertex*> OrPair1 = stateHistory->top();
 	   //Can still use end Node****
-	   Vertex firstEndVertex = std::get<1>(OrPair);
-	   Vertex firstNode = std::get<0>(OrPair1);
-	   stateHistory.pop();
+	   Vertex* firstEndVertex = std::get<1>(OrPair);
+	   Vertex* firstNode = std::get<0>(OrPair1);
+	   stateHistory->pop();
 
 
 	   //Add Edge creation
-	   Edge secondEdge = Edge(secondNode,empty);
-	   Edge firstEdge = Edge(firstNode,empty);
+	   Edge* secondEdge = new Edge(secondNode,empty);
+	   Edge* firstEdge = new Edge(firstNode,empty);
 
 	   //New Root node attached
-	   rootNodeOr.out = &firstEdge;
-	   rootNodeOr.out2 = &secondEdge;
+	   rootNodeOr->out = firstEdge;
+	   rootNodeOr->out2 = secondEdge;
 
 	   //Remove old root and final state markers
-	   secondNode.thisState.rootState=false;
-	   secondNode.out->makeFinalFalse();
-	   secondNode.out2->makeFinalFalse();
+	   secondNode->thisState.rootState=false;
+	   secondNode->out->makeFinalFalse();
+	   secondNode->out2->makeFinalFalse();
 
-	   firstNode.thisState.rootState=false;
-	   firstNode.out->makeFinalFalse();
-	   firstNode.out2->makeFinalFalse();
+	   firstNode->thisState.rootState=false;
+	   firstNode->out->makeFinalFalse();
+	   firstNode->out2->makeFinalFalse();
 
 	   //Add new Final Node
-	   Edge finalEdge = Edge(endNodeOr,empty);
+	   Edge* finalEdge = new Edge(endNodeOr,empty);
 
 	   //Connect Final Node
-	   secondEndVertex.out = &finalEdge;
-	   firstEndVertex.out = &finalEdge;
+	   secondEndVertex->out = finalEdge;
+	   firstEndVertex->out = finalEdge;
 
 	   //Save State on stack for Operator
-	    std::pair<Vertex,Vertex> orPairFinal;
+	    std::pair<Vertex*,Vertex*> orPairFinal;
 	    orPairFinal= make_pair(rootNodeOr,endNodeOr);
-	    stateHistory.push(orPairFinal);
+	    stateHistory->push(orPairFinal);
 
 	   //Add to Graph Table
 	  gTable.InsertEdgeByWeight(rootNodeOr,firstNode,empty);
@@ -301,7 +303,7 @@ void fileparser(){
 	        	int lengthOF = postfix.size();
 	        	cout <<"Here is the postfix expression "<< postfix << endl;
 	        	toNFA(postfix);
-
+	        	gTable.PrintTable();
 	        }
 	        //ONE EXTRA TEST CASE IS BEING RAN~~REMOVE--I added 1 to check on bIndex..check that
 	        //Testing String Input against cases
@@ -320,6 +322,8 @@ void fileparser(){
 
 int main(){
 	char Name[30];
+	stateHistory = new std::stack<  std::pair<Vertex*,Vertex*> >;
+
 	cout << "!!!Hello, what is your name!!!" << endl; // prints !!!Hello World!!!
 	cin >> Name;
 	ifstream ifs( "/Users/Deverick/Documents/workspace/RegDFA/Libs/input.txt" );       // note no mode needed

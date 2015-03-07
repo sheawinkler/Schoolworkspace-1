@@ -1,22 +1,18 @@
 #include <string>
 #include <iostream>
 #include "Edge.h"
-
-
 using namespace std;
 
-//class Vertex;
-
-Edge::Edge(Vertex vertT, char weigh){
+Edge::Edge(Vertex* vertT, char weigh){
 	weight = weigh;
-	vertexTo=&vertT;
+	vertexTo=vertT;
 	dangling =NULL;
 
 }
 //Copy Constructor
-Edge::Edge(const Edge &e){
-	vertexTo = e.vertexTo;
-	weight = e.weight;
+Edge::Edge(const Edge &E){
+	vertexTo = E.vertexTo;
+	weight = E.weight;
 	dangling =NULL;
 }
 
@@ -33,4 +29,11 @@ void Edge::makeRootFalse(){
 }
 void Edge::makeRootTrue(){
 	vertexTo->thisState.rootState=true;
+}
+
+Edge& Edge::operator=(const Edge& T){
+	vertexTo = T.vertexTo;
+	weight = T.weight;
+	dangling =T.dangling;
+	return *this;
 }

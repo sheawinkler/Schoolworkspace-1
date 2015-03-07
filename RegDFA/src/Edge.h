@@ -18,12 +18,14 @@ private:
 public:
 	//Should this be a pointer..When I change what i point to, is it doing what i want it to?
 	char weight;
-	Vertex *vertexTo;
+	Vertex* vertexTo;
 	Edge* dangling;
 	//CONSTRUCTOR
-	Edge(Vertex vertT, char weight);
+	Edge(Vertex* vertT, char weight);
 	//Copy Constructor
 	Edge(const Edge& E);
+
+	Edge& operator=(const Edge& T);
 
 	//GETTER METHODS maybe a set
 	Vertex* returnToVertex(){

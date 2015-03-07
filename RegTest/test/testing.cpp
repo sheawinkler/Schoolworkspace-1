@@ -9,6 +9,7 @@
 #include "InfixToPostfix.h"
 #include "Vertex.h"
 #include "RegDFA.h"
+#include "GraphTable.h"
 
 
 TEST(precedenceTest, allChars){
@@ -42,27 +43,49 @@ TEST(convertToPostfix, simpleCombo){
 
 
 TEST(testingVertexandEdge, simpleVertexCreate){
-	Vertex vertexTest;
-	vertexTest.thisState.stateId =5;
-	Vertex vertexTest2;
-	vertexTest2.thisState.finalState=true;
-	vertexTest2.thisState.stateId =4;
+	Vertex* vertexTest = new Vertex();
+	vertexTest->thisState.stateId =3;
+	Vertex* vertexTest2 = new Vertex();
+	vertexTest2->thisState.finalState=true;
+	vertexTest2->thisState.stateId =4;
 
-	Edge edgeTest = Edge(vertexTest2,'c');
-	vertexTest.out = &edgeTest;
-	EXPECT_EQ('c',vertexTest.out->returnWeight());
+	Edge* edgeTest = new Edge(vertexTest2,'c');
+	vertexTest->out = edgeTest;
+	EXPECT_EQ('c',vertexTest->out->returnWeight());
 
 	//ACCESSING EDGES STATE ID
-	Vertex* val =vertexTest.out->returnToVertex();
+	Vertex* val =vertexTest->out->returnToVertex();
 	EXPECT_EQ(4,val->thisState.stateId);
 	cout<<"HELLO value is "<<val->thisState.stateId <<endl;
-
-//	GraphTable gTables;
-//	gTables.InsertEdgeByWeight(vertexTest, vertexTest2, 'c');
-//	gTables.PrintTable();
+	cout << "\n"<<endl;
+	GraphTable* gTables = new GraphTable;
+	gTables->InsertEdgeByWeight(vertexTest, vertexTest2, 'c');
+	//gTables->PrintTable();
+	cout << "\n"<<endl;
 
 }
-
+//
+//TEST(testingVertexandEdge, complexVertexCreate){
+//	Vertex* vertexTest = new Vertex();
+//	vertexTest->thisState.stateId =6;
+//	Vertex* vertexTest2 = new Vertex();
+//	vertexTest2->thisState.finalState=true;
+//	vertexTest2->thisState.stateId =43;
+//
+//	Edge* edgeTest = new Edge(vertexTest2,'c');
+//	vertexTest->out = edgeTest;
+//	EXPECT_EQ('c',vertexTest->out->returnWeight());
+//
+//	//ACCESSING EDGES STATE ID
+//	Vertex* val =vertexTest->out->returnToVertex();
+//	EXPECT_EQ(43,val->thisState.stateId);
+//	cout<<"HELLO value is "<<val->thisState.stateId <<endl;
+//
+//	GraphTable* gTables = new GraphTable;
+//	gTables->InsertEdgeByWeight(vertexTest, vertexTest2, 'c');
+////	gTables->PrintTable();
+//
+//}
 
 
 GTEST_API_ int main(int argc, char **argv) {

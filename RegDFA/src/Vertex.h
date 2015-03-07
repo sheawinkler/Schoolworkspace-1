@@ -30,32 +30,13 @@ struct State{
 class Vertex{
 public:
 	Vertex();
+	Vertex(const Vertex& T);
+	Vertex& operator=(const Vertex& S);
 	virtual ~Vertex();
 
 	State thisState;
 	Edge* out;
 	Edge* out2;
-};
-
-
-
-
-//-------------------------------GRAPH TABLE----------------------------------------//
-class GraphTable{
-	//list of stateNotes
-	//Space is required between angled brackets
-public:
-	//Dont forget your copy constructor
-	GraphTable();
-	int numVert, numEdges;
-	std::vector< std::vector<Edge*> > adjacencies;
-	std::vector< std::vector<Edge*> > dfaList;
-	void InsertEdgeByWeight(Vertex vertF,Vertex vertT, char weigh);
-	void InsertEdgeByWeight(Vertex* vertF,Vertex vertT, char weigh);
-	void Closure();
-	void TravelMarker();
-	void PrintTable();
-
 };
 
 
