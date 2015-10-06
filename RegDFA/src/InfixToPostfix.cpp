@@ -140,8 +140,8 @@ string InfixToPostfix :: convertToPostfix(std::string STRING){
 	std::string output_string(outputQueue.begin(), outputQueue.end());
 	outputQueue.clear();
 	//return string
-	//cout<<"HEre is the final output String  "<<output_string<<endl;
-	//cout<<"Above should be the postfix output to console "<<endl;
+	cout<<"HEre is the final output String  "<<output_string<<endl;
+	cout<<"Above should be the postfix output to console "<<endl;
 	//while stack has operators..enqueue into outputQueue
 	if(operatorStack.size()>0){
 		cout<<"There are still items on the stack, mismatch occurred"<<endl;

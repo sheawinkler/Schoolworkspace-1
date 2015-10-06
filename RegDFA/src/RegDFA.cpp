@@ -78,6 +78,7 @@ void concatState(){
 	   Vertex* nodeBFinal = std::get<1>(tempPair);
  	   Vertex* nodeB = std::get<0>(tempPair);
 	   stateHistory->pop();
+
 	   //Remove as Start State and add as Final State
 	   nodeB->thisState.rootState =false;
 
@@ -88,7 +89,7 @@ void concatState(){
 	   Vertex* nodeA = std::get<0>(tempPair2);
 	   stateHistory->pop();
 
-	   //CHECK IF THIS CAN BE CALLING THE ADDRESS
+
 	   //CONCAT rootNode.out->edge to nodeA
 	   Edge* concatRootEdge = new Edge(nodeA,empty);
 	   rootNode->out = concatRootEdge;
@@ -119,7 +120,7 @@ void concatState(){
 
 	   //Insert into Graph
 	   gTable.InsertEdgeByWeight(rootNode, nodeA, empty);
-	   //THIS MAY OR MAY NOT BE RIGHT!!
+
 	   gTable.InsertEdgeByWeight(nodeAFinal,nodeB, empty);
 
 	   gTable.InsertEdgeByWeight(nodeBFinal,endNode, empty);
@@ -277,12 +278,10 @@ void toNFA(string Postfix){
 	}
 }
 
-
 /*
  * File Parsing and Main Function Call
  * ----------------------------------------------------------------------------------
  */
-
 void fileparser(){
 	string STRING;
 	    ifstream infile;
@@ -303,7 +302,7 @@ void fileparser(){
 	        	int lengthOF = postfix.size();
 	        	cout <<"Here is the postfix expression "<< postfix << endl;
 	        	toNFA(postfix);
-	        	gTable.PrintTable();
+	        	//gTable.PrintTable();
 	        }
 	        //ONE EXTRA TEST CASE IS BEING RAN~~REMOVE--I added 1 to check on bIndex..check that
 	        //Testing String Input against cases

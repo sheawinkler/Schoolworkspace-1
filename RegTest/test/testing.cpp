@@ -12,39 +12,39 @@
 #include "GraphTable.h"
 
 
-TEST(precedenceTest, allChars){
-	InfixToPostfix test;
-	EXPECT_TRUE(test.higherPrecedence('*','('));
-	EXPECT_TRUE(test.higherPrecedence('*','.'));
-	EXPECT_TRUE(test.higherPrecedence('.','('));
-	EXPECT_TRUE(test.higherPrecedence('|','('));
-
-}
-
-
-TEST(concatTest, simpleCombo){
-	InfixToPostfix test;
-	EXPECT_EQ("a.b",test.addConcat("ab"));
-	EXPECT_NE("ab",test.addConcat("a.b"));
-	EXPECT_EQ("((a*.b)|(b.a))",test.addConcat("((a*b)|(ba))"));
-}
-
-TEST(convertToPostfix, simpleCombo){
-	InfixToPostfix test;
-	EXPECT_EQ("ab.",test.convertToPostfix("a.b"));
-	EXPECT_EQ("ab|",test.convertToPostfix("a|b"));
-	EXPECT_EQ("ab*.",test.convertToPostfix("a.b*"));
-	EXPECT_EQ("ab.*",test.convertToPostfix("(a.b)*"));
-	EXPECT_EQ("a*b*|",test.convertToPostfix("a*|b*"));
-	EXPECT_EQ("ab*.",test.convertToPostfix("a.b*"));
-	EXPECT_EQ("ab.ba.|",test.convertToPostfix("(a.b|b.a)"));
-	EXPECT_EQ("a*b.ba.|",test.convertToPostfix("((a*.b)|(b.a))"));
-}
+//TEST(precedenceTest, allChars){
+//	InfixToPostfix test;
+//	EXPECT_TRUE(test.higherPrecedence('*','('));
+//	EXPECT_TRUE(test.higherPrecedence('*','.'));
+//	EXPECT_TRUE(test.higherPrecedence('.','('));
+//	EXPECT_TRUE(test.higherPrecedence('|','('));
+//
+//}
+//
+//
+//TEST(concatTest, simpleCombo){
+//	InfixToPostfix test;
+//	EXPECT_EQ("a.b",test.addConcat("ab"));
+//	EXPECT_NE("ab",test.addConcat("a.b"));
+//	EXPECT_EQ("((a*.b)|(b.a))",test.addConcat("((a*b)|(ba))"));
+//}
+//
+//TEST(convertToPostfix, simpleCombo){
+//	InfixToPostfix test;
+//	EXPECT_EQ("ab.",test.convertToPostfix("a.b"));
+//	EXPECT_EQ("ab|",test.convertToPostfix("a|b"));
+//	EXPECT_EQ("ab*.",test.convertToPostfix("a.b*"));
+//	EXPECT_EQ("ab.*",test.convertToPostfix("(a.b)*"));
+//	EXPECT_EQ("a*b*|",test.convertToPostfix("a*|b*"));
+//	EXPECT_EQ("ab*.",test.convertToPostfix("a.b*"));
+//	EXPECT_EQ("ab.ba.|",test.convertToPostfix("(a.b|b.a)"));
+//	EXPECT_EQ("a*b.ba.|",test.convertToPostfix("((a*.b)|(b.a))"));
+//}
 
 
 TEST(testingVertexandEdge, simpleVertexCreate){
 	Vertex* vertexTest = new Vertex();
-	vertexTest->thisState.stateId =3;
+	vertexTest->thisState.stateId =0;
 	Vertex* vertexTest2 = new Vertex();
 	vertexTest2->thisState.finalState=true;
 	vertexTest2->thisState.stateId =4;
@@ -56,12 +56,10 @@ TEST(testingVertexandEdge, simpleVertexCreate){
 	//ACCESSING EDGES STATE ID
 	Vertex* val =vertexTest->out->returnToVertex();
 	EXPECT_EQ(4,val->thisState.stateId);
-	cout<<"HELLO value is "<<val->thisState.stateId <<endl;
-	cout << "\n"<<endl;
 	GraphTable* gTables = new GraphTable;
 	gTables->InsertEdgeByWeight(vertexTest, vertexTest2, 'c');
-	//gTables->PrintTable();
-	cout << "\n"<<endl;
+//	gTables->PrintTable();
+//	cout << "\n"<<endl;
 
 }
 //
@@ -83,7 +81,7 @@ TEST(testingVertexandEdge, simpleVertexCreate){
 //
 //	GraphTable* gTables = new GraphTable;
 //	gTables->InsertEdgeByWeight(vertexTest, vertexTest2, 'c');
-////	gTables->PrintTable();
+//	gTables->PrintTable();
 //
 //}
 

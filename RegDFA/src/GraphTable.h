@@ -22,7 +22,7 @@ public:
 	GraphTable();
 	int numVert, numEdges;
 	std::vector< std::vector<Edge*>* > *adjacencies;
-	//std::vector< std::vector<Edge*> > dfaList;
+
 
 	void InsertEdgeByWeight(Vertex* vertF,Vertex* vertT, char weigh);
 	void Closure();
