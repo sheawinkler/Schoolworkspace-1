@@ -46,7 +46,6 @@ Vertex* createFinal(){
    return endVertex;
 }
 
-
 void charTransition(char c){
 	   //Vertex Construction
 	   Vertex* rootNodeChar = createStart();
@@ -54,13 +53,15 @@ void charTransition(char c){
 	   Edge* tempEdge = new Edge(endNodeChar,c);
 	   rootNodeChar->out = tempEdge;
 
+
 	   //Save State on stack for Operator
 	    std::pair<Vertex*,Vertex*> charPair;
 	    charPair = make_pair(rootNodeChar, endNodeChar);
 	    stateHistory->push((std::pair<Vertex*,Vertex*>)charPair);
 
 	   //Figure out your table schema
-	   gTable.InsertEdgeByWeight(rootNodeChar, endNodeChar, c);
+	   //startVertex->thisState  and startVertex->out
+	   gTable.InsertEdgeByWeight(rootNodeChar,endNodeChar,c);
 	   gTable.numVert += 2;
 	   gTable.numEdges++;
 
@@ -88,7 +89,7 @@ void concatState(){
 	   Vertex* nodeA = std::get<0>(tempPair2);
 	   stateHistory->pop();
 
-	   //Here we have nodeA-->nodeAFinal    going to be concat with nodeB -->nodeBFinal
+
 	   //CONCAT rootNode.out->edge to nodeA
 	   Edge* concatRootEdge = new Edge(nodeA,empty);
 	   rootNode->out = concatRootEdge;
@@ -120,9 +121,9 @@ void concatState(){
 	   //Insert into Graph
 	   gTable.InsertEdgeByWeight(rootNode, nodeA, empty);
 
-	   gTable.InsertEdgeByWeight(nodeAFinal, nodeB, empty);
+	   gTable.InsertEdgeByWeight(nodeAFinal,nodeB, empty);
 
-	   gTable.InsertEdgeByWeight(nodeBFinal, endNode, empty);
+	   gTable.InsertEdgeByWeight(nodeBFinal,endNode, empty);
 
 	   gTable.numVert += 2;
 	   gTable.numEdges += 2;
@@ -281,6 +282,7 @@ void toNFA(string Postfix){
  * File Parsing and Main Function Call
  * ----------------------------------------------------------------------------------
  */
+
 void fileparser(){
 	string STRING;
 	    ifstream infile;
@@ -299,10 +301,9 @@ void fileparser(){
 	        	//converToPostfix is a string===remove string creation, wasting space
 	        	string postfix = sampleTest.convertToPostfix(sampleTest.addConcat(STRING));
 	        	int lengthOF = postfix.size();
-	        	cout <<"Here is the original expression "<< STRING << endl;
 	        	cout <<"Here is the postfix expression "<< postfix << endl;
 	        	toNFA(postfix);
-	        	//gTable.PrintTable();
+	        	gTable.PrintTable();
 	        }
 	        //ONE EXTRA TEST CASE IS BEING RAN~~REMOVE--I added 1 to check on bIndex..check that
 	        //Testing String Input against cases
@@ -314,6 +315,7 @@ void fileparser(){
 	        bIndex++;
 	    }
 	    infile.close();
+	    cout<<"We are here "<<endl;
 	    //Need to return a parsing stack to manipulate the regex to a NFA
 }
 

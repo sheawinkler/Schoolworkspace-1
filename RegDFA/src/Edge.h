@@ -19,7 +19,7 @@ public:
 	//Should this be a pointer..When I change what i point to, is it doing what i want it to?
 	char weight;
 	Vertex* vertexTo;
-	Edge* dangling;
+	//Edge* dangling;
 	//CONSTRUCTOR
 	Edge(Vertex* vertT, char weight);
 	//Copy Constructor

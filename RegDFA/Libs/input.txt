@@ -1,4 +1,4 @@
-((a*b)|(ba))
+(aba)*b
 aaaa
 bbb
 aba

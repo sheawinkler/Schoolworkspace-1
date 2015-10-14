@@ -7,6 +7,7 @@
 #ifndef GRAPHTABLE_H_
 #define GRAPHTABLE_H_
 #include <string>
+#include <map>
 #include <vector>
 #include "Edge.h"
 #include "Vertex.h"
@@ -15,16 +16,17 @@ class Edge;
 
 //-------------------------------GRAPH TABLE----------------------------------------//
 class GraphTable{
-	//list of stateNotes
-	//Space is required between angled brackets on vector
+
 public:
 	//Dont forget your copy constructor
 	GraphTable();
 	int numVert, numEdges;
-	std::vector< std::vector<Edge*>* > *adjacencies;
+    typedef std::pair<Vertex*,char> transitionPair;
+	std::multimap<int*, transitionPair > adjacencies;
 
+	typedef std::pair<int*, transitionPair > map_pair;
 
-	void InsertEdgeByWeight(Vertex* vertF,Vertex* vertT, char weigh);
+	void InsertEdgeByWeight(Vertex* vertF, Vertex* vertT, char A);
 	void Closure();
 	void TravelMarker();
 	void PrintTable();

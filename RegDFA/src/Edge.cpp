@@ -6,14 +6,14 @@ using namespace std;
 Edge::Edge(Vertex* vertT, char weigh){
 	weight = weigh;
 	vertexTo=vertT;
-	dangling =NULL;
+	//dangling =NULL;
 
 }
 //Copy Constructor
 Edge::Edge(const Edge &E){
 	vertexTo = E.vertexTo;
 	weight = E.weight;
-	dangling =NULL;
+	//dangling =NULL;
 }
 
 
@@ -34,6 +34,6 @@ void Edge::makeRootTrue(){
 Edge& Edge::operator=(const Edge& T){
 	vertexTo = T.vertexTo;
 	weight = T.weight;
-	dangling =T.dangling;
+	//dangling =T.dangling;
 	return *this;
 }
