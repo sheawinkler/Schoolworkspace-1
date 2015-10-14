@@ -2,6 +2,7 @@
 #include "GraphTable.h"
 #include <iostream>
 #include <map>
+
 using namespace std;
 
 //-------------------------------GRAPH TABLE----------------------------------------//
@@ -34,10 +35,12 @@ void GraphTable::InsertEdgeByWeight(Vertex* vertF, Vertex* vertT,char A){
 
 void GraphTable::PrintTable(){
 	cout << "Number of elements with key 0: " << adjacencies.count(0) << endl;
-	std::multimap<int, transitionPair>::iterator it = adjacencies.find();
+
+
+	std::multimap<int, transitionPair>::iterator it = adjacencies.begin();
 
 	if(it != adjacencies.end()){
-		for(size_t i=0; )
+
 	}
 }
 
