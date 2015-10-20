@@ -135,7 +135,7 @@ public class GraphTable {
 		if(true){
 			
 		}else{
-			//recurseEpsilons();
+			recurseEpsilons();
 		}
 		
 		return recursedEpsilons;

@@ -125,7 +125,7 @@ public class GraphTable {
 	/*
 	 * Here I want to search transitionVertex for whether .out.returnWeight() and .out2 == empty,
 	 * If so, check whether listOfStates !.contains transitionVertex.stateID and add to list if so.
-	 * continue recursively searching the .out edges of those that have returnWeight()==empty
+	 * continue recursively searching .out edges 
 	 */
 	
 	public List<Integer> recurseEpsilons(Vertex transitionVertex, List<Integer> listOfStates ){
@@ -135,7 +135,7 @@ public class GraphTable {
 		if(true){
 			
 		}else{
-			//recurseEpsilons();
+			recurseEpsilons();
 		}
 		
 		return recursedEpsilons;

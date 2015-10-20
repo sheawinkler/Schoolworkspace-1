@@ -7,7 +7,8 @@ public class mainConverter {
 	
 	
 	int id =-1;
-	char empty = '#';
+	int startState = 0;
+	char empty = 'e';
 	GraphTable gTable = new GraphTable();
 	Stack<  Pair<Vertex,Vertex> > stateHistory = new Stack<  Pair<Vertex,Vertex> >();
 
@@ -46,6 +47,7 @@ public class mainConverter {
 		   gTable.setNumVert(gTable.getNumVert()+2); 
 		   gTable.setNumEdges(gTable.getNumEdges()+1); 
 
+		   startState = rootNodeChar.stateID;
 	}
 	//Change to End Node transition
 	public void concatState(){
@@ -60,11 +62,11 @@ public class mainConverter {
 		 //Remove as Start State and add as Final State
 		nodeB.setRootState(false);
 		
-		//Pop first two off stack--Retrieving Pair from Stack  pair<start,end>
+		//Pop first two off stack--Retrieving Pair from Stack  pair<start,end> 
 		Pair<Vertex,Vertex> tempPair2 = stateHistory.peek();
 		Vertex nodeAFinal = tempPair2.getR();
-		  //This is the nodeA -----> nodeB..
 		Vertex nodeA = tempPair2.getL();
+		
 		stateHistory.pop();
 		
 		//Here we have nodeA-->nodeAFinal    going to be concat with nodeB -->nodeBFinal
@@ -83,15 +85,17 @@ public class mainConverter {
 		nodeBFinal.setRootState(false); 	
 
 
-	   //Save State on stack for Operator
+	   //Save State on stack for Operator--Start-End
 	   	Pair<Vertex,Vertex> concatFinalPair = new Pair<Vertex,Vertex>();;
-	    concatFinalPair.setL(nodeAFinal);
+	    concatFinalPair.setL(nodeA);
 	    concatFinalPair.setR(nodeBFinal);
 	    stateHistory.push(concatFinalPair);
 	    
-	   //Figure out your table schema
+	   //Add edge to graph
 	   gTable.InsertEdgeByWeight(nodeAFinal, nodeB, empty);
 	   gTable.setNumEdges(gTable.getNumEdges()+1); 		
+	   gTable.setStartState(nodeA.stateID);
+	  
 	}
 	public void kleene(){
 		   //Vertex Default Construction
@@ -145,7 +149,9 @@ public class mainConverter {
 			  
 			   
 			   gTable.setNumVert(gTable.getNumVert()+2); 
-			   gTable.setNumEdges(gTable.getNumEdges()+4);	   
+			   gTable.setNumEdges(gTable.getNumEdges()+4);	 
+			   gTable.setStartState(newStart.stateID);
+			   
 	}
 	
 	
@@ -160,13 +166,17 @@ public class mainConverter {
 		   secondEndVertex.makeFinalFalse();
 		   //First State
 		   Vertex secondNode = OrPair.getL();
+		   secondNode.makeRootFalse();
 		   stateHistory.pop();
 		   
 		   //First Pair popped off
 		   Pair<Vertex,Vertex> OrPair1 = stateHistory.peek();
-		   //Can still use end Node****
-		   Vertex firstEndVertex = OrPair1.getR();     
+		   //Final State
+		   Vertex firstEndVertex = OrPair1.getR();    
+		   firstEndVertex.makeFinalFalse();
+		   //First State	   
 		   Vertex firstNode =OrPair1.getL(); 
+		   firstNode.makeRootFalse();
 		   stateHistory.pop();
 		   
 		   //Add Edge creation
@@ -177,14 +187,8 @@ public class mainConverter {
 		   rootNodeOr.out = firstEdge;
 		   rootNodeOr.out2 = secondEdge;
 
-		   //Remove old root and final state markers
-		   secondNode.makeRootFalse();
-		   secondNode.out.returnToVertex().makeFinalFalse();
-		   secondNode.out2.returnToVertex().makeFinalFalse();
 
-		   firstNode.makeRootFalse();
-		   firstNode.out.returnToVertex().makeFinalFalse();
-		   firstNode.out2.returnToVertex().makeFinalFalse();
+
 
 		   //Add new Final Node
 		   Edge finalEdge = new Edge(endNodeOr,empty);
@@ -209,8 +213,7 @@ public class mainConverter {
 			  
 			   gTable.setNumVert(gTable.getNumVert()+2);
 			   gTable.setNumEdges(gTable.getNumEdges()+4);   
-		   
-		   
+			   gTable.setStartState(rootNodeOr.stateID);
 	}
 	
 	
