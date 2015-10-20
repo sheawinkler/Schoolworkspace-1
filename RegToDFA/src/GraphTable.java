@@ -1,15 +1,17 @@
 
 import java.util.*;
+import java.util.Map.Entry;
 
 public class GraphTable {
-	private int numVert, numEdges;
-	Map<Integer, List<Pair<Vertex,Character>>> multiMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
 	
+	private int numVert, numEdges;	
+	Map<Integer, List<Pair<Vertex,Character>>> multiMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
 	
 	
 	GraphTable(){
 		setNumVert(0);
 		setNumEdges(0);
+		multiMap.clear();
 	}
 	
 	
@@ -27,7 +29,7 @@ public class GraphTable {
 		return numEdges;
 	}
 
-
+	
 	public void setNumEdges(int numEdges) {
 		this.numEdges = numEdges;
 	}
@@ -40,19 +42,33 @@ public class GraphTable {
 		edgePair.setR(A);
 		
 		//Add edge to list
-			multiMap.get(vertF.getStateID()).add(edgePair) ;
-	
-		
+		if(multiMap.get(vertF.getStateID())!= null){
+			multiMap.get(vertF.getStateID()).add(edgePair) ;	
+		}else{
+			List<Pair<Vertex,Character>> values = new ArrayList<Pair<Vertex,Character>>(); 
+			values.add(edgePair);
+			multiMap.put(vertF.getStateID(), values);
+		}
 	}
 	
 	public void PrintTable(){
-		
-		
 		System.out.println("Attempting to print table now");
-		
-		for(List<Pair<Vertex,Character>> l : multiMap.values()){
-			 System.out.println(l.size() + ": " + l);
-		}
+	    
+		   Iterator<Entry<Integer, List<Pair<Vertex, Character>>>> it = multiMap.entrySet().iterator();
+		    while (it.hasNext()) {
+		        Map.Entry<Integer, List<Pair<Vertex, Character>>> graphPair = (Entry<Integer, List<Pair<Vertex, Character>>>)it.next();
+		        List<Pair<Vertex,Character>> listPair = new ArrayList<Pair<Vertex,Character>>(); 
+		        listPair = graphPair.getValue();
+		        System.out.println("State "+ graphPair.getKey() + " = ");
+		        for(int i=0;i<listPair.size();i++){
+		        	Pair<Vertex, Character> output = listPair.get(i);
+		        	char outputChar = output.getR();
+		        	Vertex outputVertex = output.getL();
+		        	
+		        	System.out.println("---> "+outputChar+" to state "+outputVertex.getStateID());
+		        }
+		        it.remove(); // avoids a ConcurrentModificationException
+		    }
 	}
 	
 	

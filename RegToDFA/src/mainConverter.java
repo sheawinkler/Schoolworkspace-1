@@ -8,8 +8,8 @@ public class mainConverter {
 	
 	int id =-1;
 	char empty = '#';
-	GraphTable gTable;
-	Stack<  Pair<Vertex,Vertex> > stateHistory;
+	GraphTable gTable = new GraphTable();
+	Stack<  Pair<Vertex,Vertex> > stateHistory = new Stack<  Pair<Vertex,Vertex> >();
 
 
 	public Vertex createStart(){
@@ -34,7 +34,7 @@ public class mainConverter {
 		   Edge tempEdge = new Edge(endNodeChar,c);
 		   rootNodeChar.out = tempEdge;
 
-		   //Save State on stack for Operator
+		   //Save State[Root,End] on stack for Operator
 		    Pair<Vertex,Vertex> charPair = new Pair<Vertex,Vertex>();
 		    
 		    charPair.setL(rootNodeChar);
@@ -49,9 +49,7 @@ public class mainConverter {
 	}
 	//Change to End Node transition
 	public void concatState(){
-		   //Vertex Construction
-		Vertex rootNode = createStart();
-		Vertex endNode = createFinal();
+
 		
 		   //Pop last two off stack
 		Pair<Vertex,Vertex> tempPair = stateHistory.peek();
@@ -70,83 +68,87 @@ public class mainConverter {
 		stateHistory.pop();
 		
 		//Here we have nodeA-->nodeAFinal    going to be concat with nodeB -->nodeBFinal
-		//CONCAT rootNode.out->edge to nodeA
-		Edge concatRootEdge = new Edge(nodeA,empty);
-		rootNode.out = concatRootEdge;	
+		//CONCAT nodeAFinal.out->edge to nodeB
+		Edge concatEdge = new Edge(nodeB,empty);
+		nodeAFinal.out = concatEdge;	//Must insert this edge into gTable after this operation
 		
-		   //CONCAT nodeAFinal TO nodeB
-		   Edge concatMiddleEdge =  new Edge(nodeB,empty);
-		   nodeAFinal.setFinalState(false); 
-		   nodeAFinal.setRootState(false); 
-		   nodeAFinal.out = concatMiddleEdge;
+		//ALL CONNECTIONS MADE---CHANGING PERMISSIONS
+		nodeAFinal.setFinalState(false); 
+		nodeAFinal.setRootState(false); 
 		
-		   //CONCAT nodeBFinal  to endNode
-		   Edge concatFinalEdge = new Edge(endNode,empty);
-		   //Dangling is the Edge----.out contains the node --->dangling
-		   nodeBFinal.setFinalState(false);
-		   nodeBFinal.setRootState(false); 
-		   nodeBFinal.out = concatFinalEdge;		
+		nodeB.setRootState(false);
+		nodeB.setFinalState(false);
+		
+		nodeBFinal.setFinalState(true);
+		nodeBFinal.setRootState(false); 	
 
-		   //ALL CONNECTIONS MADE---CHANGING PERMISSIONS
-		   nodeA.setRootState(false); 
-		   nodeB.setRootState(false); 
-		   nodeA.out.returnToVertex().makeFinalFalse();
-		   nodeB.out.returnToVertex().makeFinalFalse();
 
-		   //Save State on stack for Operator
-		   	Pair<Vertex,Vertex> concatFinalPair = new Pair<Vertex,Vertex>();;
-		    concatFinalPair.setL(rootNode);
-		    concatFinalPair.setR(endNode);
-		    stateHistory.push(concatFinalPair);
-		
+	   //Save State on stack for Operator
+	   	Pair<Vertex,Vertex> concatFinalPair = new Pair<Vertex,Vertex>();;
+	    concatFinalPair.setL(nodeAFinal);
+	    concatFinalPair.setR(nodeBFinal);
+	    stateHistory.push(concatFinalPair);
+	    
+	   //Figure out your table schema
+	   gTable.InsertEdgeByWeight(nodeAFinal, nodeB, empty);
+	   gTable.setNumEdges(gTable.getNumEdges()+1); 		
 	}
 	public void kleene(){
 		   //Vertex Default Construction
-		   Vertex startVertexKleene = createStart();
-		   Vertex endVertexKleene = createFinal();
+		   Vertex newStart = createStart();
+		   Vertex newFinal = createFinal();
 		   /*
 		    * Popped last off stack
 		    */
 		   Pair<Vertex,Vertex> kleenePaire = stateHistory.peek();
 		   //Start Node
-		   Vertex kleeneStartNode = kleenePaire.getL();
+		   Vertex oldStart = kleenePaire.getL();
 		   //End Node
-		   Vertex kleeneEndNode = kleenePaire.getR();
+		   Vertex oldFinal = kleenePaire.getR();
 		   stateHistory.pop();
 		   
-		   //Going to New final state
-		   Edge kleeneEdge = new Edge(endVertexKleene,empty);
-		   Edge kleeneStartEdge = new Edge(kleeneStartNode,empty);
+		   //Epsilon Transition from new start to new final
+		   Edge kleeneEdge = new Edge(newFinal,empty);
+		   oldFinal.out = kleeneEdge;
+		   newStart.out = kleeneEdge;
+		   
+		   
+		   // Epsilon Transition from new start to original start
+		   Edge kleeneStartEdge = new Edge(oldStart,empty);
+		   newStart.out2 = kleeneStartEdge;
 
-	   	   //Add Transitions
-		   kleeneEndNode.out = kleeneEdge;
-		   kleeneEndNode.out2 = kleeneStartEdge;
-
-		   startVertexKleene.out = kleeneEdge;
-		   startVertexKleene.out2 = kleeneStartEdge;
-
+		   // Epsilon Transition from new final to original start
+		   Edge finalToOld = new Edge(oldStart,empty);
+		   newFinal.out = finalToOld;
+		   
+		   
 		   //ALL CONNECTIONS MADE---CHANGING PERMISSIONS
-		   kleeneEndNode.makeRootFalse() ;
-		   kleeneEndNode.out.returnToVertex().makeFinalFalse();
+		   oldFinal.makeRootFalse();
+		   oldFinal.makeFinalFalse();
+		   oldStart.makeRootFalse();
+		   oldStart.makeFinalFalse();
+		   
+		   
 
 		   //Save State on stack for Operator
 		    Pair<Vertex,Vertex> kleeneFinalPair = new Pair<Vertex,Vertex>();
-		    kleeneFinalPair.setL(startVertexKleene);
-		    kleeneFinalPair.setR(endVertexKleene);
+		    kleeneFinalPair.setL(newStart);
+		    kleeneFinalPair.setR(newFinal);
 		    stateHistory.push(kleeneFinalPair);
 		   
 			   //Add to graph
-			   gTable.InsertEdgeByWeight(kleeneEndNode, endVertexKleene, empty);
-			   gTable.InsertEdgeByWeight(kleeneEndNode, kleeneStartNode, empty);
-
-			   gTable.InsertEdgeByWeight(startVertexKleene, kleeneStartNode, empty);
-			   gTable.InsertEdgeByWeight(startVertexKleene, endVertexKleene, empty);
+			   gTable.InsertEdgeByWeight(oldFinal, newFinal, empty);
+			   gTable.InsertEdgeByWeight(newStart, newFinal, empty);
+			   
+			   gTable.InsertEdgeByWeight(newFinal, oldStart, empty);
+			   gTable.InsertEdgeByWeight(newStart, oldStart, empty);
+			  
 			   
 			   gTable.setNumVert(gTable.getNumVert()+2); 
-			   gTable.setNumEdges(gTable.getNumEdges()+4); 
-			   
-			   
+			   gTable.setNumEdges(gTable.getNumEdges()+4);	   
 	}
+	
+	
 	public void orSelection(){
 		   Vertex rootNodeOr = createStart();
 		   Vertex endNodeOr = createFinal();
@@ -205,7 +207,7 @@ public class mainConverter {
 			  gTable.InsertEdgeByWeight(firstEndVertex,endNodeOr,empty);
 			  
 			  
-			   gTable.setNumVert(gTable.getNumVert()+2); 
+			   gTable.setNumVert(gTable.getNumVert()+2);
 			   gTable.setNumEdges(gTable.getNumEdges()+4);   
 		   
 		   
@@ -264,20 +266,23 @@ public class mainConverter {
     	System.out.println("Regex: "+ regex);
     	InfixToPostfix toPostfix = new InfixToPostfix();
     	
+    	String postfix = "";
     	
-    	String postfix = toPostfix.convertToPostfix(toPostfix.addConcat(regex));
-    	System.out.println("Postfix: "+ postfix.toString());
-    	
-    	
+    	postfix = toPostfix.convertToPostfix(toPostfix.addConcat(regex)).toString();
     	
     	
+    	System.out.println("Postfix: "+ postfix);
+  
+    	
+    	toNFA(postfix);
+    	gTable.PrintTable();
     	
     	//Test cases are ran below
-    	List<String> testCases = new ArrayList<String>();
-    	
-    		while(scanner.hasNextLine()){
-    			testCases.add(scanner.nextLine());
-    		}
+//    	List<String> testCases = new ArrayList<String>();
+//    	
+//    		while(scanner.hasNextLine()){
+//    			testCases.add(scanner.nextLine());
+//    		}
 //    		
 //            for(String testCase : testCases) {
 //                System.out.println(testCase);

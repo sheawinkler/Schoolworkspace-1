@@ -17,34 +17,30 @@ public class InfixToPostfix {
 			precedenceMap.put('*',4);
 		}
 	
-	
-		
-		public String addConcat(String currChar){
-			String concatReg = "";
-			char concat = '.';
-			
-			for(int i=0;i< (currChar.length()-1);i++){
-				
-				if((currChar.charAt(i)=='a'|| currChar.charAt(i)== 'b')  && (currChar.charAt(i+1)=='a'|| currChar.charAt(i+1)=='b')){
-					concatReg = concatReg+currChar.charAt(i)+currChar.charAt(i+1)+concat;
-					i++;
-				}else if(currChar.charAt(i)==')' && currChar.charAt(i+1)=='('){
-					concatReg = concatReg+currChar.charAt(i)+concat;
-				
-				}else if(currChar.charAt(i)=='*' && (currChar.charAt(i+1)=='a'||currChar.charAt(i+1)=='b') ){
-					concatReg = concatReg+currChar.charAt(i);
-					concatReg = concatReg+concat;
-				}else if(currChar.charAt(i)=='*' && currChar.charAt(i+1)=='('){
-					concatReg = concatReg+concat;
-				}else if(currChar.charAt(i) =='|' && (currChar.charAt(i+1)== 'a' || currChar.charAt(i+1)== 'b') ){
-					
-				}else if((currChar.charAt(i)== 'a' || currChar.charAt(i)== 'b') && (currChar.charAt(i+1)=='|')){
-					
+		/**
+		 * Add the '.' concat operator to the string
+		 */
+		public String addConcat(String currString) {
+			String concatString = new String();
+			List<Character> allOperators = Arrays.asList('|', '*');
+			List<Character> binaryOperators = Arrays.asList('|');
+
+			for (int i = 0; i < currString.length(); i++) {
+				Character char1 = currString.charAt(i);
+
+				if (i + 1 < currString.length()) {
+					Character char2 = currString.charAt(i + 1);
+
+					concatString += char1;
+
+					if (!char1.equals('(') && !char2.equals(')') && !allOperators.contains(char2) && !binaryOperators.contains(char1)) {
+						concatString += '.';
+					}
 				}
-				
-				
 			}
-			return concatReg;
+			concatString += currString.charAt(currString.length() - 1);
+
+			return concatString;
 		}
 		
 		
@@ -77,19 +73,19 @@ public class InfixToPostfix {
 		
 		
 		public String convertToPostfix(String infixString){
-			String output_string = "";
-			Queue<Character> outputQueue = new ArrayDeque<Character>();
+			String tmp_string="";
+			
 			Stack<Character> operatorStack = new Stack<Character>();
 			for(int i =0;i<infixString.length();i++){
 			
 				switch(infixString.charAt(i)){
 					case 'a':
 						   // append operand to end of PE
-						outputQueue.add(infixString.charAt(i));
+						tmp_string = tmp_string + infixString.charAt(i);
 						break;
 					case 'b':
 						   // append operand to end of PE
-						outputQueue.add(infixString.charAt(i));
+						tmp_string = tmp_string + infixString.charAt(i);
 						break;
 					case '(':
 						   // save ’(’ on stack
@@ -98,7 +94,7 @@ public class InfixToPostfix {
 					case ')':
 						 //  pop stack until matching ’(’
 						while(operatorStack.size()>0 && ('(' != operatorStack.peek())){
-							outputQueue.add(operatorStack.peek());
+							tmp_string = tmp_string + operatorStack.peek();
 							operatorStack.pop();
 						}
 						if(operatorStack.size()==0){
@@ -117,7 +113,9 @@ public class InfixToPostfix {
 						
 						 while((operatorStack.size() > 0) && ('('!=operatorStack.peek()) && (higherPrecedence(operatorStack.peek(), infixString.charAt(i)))  ){
 				   		 	 //If operator stack precedence is greater or equal to char
-				   		 		 	outputQueue.add(operatorStack.peek());
+							 		tmp_string = tmp_string + operatorStack.peek();
+							 		
+				   		 		
 				   		 		 	operatorStack.pop();
 						 }
 				   		 operatorStack.push(infixString.charAt(i));	//Save new char
@@ -128,25 +126,15 @@ public class InfixToPostfix {
 				
 			}
 			while(operatorStack.size()>0){
-			   	 outputQueue.add(operatorStack.peek());
+				 tmp_string = tmp_string + operatorStack.peek();
+			
 			   	 operatorStack.pop();
 			}
-			output_string= outputQueue.toString();
-			outputQueue.clear();
-			//return string
-			System.out.println("Here is the final output String  ");
-			System.out.println("Above should be the postfix output to console   ");
+			
 			//while stack has operators..enqueue into outputQueue
 			if(operatorStack.size()>0){
-				System.out.println("There are still items on the stack, mismatch occurred   ");
+				System.out.println("There are still items on the stack, mismatch occurred while converting to Postfix   ");
 			}
-			return output_string;
-		}
-		
-		
-		
-		
-		
-		
-	
+			return tmp_string;
+		}	
 }
