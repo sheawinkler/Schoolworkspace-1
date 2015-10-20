@@ -132,18 +132,19 @@ public class GraphTable {
 	
 	public List<Integer> recurseEpsilons(Vertex transitionVertex, List<Integer> listOfStates ){
 		
-		List<Integer> recursedEpsilons = new LinkedList<Integer>();
+		List<Integer> recursedEpsilons = null;
 		
-
-			if(transitionVertex.out.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
+		if(true){
+			
+		}else{
+			if(transitionVertex.out.returnWeight()==empty){
 				recursedEpsilons.add(transitionVertex.out.returnToVertex().stateID);
 				recurseEpsilons(transitionVertex.out.returnToVertex(),listOfStates);
 			}
-			if(transitionVertex.out2.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
-				recursedEpsilons.add(transitionVertex.out2.returnToVertex().stateID);
-				recurseEpsilons(transitionVertex.out2.returnToVertex(),listOfStates);
+			if(){
+			recurseEpsilons(transitionVertex.out2.returnToVertex(),listOfStates);
 			}
-
+		}
 		
 		return recursedEpsilons;
 	}

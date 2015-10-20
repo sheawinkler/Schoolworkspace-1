@@ -111,12 +111,10 @@ public class GraphTable {
 			
 			for(Pair<Vertex, Character> stateTransition : currStateTransitions){
 				if(stateTransition.getR() ==empty){
-					//Not sure if this needs to get checked with the below condition. think on that
-					List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
-					closureStates.addAll(depthFirstEpsilons);
-					
 					if(!closureStates.contains(stateTransition.getL().stateID)){
 						closureStates.add(stateTransition.getL().stateID);
+						List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
+						closureStates.addAll(depthFirstEpsilons);
 					}
 				}
 			}
@@ -132,18 +130,18 @@ public class GraphTable {
 	
 	public List<Integer> recurseEpsilons(Vertex transitionVertex, List<Integer> listOfStates ){
 		
-		List<Integer> recursedEpsilons = new LinkedList<Integer>();
+		List<Integer> recursedEpsilons = null;
 		
-
-			if(transitionVertex.out.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
-				recursedEpsilons.add(transitionVertex.out.returnToVertex().stateID);
+		if(true){
+			
+		}else{
+			if(){
 				recurseEpsilons(transitionVertex.out.returnToVertex(),listOfStates);
 			}
-			if(transitionVertex.out2.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
-				recursedEpsilons.add(transitionVertex.out2.returnToVertex().stateID);
-				recurseEpsilons(transitionVertex.out2.returnToVertex(),listOfStates);
+			if(){
+			recurseEpsilons(.out2);
 			}
-
+		}
 		
 		return recursedEpsilons;
 	}

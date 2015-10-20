@@ -132,8 +132,9 @@ public class GraphTable {
 	
 	public List<Integer> recurseEpsilons(Vertex transitionVertex, List<Integer> listOfStates ){
 		
-		List<Integer> recursedEpsilons = new LinkedList<Integer>();
+		List<Integer> recursedEpsilons = null;
 		
+	
 
 			if(transitionVertex.out.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
 				recursedEpsilons.add(transitionVertex.out.returnToVertex().stateID);
