@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item value="2" key="TypeHierarchyViewPart.hierarchyview"/>
-	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="false" key="ProjectSelectionDialog.show_all"/>
+	<item value="filter_imports;" key="filters_last_used"/>
 	<item value="/Users/Deverick/android-sdks/platforms/android-16" key="org.eclipse.jdt.ui.lastextjar"/>
-	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="3" key="TypeHierarchyViewPart.orientation"/>
+	<item value="false" key="TypeHierarchyViewPart.qualifiednames"/>
 	<item value="false" key="TypeHierarchyViewPart.linkeditors"/>
 	<item value="/Users/Deverick/Documents/workspace" key="org.eclipse.jdt.ui.last.external.project"/>
 	<section name="OptionalMessageDialog.hide.">
@@ -17,8 +17,8 @@
 	<section name="org.eclipse.jdt.internal.ui.wizards.buildpaths.NewVariableEntryDialog">
 		<item value="557" key="DIALOG_WIDTH"/>
 		<item value="36" key="DIALOG_Y_ORIGIN"/>
-		<item value="347" key="DIALOG_HEIGHT"/>
 		<item value="113" key="DIALOG_X_ORIGIN"/>
+		<item value="347" key="DIALOG_HEIGHT"/>
 		<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 	</section>
 	<section name="BuildPathsPropertyPage">
@@ -36,10 +36,10 @@
 			<item value="11" key="includeMask"/>
 			<item value="2" key="limitTo"/>
 			<item value="0" key="scope"/>
-			<item value="" key="javaElement"/>
 			<item value="left" key="pattern"/>
-			<item value="0" key="matchLocations"/>
+			<item value="" key="javaElement"/>
 			<item value="0" key="searchFor"/>
+			<item value="0" key="matchLocations"/>
 			<item value="false" key="isCaseSensitive"/>
 			<list key="workingSets">
 			</list>
@@ -100,158 +100,151 @@
 		<section name="projects">
 			<section name="Homework4">
 				<item value="/Users/Deverick/Documents/workspace/Homework4/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Homework4/javadoc.xml" key="antpath"/>
-			</section>
-			<section name="Lab10">
-				<item value="/Users/Deverick/Documents/workspace/Lab10/doc" key="destdir"/>
 				<item value="" key="href"/>
-				<item value="/Users/Deverick/Documents/workspace/Lab10/javadoc.xml" key="antpath"/>
 			</section>
 			<section name="Lab-Recursion">
 				<item value="/Users/Deverick/Documents/workspace/Lab-Recursion/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-Recursion/javadoc.xml" key="antpath"/>
-			</section>
-			<section name="Homework310">
-				<item value="/Users/Deverick/Documents/workspace/Homework310/doc" key="destdir"/>
 				<item value="" key="href"/>
-				<item value="/Users/Deverick/Documents/workspace/Homework310/javadoc.xml" key="antpath"/>
+			</section>
+			<section name="Lab10">
+				<item value="/Users/Deverick/Documents/workspace/Lab10/doc" key="destdir"/>
+				<item value="/Users/Deverick/Documents/workspace/Lab10/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Disassembler">
 				<item value="/Users/Deverick/Desktop" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Disassembler/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
+			</section>
+			<section name="Homework310">
+				<item value="/Users/Deverick/Documents/workspace/Homework310/doc" key="destdir"/>
+				<item value="/Users/Deverick/Documents/workspace/Homework310/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="lab15">
 				<item value="/Users/Deverick/Documents/workspace/lab15/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/lab15/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="HW">
 				<item value="/Users/Deverick/Documents/workspace/HW/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/HW/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Lab-Lists">
 				<item value="/Users/Deverick/Documents/workspace/Lab-Lists/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-Lists/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Assembler">
 				<item value="/Users/Deverick/Documents/workspace/Assembler/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Assembler/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="homework3">
 				<item value="/Users/Deverick/Documents/workspace/homework3/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/homework3/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="RemoteSystemsTempFiles">
 				<item value="/Users/Deverick/Documents/workspace/RemoteSystemsTempFiles/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/RemoteSystemsTempFiles/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Lab-Sorting">
 				<item value="/Users/Deverick/Documents/workspace/Lab-Sorting/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-Sorting/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="homework5">
 				<item value="/Users/Deverick/Documents/workspace/homework5/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/homework5/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Lab-Polymorphism">
 				<item value="/Users/Deverick/Documents/workspace/Lab-Polymorphism/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-Polymorphism/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Norm">
 				<item value="/Users/Deverick/Documents/workspace/Norm/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Norm/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="employee">
 				<item value="/Users/Deverick/Documents/workspace/employee/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/employee/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="AcyclicGraph">
 				<item value="/Users/Deverick/Documents/workspace/AcyclicGraph/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/AcyclicGraph/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Relation">
 				<item value="/Users/Deverick/Documents/workspace/Relation/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Relation/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="CSE235HW2">
 				<item value="/Users/Deverick/Documents/workspace/CSE235HW2/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/CSE235HW2/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Heap">
 				<item value="/Users/Deverick/Documents/workspace/Heap/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Heap/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="lab_14">
 				<item value="/Users/Deverick/Documents/workspace/lab_14/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/lab_14/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Lab-Inheritance">
 				<item value="/Users/Deverick/Documents/workspace/Lab-Inheritance/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-Inheritance/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Lab-BST">
 				<item value="/Users/Deverick/Documents/workspace/Lab-BST/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-BST/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="CSCE156">
 				<item value="/Users/Deverick/Documents/workspace/CSCE156/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/CSCE156/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Lab-StacksQueues">
 				<item value="/Users/Deverick/Documents/workspace/Lab-StacksQueues/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-StacksQueues/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="Lab-Classes">
 				<item value="/Users/Deverick/Documents/workspace/Lab-Classes/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/Lab-Classes/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="DCH_System">
 				<item value="/Users/Deverick/Documents/workspace/DCH_System/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/DCH_System/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 			<section name="StringMatch">
 				<item value="/Users/Deverick/Documents/workspace/StringMatch/doc" key="destdir"/>
-				<item value="" key="href"/>
 				<item value="/Users/Deverick/Documents/workspace/StringMatch/javadoc.xml" key="antpath"/>
+				<item value="" key="href"/>
 			</section>
 		</section>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.typehierarchy.QuickHierarchy">
 		<item value="350" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_WIDTH"/>
-		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
 		<item value="300" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_HEIGHT"/>
+		<item value="false" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_LOCATION"/>
 		<item value="true" key="org.eclipse.jdt.internal.ui.typehierarchy.HierarchyInformationControlDIALOG_USE_PERSISTED_SIZE"/>
-	</section>
-	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
-		<item value="true" key="group_libraries"/>
-		<item value="false" key="linkWithEditor"/>
-		<item value="2" key="layout"/>
-		<item value="1" key="rootMode"/>
-		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;packageExplorer group_libraries=&quot;1&quot; layout=&quot;2&quot; linkWithEditor=&quot;0&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1380317452761&quot;&gt;&#x0A;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;&gt;&#x0A;&lt;xmlDefinedFilters&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.mylyn.java.ui.MembersFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.m2e.MavenModuleFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;/xmlDefinedFilters&gt;&#x0A;&lt;/customFilters&gt;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.dialogs.FilteredTypesSelectionDialog">
 		<item value="true" key="ShowStatusLine"/>
@@ -259,10 +252,17 @@
 		<section name="DialogBoundsSettings">
 			<item value="600" key="DIALOG_WIDTH"/>
 			<item value="0" key="DIALOG_Y_ORIGIN"/>
-			<item value="-75" key="DIALOG_X_ORIGIN"/>
 			<item value="500" key="DIALOG_HEIGHT"/>
+			<item value="-75" key="DIALOG_X_ORIGIN"/>
 			<item value="1|.Helvetica Neue DeskInterface|11.0|0|COCOA|1|.HelveticaNeueDeskInterface-Regular" key="DIALOG_FONT_NAME"/>
 		</section>
+	</section>
+	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
+		<item value="true" key="group_libraries"/>
+		<item value="false" key="linkWithEditor"/>
+		<item value="2" key="layout"/>
+		<item value="1" key="rootMode"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;packageExplorer group_libraries=&quot;1&quot; layout=&quot;2&quot; linkWithEditor=&quot;0&quot; rootMode=&quot;1&quot; workingSetName=&quot;Aggregate for window 1380317452761&quot;&gt;&#x0A;&lt;customFilters userDefinedPatternsEnabled=&quot;false&quot;&gt;&#x0A;&lt;xmlDefinedFilters&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.LocalTypesFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.StaticsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ClosedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonSharedProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaElementFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ContainedLibraryFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.CuAndClassFileFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonJavaProjectsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyInnerPackageFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.PackageDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.EmptyPackageFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.ImportDeclarationFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.FieldsFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.internal.ui.PackageExplorer.HideInnerClassFilesFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.NonPublicFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer_patternFilterId_.*&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.EmptyLibraryContainerFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.jdt.ui.PackageExplorer.SyntheticMembersFilter&quot; isEnabled=&quot;true&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.mylyn.java.ui.MembersFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;child filterId=&quot;org.eclipse.m2e.MavenModuleFilter&quot; isEnabled=&quot;false&quot;/&gt;&#x0A;&lt;/xmlDefinedFilters&gt;&#x0A;&lt;/customFilters&gt;&#x0A;&lt;/packageExplorer&gt;" key="memento"/>
 	</section>
 	<section name="completion_proposal_size">
 		<item value="716" key="size.x"/>
@@ -277,8 +277,8 @@
 	<section name="JavadocWizardDialog">
 		<item value="600" key="DIALOG_WIDTH"/>
 		<item value="0" key="DIALOG_Y_ORIGIN"/>
-		<item value="340" key="DIALOG_X_ORIGIN"/>
 		<item value="582" key="DIALOG_HEIGHT"/>
+		<item value="340" key="DIALOG_X_ORIGIN"/>
 		<item value="1|Lucida Grande|11.0|0|COCOA|1|LucidaGrande" key="DIALOG_FONT_NAME"/>
 	</section>
 </section>

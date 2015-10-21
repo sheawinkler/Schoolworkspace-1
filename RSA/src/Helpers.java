@@ -7,36 +7,7 @@ public class Helpers {
     BigInteger oneVal = BigInteger.ONE;
     BigInteger zeroVal = BigInteger.ZERO;
     
-	public static BigInteger findInverse(BigInteger a, BigInteger b) {
-		
-		BigInteger temp = BigInteger.ZERO;
-		BigInteger a0 = a;
-		BigInteger b0 = b;
-		BigInteger t0 = BigInteger.ZERO;
-		BigInteger t = BigInteger.ONE;
-		BigInteger s0 = BigInteger.ONE;
-		BigInteger s = BigInteger.ZERO;
 
-		BigInteger q = a0.divide(b0);
-		BigInteger temp2 = q.multiply(b);
-		BigInteger r = a0.subtract(temp2);
-
-		while (r.compareTo(BigInteger.ZERO) == 1) {
-			temp = t0.subtract(q.multiply(t));
-			t0 = t;
-			t = temp;
-			temp = s0.subtract(q.multiply(s));
-			s0 = s;
-			s = temp;
-			a0 = b0;
-			b0 = r;
-			q = a0.divide(b0);
-			r = a0.subtract(q.multiply(b0));
-		}
-
-		return s;
-	}
-	
 	private static BigInteger sqrt(BigInteger n) {
 		  BigInteger a = BigInteger.ONE;
 		  BigInteger b = new BigInteger(n.shiftRight(5).add(new BigInteger("8")).toString());
@@ -57,8 +28,7 @@ public class Helpers {
 		
 		BigInteger bSquared = aSquared.subtract(n);
 
-		
-		while(!isSquare(bSquared)){
+		while(PerfectSquare(bSquared).compareTo(oneVal)==1||PerfectSquare(bSquared).compareTo(oneVal)==-1){
             a=a.add(BigInteger.ONE);
             bSquared = a.multiply(a).subtract(n);
 		}
@@ -73,76 +43,49 @@ public class Helpers {
 		
 		return set;
 	}
+
 	
+	BigInteger PerfectSquare(BigInteger number) 
+	{ 
+		BigInteger high = number.divide(oneVal.add(oneVal)); 
+		BigInteger low = zeroVal; 
+		while(high.compareTo(low)==0||high.compareTo(low) ==1){
+			BigInteger mid = low.add(high).divide(oneVal.add(oneVal));
+			BigInteger square = mid.multiply(mid);
+			if(square.compareTo(number)==0){
+				return mid;
+			}
+			if(square.compareTo(number) ==1){
+				high = mid.subtract(oneVal);
+			}
+		}
+		return oneVal; 
+	} 
 	
 	int PerfectSquareOrNot(int number) 
 	{ 
-		int high = number/2; 
-		int low = 0; 
-		while(high>=low) { 
-				int mid = (low + high)/2; 
-				int square = mid * mid; 
-				if(square==number) { 
-						return mid; 
-				} 
-				if(square > number){ 
-						high = mid-1; 
-				} else{ 
-					low = mid+1; 
-				} 
-		} 
-		return 1; 
+	int high = number/2; 
+	int low = 0; 
+	while(high>=low) 
+	{ 
+	int mid = (low + high)/2; 
+	int square = mid * mid; 
+	if(square==number) 
+	{ 
+	return mid; 
+	} 
+	if(square > number) 
+	{ 
+	high = mid-1; 
+	} 
+	else 
+	{ 
+	low = mid+1; 
+	} 
+	} 
+	return 0; 
 	} 
 	
-	
-    public boolean isSquare(BigInteger n)
-    {
-    	BigInteger sqr = zeroVal.subtract(oneVal);
- 
-         if (n.compareTo(BigInteger.ZERO) == -1)
-         {
-             return false;
-         }
-         else if(n.compareTo(BigInteger.ZERO)==0 || n.compareTo(BigInteger.ONE) == 0)
-         {
-             sqr = n;
-             return true;
-         }
-         //Find the lower and upper limits
-
-         BigInteger lower = BigInteger.ONE;
-         BigInteger upper = lower.add(lower);
-         
-         
-         
-         while( n.compareTo(lower.multiply(lower)) == -1 || n.compareTo(upper.multiply(upper)) ==1)
-         {
-        	 
-             lower = upper;
-             upper = upper.multiply(upper);
-         }
-        
-         //Binary search
-         while (lower.add(oneVal).compareTo(upper)==-1)
-         {
-             BigInteger mid = (lower.add(upper)).divide(oneVal.add(oneVal));
-        
-             BigInteger midSq = mid.multiply(mid);
-             if (midSq == n)
-             {
-                 sqr = mid;
-                 return true;
-             }
-             else if (midSq.compareTo(n) ==-1)
-             {
-                 upper = mid;
-             }
-             else
-             {
-                 lower = mid;
-             }
-         }
-         return false;
-    }
+   
 	
 }
