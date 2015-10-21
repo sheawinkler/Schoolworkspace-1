@@ -16,13 +16,15 @@ public class HelpersTest {
 
 	@Test
 	public void testIsSquare() {
-		Helpers help = new Helpers();
+		AssistFunctions help = new AssistFunctions();
 		BigInteger val = BigInteger.valueOf(9);
-		System.out.println("Je;;p");
-		System.out.println(help.PerfectSquareOrNot(9));
-	//	help.PerfectSquare(val);
+		BigInteger ans = BigInteger.valueOf(3);
+		BigInteger ferVal = BigInteger.valueOf(3);
+		help.fermat(ferVal);
 		System.out.println(help.PerfectSquare(val));
-		//assertEquals(true, help.PerfectSquare(val));
+		
+		assertEquals(ans,help.sqrt(val));
+		assertEquals(ans, help.PerfectSquare(val));
 		//assertEquals(true, help.isSquare(BigInteger.valueOf(9)));
 	}
 

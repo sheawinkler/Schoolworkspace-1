@@ -15,6 +15,9 @@ public class GraphTable {
 		multiMap.clear();
 	}
 	
+	public Map<Integer, List<Pair<Vertex,Character>>>getMap(){
+		return multiMap;
+	}
 	
 	public int getNumVert() {
 		return numVert;
@@ -88,10 +91,11 @@ public class GraphTable {
 	 * http://www.idt.mdh.se/kurser/cd5560/10_01/examination/examination/NFA-DFA.pdf
 	 */
 	
-	public void subsetConstruction(){
+	public void subsetConstruction(Map<Integer, List<Pair<Vertex,Character>>> nfaMap){
 		System.out.println("Attempting to convert table to a DFA now");
 
 		//Initial State of DFA
+		System.out.println(startState);
 		List<Integer> initialClosure = eClosure(startState);
 		char[] alpha = new char[2];
 		alpha[1]='a';
@@ -102,9 +106,6 @@ public class GraphTable {
 
 
 		Pair<List<Integer>,Boolean > transition = new Pair<List<Integer>,Boolean>();
-		
-		
-		
 		Boolean truth = false;
 		transition.setL(initialClosure);
 		transition.setR(truth);
@@ -173,7 +174,6 @@ public class GraphTable {
 	 * If so, check whether listOfStates !.contains transitionVertex.stateID and add to list if so.
 	 * continue recursively searching the .out edges of those that have returnWeight()==empty
 	 */
-	
 	public List<Integer> recurseEpsilons(Vertex transitionVertex, List<Integer> listOfStates ){
 		
 		List<Integer> recursedEpsilons = new LinkedList<Integer>();
@@ -186,18 +186,12 @@ public class GraphTable {
 				recursedEpsilons.add(transitionVertex.out2.returnToVertex().stateID);
 				recurseEpsilons(transitionVertex.out2.returnToVertex(),listOfStates);
 			}
-
-		
 		return recursedEpsilons;
 	}
 	
 	
-
-	
 	public List<Integer> travelMarker(List<Integer> travelList,char transitionMarker){
-		
 		List<Integer> returnList = new LinkedList<Integer>();
-		
 		for(int value: travelList){
 			List<Pair<Vertex, Character>> tempList = new ArrayList<Pair<Vertex, Character>>();
 			tempList = multiMap.get(value);

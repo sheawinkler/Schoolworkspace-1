@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Helpers&apos; to &apos;AssistFunctions&apos;&#x0A;- Original project: &apos;RSA&apos;&#x0A;- Original element: &apos;Helpers&apos;&#x0A;- Renamed element: &apos;AssistFunctions&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Helpers&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Helpers.java[Helpers" matchStrategy="1" name="AssistFunctions" qualified="false" references="true" similarDeclarations="false" stamp="1445449007806" textual="false" version="1.0"/>
+</session>

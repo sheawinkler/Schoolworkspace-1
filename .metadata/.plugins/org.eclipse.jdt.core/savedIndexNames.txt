@@ -1,17 +1,2 @@
 INDEX VERSION 1.127+/Users/Deverick/Documents/workspace/.metadata/.plugins/org.eclipse.jdt.core
-2044768101.index
-86852845.index
-2427352903.index
-750223094.index
-2931467479.index
-2144122385.index
-252863676.index
-1799156809.index
-643884347.index
-177835100.index
-1271342938.index
-3697685622.index
-3449433182.index
-3161353398.index
-2213443989.index
-1496380476.index
+511755008.index

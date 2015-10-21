@@ -1,7 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Scanner;
-import java.util.Stack;
 import java.util.*;
 public class mainConverter {
 	
@@ -279,7 +277,9 @@ public class mainConverter {
     	
     	toNFA(postfix);
     	gTable.PrintTable();
-    	gTable.subsetConstruction();
+    	Map<Integer, List<Pair<Vertex,Character>>> nfaMap = new HashMap<Integer, List<Pair<Vertex,Character>>>();
+    	nfaMap=gTable.getMap();
+    	gTable.subsetConstruction(gTable.getMap());
     	//Test cases are ran below
 //    	List<String> testCases = new ArrayList<String>();
 //    	
@@ -295,7 +295,6 @@ public class mainConverter {
 	
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("Hello this is the main system");
 		mainConverter convertRegex = new mainConverter();
 		convertRegex.fileParser();
