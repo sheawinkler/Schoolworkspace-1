@@ -1,0 +1,65 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Scanner;
+import java.util.Set;
+
+
+public class RSA {
+	static String parseN;
+	static String parseA;
+	
+	public static String fileReader(String fileName) throws FileNotFoundException{
+		File file = new File(fileName);	
+		Scanner scan = new Scanner(file);
+		scan.nextLine();
+		String[] parsing = scan.nextLine().split("=");
+		parseN = parsing[1];
+		scan.nextLine();
+		parsing = scan.nextLine().split(" = ");
+		parseA = parsing[1];
+		scan.nextLine();
+		scan.nextLine();
+		scan.nextLine();
+		String cipher = new String();
+	
+		while(scan.hasNextLine()){
+			 cipher = cipher + scan.nextLine();
+		}
+		scan.close();
+		return cipher;
+	}
+
+	
+	
+	
+	
+	public String cipherDecrypt(String cipher){
+		
+		return cipher;
+	}
+	
+	private static BigInteger getPhi(BigInteger[] factors){
+		BigInteger factor1Temp = factors[0].subtract(BigInteger.ONE);
+		BigInteger factor2Temp = factors[1].subtract(BigInteger.ONE);
+		BigInteger eulerTotient = factor1Temp.multiply(factor2Temp);
+		return eulerTotient;
+	}
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.out.println("Hello");
+		String ciphertext = fileReader("libs/cipher001.txt");
+		
+		BigInteger bigN = new BigInteger(parseN);
+		Helpers help = new Helpers();
+		Set<BigInteger> factors = help.fermat(bigN);
+		BigInteger phi = getPhi(factors);
+	}
+
+}

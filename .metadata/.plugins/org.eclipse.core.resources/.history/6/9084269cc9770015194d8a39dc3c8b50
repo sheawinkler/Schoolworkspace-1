@@ -1,0 +1,58 @@
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.LineNumberReader;
+import java.math.BigInteger;
+import java.util.HashMap;
+import java.util.Scanner;
+
+
+public class RSA {
+	static String parseN;
+	static String parseA;
+	
+	public static String fileReader(String fileName) throws FileNotFoundException{
+		File file = new File(fileName);	
+		Scanner scan = new Scanner(file);
+		scan.nextLine();
+		String[] parsing = scan.nextLine().split("=");
+		parseN = parsing[1];
+		scan.nextLine();
+		parsing = scan.nextLine().split(" = ");
+		parseA = parsing[1];
+		scan.nextLine();
+		scan.nextLine();
+		scan.nextLine();
+		String cipher = new String();
+	
+		while(scan.hasNextLine()){
+			 cipher = cipher + scan.nextLine();
+		}
+		scan.close();
+		return cipher;
+	}
+
+	
+	
+	
+	
+	public String cipherDecrypt(String cipher){
+		
+		return cipher;
+	}
+	
+	
+	
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.out.println("Hello");
+		String ciphertext = fileReader("libs/cipher001.txt");
+		BigInteger sum = new BigInteger;
+		 sum = sum.add(new BigInteger(parseN));
+		Helpers.fermat(sum);
+	}
+
+}

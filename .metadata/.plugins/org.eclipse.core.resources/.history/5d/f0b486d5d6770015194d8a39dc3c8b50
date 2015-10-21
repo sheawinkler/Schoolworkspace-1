@@ -1,0 +1,24 @@
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class HelpersTest {
+
+	@Before
+	public void setUp() throws Exception {
+	}
+
+	@Test
+	public void testFermat() {
+		
+	}
+
+	@Test
+	public void testIsSquare() {
+		Helpers help = new Helpers();
+		BigInteger number = 5;
+		assertEquals(help.isSquare(6),);
+	}
+
+}
