@@ -8,9 +8,6 @@ public class GraphTable {
 	char empty = 'e';
 	Map<Integer, List<Pair<Vertex,Character>>> multiMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
 	
-	
-	Map<Integer, List<Pair<Vertex,Character>>> DFAMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
-	
 	GraphTable(){
 		setNumVert(0);
 		setNumEdges(0);
@@ -88,36 +85,59 @@ public class GraphTable {
 	 * Utilizing the well known subset Construction algorithm here.  
 	 * Link to researched materials are below:
 	 * http://binarysculpting.com/2012/02/15/converting-dfa-to-nfa-by-subset-construction-regular-expressions-part-2/
+	 * http://www.idt.mdh.se/kurser/cd5560/10_01/examination/examination/NFA-DFA.pdf
 	 */
 	
 	public void subsetConstruction(){
 		System.out.println("Attempting to convert table to a DFA now");
-		List<Pair<Vertex, Character>> initialState = multiMap.get(startState);
-		List<Integer> initialClosure = eClosure(0,initialState);
+
+		//Initial State of DFA
+		List<Integer> initialClosure = eClosure(startState);
+		char[] alpha = new char[2];
+		alpha[1]='a';
+		alpha[2]='b';
 		
+		//Compute U = ε -closure(move(T,a)
+		//Set contains transitions possible on a and then b
+		
+		Set<List<Integer>> set = new HashSet<List<Integer>>();
+		
+		//Key
+		Pair<Set<List<Integer>>,Boolean> state = new Pair<>();
+		
+		
+		for(int i=0;i<alpha.length;i++){
+			
+			eClosureSet(travelMarker(initialClosure,alpha[i]));
+			
+			
+		}
 	
 		
 		
 		
 	}
 	
+	public List<Integer> eClosureSet( List<Integer> subsetList ){
+		List<Integer> closureList = new ArrayList<Integer>();
+		for(int value: subsetList){
+			closureList.addAll(eClosure(value));
+		}
+		return closureList;
+	}
 	
-	public List<Integer> eClosure(int key ,List<Pair<Vertex, Character>> states){
+	public List<Integer> eClosure(int key){
 		List<Integer> closureStates = new ArrayList<Integer>();
 		closureStates.add(key);
 		for(int i =0;i<closureStates.size();i++){
 			int currKey = closureStates.get(i);
 			List<Pair<Vertex, Character>> currStateTransitions = multiMap.get(currKey);
-			
 			for(Pair<Vertex, Character> stateTransition : currStateTransitions){
-				if(stateTransition.getR() ==empty){
-					//Not sure if this needs to get checked with the below condition. think on that
-					List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
-					closureStates.addAll(depthFirstEpsilons);
-					
-					if(!closureStates.contains(stateTransition.getL().stateID)){
+				if(stateTransition.getR() ==empty  && !closureStates.contains(stateTransition.getL().stateID)){	
 						closureStates.add(stateTransition.getL().stateID);
-					}
+						//Not sure if this needs to get checked with the below condition. think on that
+						List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
+						closureStates.addAll(depthFirstEpsilons);
 				}
 			}
 		}
@@ -133,7 +153,6 @@ public class GraphTable {
 	public List<Integer> recurseEpsilons(Vertex transitionVertex, List<Integer> listOfStates ){
 		
 		List<Integer> recursedEpsilons = new LinkedList<Integer>();
-		
 
 			if(transitionVertex.out.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
 				recursedEpsilons.add(transitionVertex.out.returnToVertex().stateID);
@@ -148,7 +167,23 @@ public class GraphTable {
 		return recursedEpsilons;
 	}
 	
-	public void TravelMarker(){
+	
+
+	
+	public List<Integer> travelMarker(List<Integer> travelList,char transitionMarker){
+		
+		List<Integer> returnList = new LinkedList<Integer>();
+		
+		for(int value: travelList){
+			List<Pair<Vertex, Character>> tempList = new ArrayList<Pair<Vertex, Character>>();
+			tempList = multiMap.get(value);
+			for(Pair<Vertex, Character> pair: tempList){
+				if(pair.getR() == transitionMarker){
+					returnList.add(pair.getL().stateID);
+				}
+			}
+		}
+		return returnList;
 		
 	}
 
