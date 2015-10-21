@@ -111,7 +111,7 @@ public class GraphTable {
 		list.add(transition);
 		
 		while(marked()!=null){
-			
+			marked().setR(true);
 			for(int i=0;i<alpha.length;i++){
 				List<Integer> setListU = new ArrayList<Integer>();
 				setListU = eClosureSet(travelMarker(initialClosure,alpha[i]));
@@ -130,10 +130,10 @@ public class GraphTable {
 		
 	}
 	
-	public List<Integer> marked(){
+	public Pair<List<Integer>,Boolean > marked(){
 		for(Pair<List<Integer>,Boolean > item: list){
 			if(item.getR()==false   ){
-				return item.getL();
+				return item;
 			}else{
 				return null;
 			}
