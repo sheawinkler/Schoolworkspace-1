@@ -111,7 +111,11 @@ public class GraphTable {
 		list.add(transition);
 		
 		while(marked()!=null){
-
+			for(Pair<List<Integer>,Boolean > item: list){
+				if(item.getR()==false   ){
+					item.setR(true);
+				}
+			}
 			
 			
 			

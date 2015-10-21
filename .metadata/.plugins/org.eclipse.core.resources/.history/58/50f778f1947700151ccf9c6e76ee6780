@@ -7,7 +7,7 @@ public class GraphTable {
 	private int numVert, numEdges, startState;	
 	char empty = 'e';
 	Map<Integer, List<Pair<Vertex,Character>>> multiMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
-	ArrayList<Pair<List<Integer>,Boolean >> list = new ArrayList<Pair<List<Integer>,Boolean >>();	
+	
 	GraphTable(){
 		setNumVert(0);
 		setNumEdges(0);
@@ -99,43 +99,24 @@ public class GraphTable {
 		
 		//Compute U = ε -closure(move(T,a)
 		//Set contains transitions possible on a and then b
-
-
-		Pair<List<Integer>,Boolean > transition = new Pair<List<Integer>,Boolean>();
+		Set<Pair<List<Integer>,Boolean >> set = new HashSet<Pair<List<Integer>,Boolean >>();
+		set.add(initialClosure);
 		
 		
 		
-		Boolean truth = false;
-		transition.setL(initialClosure);
-		transition.setR(truth);
-		list.add(transition);
-		
-		while(marked()!=null){
-
+		while(){
 			
-			
-			
-			for(int i=0;i<alpha.length;i++){
-				
-				eClosureSet(travelMarker(initialClosure,alpha[i]));
-				
-				
-			}
-	
 		}
 		
-		
-	}
-	
-	public List<Integer> marked(){
-		for(Pair<List<Integer>,Boolean > item: list){
-			if(item.getR()==false   ){
-				return item.getL();
-			}else{
-				return null;
-			}
+		for(int i=0;i<alpha.length;i++){
+			
+			eClosureSet(travelMarker(initialClosure,alpha[i]));
+			
+			
 		}
-		return null;
+	
+		
+		
 		
 	}
 	

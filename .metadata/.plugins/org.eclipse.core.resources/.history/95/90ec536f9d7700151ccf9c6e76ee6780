@@ -110,11 +110,13 @@ public class GraphTable {
 		transition.setR(truth);
 		list.add(transition);
 		
+		
+		
+		
 		while(marked()!=null){
-
 			
-			
-			
+		
+		
 			for(int i=0;i<alpha.length;i++){
 				
 				eClosureSet(travelMarker(initialClosure,alpha[i]));

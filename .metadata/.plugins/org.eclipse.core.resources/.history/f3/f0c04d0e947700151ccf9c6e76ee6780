@@ -279,7 +279,7 @@ public class mainConverter {
     	
     	toNFA(postfix);
     	gTable.PrintTable();
-//    	gTable.subsetConstruction();
+    	gTable.subsetConstruction();
     	//Test cases are ran below
 //    	List<String> testCases = new ArrayList<String>();
 //    	

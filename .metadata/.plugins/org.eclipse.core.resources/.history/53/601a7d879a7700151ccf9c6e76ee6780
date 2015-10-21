@@ -103,18 +103,18 @@ public class GraphTable {
 
 		Pair<List<Integer>,Boolean > transition = new Pair<List<Integer>,Boolean>();
 		
-		
-		
 		Boolean truth = false;
 		transition.setL(initialClosure);
 		transition.setR(truth);
 		list.add(transition);
 		
-		while(marked()!=null){
-
+		
+		
+		
+		while(true){
 			
-			
-			
+		
+		
 			for(int i=0;i<alpha.length;i++){
 				
 				eClosureSet(travelMarker(initialClosure,alpha[i]));
@@ -124,18 +124,6 @@ public class GraphTable {
 	
 		}
 		
-		
-	}
-	
-	public List<Integer> marked(){
-		for(Pair<List<Integer>,Boolean > item: list){
-			if(item.getR()==false   ){
-				return item.getL();
-			}else{
-				return null;
-			}
-		}
-		return null;
 		
 	}
 	
