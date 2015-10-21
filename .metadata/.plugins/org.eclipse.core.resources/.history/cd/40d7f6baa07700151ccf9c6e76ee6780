@@ -111,6 +111,9 @@ public class GraphTable {
 		list.add(transition);
 		
 		while(marked()!=null){
+
+			
+			
 			
 			for(int i=0;i<alpha.length;i++){
 				List<Integer> setListU = new ArrayList<Integer>();

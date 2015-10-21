@@ -111,17 +111,14 @@ public class GraphTable {
 		list.add(transition);
 		
 		while(marked()!=null){
+
+			
+			
 			
 			for(int i=0;i<alpha.length;i++){
-				List<Integer> setListU = new ArrayList<Integer>();
-				setListU = eClosureSet(travelMarker(initialClosure,alpha[i]));
+				List<Integer> setList = new ArrayList<Integer>();
+				setList = eClosureSet(travelMarker(initialClosure,alpha[i]));
 				
-				if(!list.contains(setListU)){
-					Pair<List<Integer>,Boolean> pairList = new Pair<List<Integer>,Boolean>();
-					pairList.setL(setListU);
-					pairList.setR(false);
-					list.add(pairList);
-				}
 				
 			}
 	
