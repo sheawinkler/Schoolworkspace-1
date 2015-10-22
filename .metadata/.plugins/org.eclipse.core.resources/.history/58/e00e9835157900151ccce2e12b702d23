@@ -11,7 +11,7 @@ public class GraphTable {
 	Map<List<Integer>,Pair<List<Integer>,List<Integer>>> dfaMap = new HashMap<List<Integer>,Pair<List<Integer>,List<Integer>>>();
 	
 	List<List<Integer>> finalStates = new ArrayList<List<Integer>>();
-	List<Integer> initialClosure = new ArrayList<Integer>();
+	
 	
 	ArrayList<Pair<List<Integer>,Boolean >> list = new ArrayList<Pair<List<Integer>,Boolean >>();	
 	GraphTable(){
@@ -140,7 +140,7 @@ public class GraphTable {
 		//Initial State of DFA
 		//System.out.println(getStartState());
 		//InitialClosure is our new starting state
-		initialClosure = eClosure(startState);
+		List<Integer> initialClosure = eClosure(startState);
 		//Final States is
 		char[] alpha = new char[2];
 		alpha[0]='a';
@@ -191,7 +191,7 @@ public class GraphTable {
 	
 	public void runCases(String[] allCases){
 		for(String oneCase: allCases){
-			traverseMap(oneCase);
+			//traverseMap(oneCase);
 		}
 	}
 	
@@ -206,21 +206,17 @@ public class GraphTable {
 	
 	public boolean recurseRun(String testCase){
 		boolean canTraverse = false;
-		List<Integer> transferState = initialClosure;
-		for(int i=0; i < testCase.toCharArray().length;i++){
-			if(transferFunction(transferState)!=null){
+		for(char c:testCase.toCharArray()){
+			if(){
 				
-				transferFunction();
+		
 				canTraverse= true;
 			}else{
 				return false;
+				canTraverse=false;
 			}
 		}		
 		return canTraverse	;
-	}
-	
-	public void transferFunction(List<Integer> transferState, char transerChar){
-		
 	}
 	
 	public void findDFAFinals(){

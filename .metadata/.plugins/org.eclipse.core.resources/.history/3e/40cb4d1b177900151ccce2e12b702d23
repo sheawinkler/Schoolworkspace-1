@@ -140,7 +140,7 @@ public class GraphTable {
 		//Initial State of DFA
 		//System.out.println(getStartState());
 		//InitialClosure is our new starting state
-		initialClosure = eClosure(startState);
+		List<Integer> initialClosure = eClosure(startState);
 		//Final States is
 		char[] alpha = new char[2];
 		alpha[0]='a';
@@ -191,7 +191,7 @@ public class GraphTable {
 	
 	public void runCases(String[] allCases){
 		for(String oneCase: allCases){
-			traverseMap(oneCase);
+			//traverseMap(oneCase);
 		}
 	}
 	

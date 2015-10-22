@@ -191,7 +191,7 @@ public class GraphTable {
 	
 	public void runCases(String[] allCases){
 		for(String oneCase: allCases){
-			traverseMap(oneCase);
+			//traverseMap(oneCase);
 		}
 	}
 	
