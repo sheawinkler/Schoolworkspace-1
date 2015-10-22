@@ -191,29 +191,17 @@ public class GraphTable {
 	
 	public void runCases(String[] allCases){
 		for(String oneCase: allCases){
-			//traverseMap(oneCase);
+			traverseMap(oneCase);
 		}
 	}
 	
-	public void traverseMap(String testCase){
+	public String traverseMap(String testCase){
 		
-		if(recurseRun(testCase)){
+		if(){
 			System.out.println("Yes");
 		}
 		
 			System.out.println("No");
-	}
-	
-	public boolean recurseRun(String testCase){
-		boolean canTraverse = false;
-		for(char c:testCase.toCharArray()){
-			if(){
-				
-		
-				return true;
-			}
-		}		
-		return false;
 	}
 	
 	public void findDFAFinals(){

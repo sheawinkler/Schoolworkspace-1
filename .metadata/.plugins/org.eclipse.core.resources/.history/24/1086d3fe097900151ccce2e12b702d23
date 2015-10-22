@@ -4,7 +4,7 @@ import java.util.Map.Entry;
 
 public class GraphTable {
 	
-	private int numVert, numEdges, startState,finalState;	
+	private int numVert, numEdges, startState;	
 	char empty = 'e';
 	Map<Integer, List<Pair<Vertex,Character>>> multiMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
 	Map<Integer, List<Pair<Vertex,Character>>> subsetMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
@@ -18,7 +18,6 @@ public class GraphTable {
 		setNumVert(0);
 		setNumEdges(0);
 		setStartState(0);
-		setFinalState(0);
 		multiMap.clear();
 	}
 	
@@ -55,15 +54,6 @@ public class GraphTable {
 	
 	public void setStartState(int startState) {
 		this.startState = startState;
-	}
-	
-	public int getFinalState() {
-		return finalState;
-	}
-
-	
-	public void setFinalState(int finalState) {
-		this.finalState = finalState;
 	}
 	
 	public void InsertEdgeByWeight(Vertex vertF, Vertex vertT, char A){
@@ -138,10 +128,9 @@ public class GraphTable {
 		System.out.println("Attempting to convert table to a DFA now");
 
 		//Initial State of DFA
-		//System.out.println(getStartState());
+		System.out.println(startState);
 		//InitialClosure is our new starting state
 		List<Integer> initialClosure = eClosure(startState);
-		//Final States is
 		char[] alpha = new char[2];
 		alpha[0]='a';
 		alpha[1]='b';
@@ -169,7 +158,7 @@ public class GraphTable {
 				if(i>0){
 					setListU = eClosureSet(travelMarker(currState,alpha[i]));
 					packPair.setR(setListU);
-					//Empty case need to be considered when traverseMap()
+					//Need to hand case where the return pairPack is empty.  At this point that means there were no moves to make from the current location, leave blank
 					dfaMap.put(currState, packPair);
 			
 				}
@@ -184,52 +173,26 @@ public class GraphTable {
 		}
 		
 		//DFA has been constructed, must now located the final state
-		findDFAFinals();
+		findFinals();
 
 
 	}
-	
 	public void runCases(String[] allCases){
 		for(String oneCase: allCases){
-			//traverseMap(oneCase);
+			returnSuccess(traverseMap(oneCase));
 		}
 	}
-	
 	public void traverseMap(String testCase){
 		
-		if(recurseRun(testCase)){
-			System.out.println("Yes");
-		}
-		
-			System.out.println("No");
 	}
-	
-	public boolean recurseRun(String testCase){
-		boolean canTraverse = false;
-		for(char c:testCase.toCharArray()){
+	public void findFinals(){
+		for(){
 			if(){
-				
-		
-				return true;
+				finalStates.add();
 			}
-		}		
-		return false;
-	}
-	
-	public void findDFAFinals(){
-		//Iterate thru list, and anything with original final state is final State
-		
-		for (Entry<List<Integer>, Pair<List<Integer>, List<Integer>>> entry : dfaMap.entrySet())
-		{
-			if(entry.getKey().contains(getFinalState())){
-				finalStates.add(entry.getKey());
-				System.out.println(entry.getKey().toString());
-			}
-		    
 		}
 		
 	}
-	
 	public boolean contains(ArrayList<Pair<List<Integer>,Boolean >> currList,  List<Integer> setToCompare ){
 		boolean truth = false;
 		for(Pair<List<Integer>,Boolean > listPair:currList){
@@ -268,9 +231,7 @@ public class GraphTable {
 		}
 		return returnItem;
 	}	
-	/*
-	 * Should avoid null, change to empy set on free time
-	 */
+	
 	public Pair<List<Integer>,Boolean > marked(){
 		for(Pair<List<Integer>,Boolean > item: list){
 			if(item.getR()==false){
@@ -331,4 +292,13 @@ public class GraphTable {
 			}
 		return recursedEpsilons;
 	}
+	
+
+
+	
+
+
+
+
+	
 }

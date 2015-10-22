@@ -205,13 +205,8 @@ public class GraphTable {
 	}
 	
 	public boolean recurseRun(String testCase){
-		boolean canTraverse = false;
-		for(char c:testCase.toCharArray()){
-			if(){
-				
-		
-				return true;
-			}
+		for(){
+			
 		}		
 		return false;
 	}

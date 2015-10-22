@@ -5,7 +5,7 @@ public class mainConverter {
 	
 	
 	int id =-1;
-
+	int startState = 0;
 	char empty = 'e';
 	GraphTable gTable = new GraphTable();
 	Stack<  Pair<Vertex,Vertex> > stateHistory = new Stack<  Pair<Vertex,Vertex> >();
@@ -44,10 +44,9 @@ public class mainConverter {
 		   gTable.InsertEdgeByWeight(rootNodeChar, endNodeChar, c);
 		   gTable.setNumVert(gTable.getNumVert()+2); 
 		   gTable.setNumEdges(gTable.getNumEdges()+1);
-		   gTable.setStartState(rootNodeChar.stateID);
 		   gTable.setFinalState(endNodeChar.stateID);
 
-	
+		   startState = rootNodeChar.stateID;
 	}
 	//Change to End Node transition
 	public void concatState(){
@@ -151,7 +150,7 @@ public class mainConverter {
 			   gTable.setNumVert(gTable.getNumVert()+2); 
 			   gTable.setNumEdges(gTable.getNumEdges()+4);	 
 			   gTable.setStartState(newStart.stateID);
-			   gTable.setFinalState(newFinal.stateID);
+			   
 	}
 	
 	
@@ -214,7 +213,6 @@ public class mainConverter {
 			   gTable.setNumVert(gTable.getNumVert()+2);
 			   gTable.setNumEdges(gTable.getNumEdges()+4);   
 			   gTable.setStartState(rootNodeOr.stateID);
-			   gTable.setFinalState(endNodeOr.stateID);
 	}
 	
 	
@@ -285,8 +283,8 @@ public class mainConverter {
 
   
     	gTable.subsetConstruction();
-    	//gTable.PrintDFATable();
-    
+    	gTable.PrintDFATable();
+    	gTable.findFinals();
     	//Test cases are ran below
 //    	List<String> testCases = new ArrayList<String>();
 //    	

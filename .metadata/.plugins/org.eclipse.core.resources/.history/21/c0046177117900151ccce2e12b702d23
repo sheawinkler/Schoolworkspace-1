@@ -191,41 +191,25 @@ public class GraphTable {
 	
 	public void runCases(String[] allCases){
 		for(String oneCase: allCases){
-			//traverseMap(oneCase);
+			traverseMap(oneCase);
 		}
 	}
 	
-	public void traverseMap(String testCase){
+	public String traverseMap(String testCase){
 		
-		if(recurseRun(testCase)){
+		if(){
 			System.out.println("Yes");
 		}
 		
 			System.out.println("No");
 	}
 	
-	public boolean recurseRun(String testCase){
-		boolean canTraverse = false;
-		for(char c:testCase.toCharArray()){
-			if(){
-				
-		
-				return true;
-			}
-		}		
-		return false;
-	}
-	
 	public void findDFAFinals(){
 		//Iterate thru list, and anything with original final state is final State
-		
-		for (Entry<List<Integer>, Pair<List<Integer>, List<Integer>>> entry : dfaMap.entrySet())
-		{
-			if(entry.getKey().contains(getFinalState())){
-				finalStates.add(entry.getKey());
-				System.out.println(entry.getKey().toString());
+		for(){
+			if(){
+				finalStates.add();
 			}
-		    
 		}
 		
 	}
@@ -268,9 +252,7 @@ public class GraphTable {
 		}
 		return returnItem;
 	}	
-	/*
-	 * Should avoid null, change to empy set on free time
-	 */
+	
 	public Pair<List<Integer>,Boolean > marked(){
 		for(Pair<List<Integer>,Boolean > item: list){
 			if(item.getR()==false){
@@ -331,4 +313,13 @@ public class GraphTable {
 			}
 		return recursedEpsilons;
 	}
+	
+
+
+	
+
+
+
+
+	
 }

@@ -138,7 +138,7 @@ public class GraphTable {
 		System.out.println("Attempting to convert table to a DFA now");
 
 		//Initial State of DFA
-		//System.out.println(getStartState());
+		System.out.println(startState);
 		//InitialClosure is our new starting state
 		List<Integer> initialClosure = eClosure(startState);
 		//Final States is
@@ -169,7 +169,7 @@ public class GraphTable {
 				if(i>0){
 					setListU = eClosureSet(travelMarker(currState,alpha[i]));
 					packPair.setR(setListU);
-					//Empty case need to be considered when traverseMap()
+					//Need to hand case where the return pairPack is empty.  At this point that means there were no moves to make from the current location, leave blank
 					dfaMap.put(currState, packPair);
 			
 				}
@@ -188,48 +188,36 @@ public class GraphTable {
 
 
 	}
-	
 	public void runCases(String[] allCases){
 		for(String oneCase: allCases){
-			//traverseMap(oneCase);
+			traverseMap(oneCase);
 		}
 	}
-	
-	public void traverseMap(String testCase){
+	public String traverseMap(String testCase){
 		
-		if(recurseRun(testCase)){
-			System.out.println("Yes");
+		if(){
+			return "Yes";
 		}
 		
-			System.out.println("No");
+		return "no";
 	}
-	
-	public boolean recurseRun(String testCase){
-		boolean canTraverse = false;
-		for(char c:testCase.toCharArray()){
-			if(){
-				
+
+	public int findNFAfinal(){
 		
-				return true;
-			}
-		}		
-		return false;
+		
+		
+		
+		return 8;
 	}
-	
 	public void findDFAFinals(){
 		//Iterate thru list, and anything with original final state is final State
-		
-		for (Entry<List<Integer>, Pair<List<Integer>, List<Integer>>> entry : dfaMap.entrySet())
-		{
-			if(entry.getKey().contains(getFinalState())){
-				finalStates.add(entry.getKey());
-				System.out.println(entry.getKey().toString());
+		for(){
+			if(){
+				finalStates.add();
 			}
-		    
 		}
 		
 	}
-	
 	public boolean contains(ArrayList<Pair<List<Integer>,Boolean >> currList,  List<Integer> setToCompare ){
 		boolean truth = false;
 		for(Pair<List<Integer>,Boolean > listPair:currList){
@@ -268,9 +256,7 @@ public class GraphTable {
 		}
 		return returnItem;
 	}	
-	/*
-	 * Should avoid null, change to empy set on free time
-	 */
+	
 	public Pair<List<Integer>,Boolean > marked(){
 		for(Pair<List<Integer>,Boolean > item: list){
 			if(item.getR()==false){
@@ -331,4 +317,13 @@ public class GraphTable {
 			}
 		return recursedEpsilons;
 	}
+	
+
+
+	
+
+
+
+
+	
 }

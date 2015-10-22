@@ -195,7 +195,7 @@ public class GraphTable {
 		}
 	}
 	
-	public void traverseMap(String testCase){
+	public String traverseMap(String testCase){
 		
 		if(recurseRun(testCase)){
 			System.out.println("Yes");
@@ -205,14 +205,8 @@ public class GraphTable {
 	}
 	
 	public boolean recurseRun(String testCase){
-		boolean canTraverse = false;
-		for(char c:testCase.toCharArray()){
-			if(){
-				
 		
-				return true;
-			}
-		}		
+		
 		return false;
 	}
 	
