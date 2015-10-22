@@ -8,13 +8,15 @@ public class GraphTable {
 	char empty = 'e';
 	Map<Integer, List<Pair<Vertex,Character>>> multiMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
 	Map<Integer, List<Pair<Vertex,Character>>> subsetMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
+	Map<List<Integer>,Pair<List<Integer>,List<Integer>>> dfaMap = new HashMap<List<Integer>,Pair<List<Integer>,List<Integer>>>();
+	boolean switchSt = false;
 	
 	ArrayList<Pair<List<Integer>,Boolean >> list = new ArrayList<Pair<List<Integer>,Boolean >>();	
 	GraphTable(){
 		setNumVert(0);
 		setNumEdges(0);
 		setStartState(0);
-		//multiMap.clear();
+		multiMap.clear();
 	}
 	
 	public Map<Integer, List<Pair<Vertex,Character>>>getMap(){
@@ -89,6 +91,30 @@ public class GraphTable {
 		    }
 	}
 	
+	
+	public void PrintDFATable(){
+		System.out.println("Attempting to print table now");
+	    
+		   Iterator<Entry<List<Integer>, Pair<List<Integer>, List<Integer>>>> it = dfaMap.entrySet().iterator();
+		    while (it.hasNext()) {
+		        Map.Entry<List<Integer>, Pair<List<Integer>, List<Integer>>> graphPair = (Entry<List<Integer>, Pair<List<Integer>, List<Integer>>>)it.next();
+		        
+		        Pair<List<Integer>, List<Integer>> listPair = new Pair<List<Integer>, List<Integer>>(); 
+		        
+		        
+		        
+		        System.out.println("State "+ listPair.getL() + " = ");
+		        listPair = graphPair.getValue();
+//		        for(int i=0;i<listPair.;i++){
+//		        	Pair<Vertex, Character> output = listPair.get(i);
+//		        	char outputChar = output.getR();
+//		        	Vertex outputVertex = output.getL();
+//		        	
+//		        	System.out.println("---> "+outputChar+" to state "+outputVertex.getStateID());
+//		        }
+		        it.remove(); 
+		    }
+	}
 	/*
 	 * Utilizing the well known subset Construction algorithm here.  
 	 * Link to researched materials are below:
@@ -107,7 +133,6 @@ public class GraphTable {
 		alpha[1]='b';
 		
 		//Compute U = ε -closure(move(T,a)
-		//Set contains transitions possible on a and then b
 		Pair<List<Integer>,Boolean > transition = new Pair<List<Integer>,Boolean>();
 		Boolean truth = false;
 		transition.setL(initialClosure);
@@ -115,44 +140,57 @@ public class GraphTable {
 		list.add(transition);
 
 		
-		
 		while(marked()!=null){
-			
-			for(int i=0;i<alpha.length;i++){
+			marked().setR(true);
+			//curr value Needs to be set to true here to meet above condition allowing iteration
+			Pair<List<Integer>,List<Integer>> packPair = new Pair<List<Integer>,List<Integer>>();
+			for(int i=0;i<alpha.length;i++){	
 				List<Integer> setListU = new ArrayList<Integer>();
-				travelMarker(marked().getL(),alpha[i]);
-				setListU = eClosureSet(travelMarker(marked().getL(),alpha[i]));
-				if(i>0)
-					marked().setR(true);
-	
-				//We can build our table here based on the moves made
+				List<Integer> temp = new ArrayList<Integer>();
+				if(i==0){
 				
+					setListU = eClosureSet(travelMarker(marked().getL(),alpha[i]));
+					packPair.setL(setListU);
+					temp =marked().getL();
+				
+				}
+				if(i>0){
 	
-				if(!list.contains(setListU)){
+					setListU = eClosureSet(travelMarker(marked().getL(),alpha[i]));
+					packPair.setR(setListU);
+					dfaMap.put(temp, packPair);
+			
+				}
+				//We can build our table here based on the moves made
+					Pair<List<Integer>,Boolean > objectPair1 = new Pair<List<Integer>,Boolean>();
+					Pair<List<Integer>,Boolean > objectPair2 = new Pair<List<Integer>,Boolean>();
+					objectPair1.setL(setListU);
+					objectPair1.setR(false);
+					objectPair2.setL(setListU);
+					objectPair2.setR(true);
+				if(!list.contains(objectPair1)&&!list.contains(objectPair2)){
 					Pair<List<Integer>,Boolean> pairList = new Pair<List<Integer>,Boolean>();
 					pairList.setL(setListU);
 					pairList.setR(false);
 					list.add(pairList);
 				}
-				
 			}
-			
-	
 		}
-		
-		
 	}
-	
+	public Pair<List<Integer>,Boolean > getState(){
+		for(Pair<List<Integer>,Boolean > item: list){
+			
+				return item;
+		}
+		return null;	
+	}	
 	public Pair<List<Integer>,Boolean > marked(){
 		for(Pair<List<Integer>,Boolean > item: list){
-			if(item.getR()==false   ){
+			if(item.getR()==false){
 				return item;
-			}else{
-				return null;
 			}
 		}
-		return null;
-		
+		return null;	
 	}
 	
 	public List<Integer> eClosureSet( List<Integer> subsetList ){

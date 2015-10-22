@@ -281,7 +281,7 @@ public class mainConverter {
 
   
     	gTable.subsetConstruction();
-    	
+    	gTable.PrintDFATable();
     	
     	//Test cases are ran below
 //    	List<String> testCases = new ArrayList<String>();
