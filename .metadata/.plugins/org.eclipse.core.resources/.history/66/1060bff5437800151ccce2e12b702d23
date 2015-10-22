@@ -8,7 +8,6 @@ public class GraphTable {
 	char empty = 'e';
 	Map<Integer, List<Pair<Vertex,Character>>> multiMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
 	Map<Integer, List<Pair<Vertex,Character>>> subsetMap = new HashMap<Integer, List<Pair<Vertex,Character>  >>();
-	
 	ArrayList<Pair<List<Integer>,Boolean >> list = new ArrayList<Pair<List<Integer>,Boolean >>();	
 	GraphTable(){
 		setNumVert(0);
@@ -103,31 +102,25 @@ public class GraphTable {
 		System.out.println(startState);
 		List<Integer> initialClosure = eClosure(startState);
 		char[] alpha = new char[2];
-		alpha[0]='a';
-		alpha[1]='b';
+		alpha[1]='a';
+		alpha[2]='b';
 		
 		//Compute U = ε -closure(move(T,a)
 		//Set contains transitions possible on a and then b
+
+
 		Pair<List<Integer>,Boolean > transition = new Pair<List<Integer>,Boolean>();
 		Boolean truth = false;
 		transition.setL(initialClosure);
 		transition.setR(truth);
 		list.add(transition);
-
-		
 		
 		while(marked()!=null){
-			
+			marked().setR(true);
 			for(int i=0;i<alpha.length;i++){
 				List<Integer> setListU = new ArrayList<Integer>();
-				travelMarker(marked().getL(),alpha[i]);
-				setListU = eClosureSet(travelMarker(marked().getL(),alpha[i]));
-				if(i>0)
-					marked().setR(true);
-	
-				//We can build our table here based on the moves made
+				setListU = eClosureSet(travelMarker(initialClosure,alpha[i]));
 				
-	
 				if(!list.contains(setListU)){
 					Pair<List<Integer>,Boolean> pairList = new Pair<List<Integer>,Boolean>();
 					pairList.setL(setListU);
@@ -136,7 +129,6 @@ public class GraphTable {
 				}
 				
 			}
-			
 	
 		}
 		
@@ -169,14 +161,12 @@ public class GraphTable {
 		for(int i =0;i<closureStates.size();i++){
 			int currKey = closureStates.get(i);
 			List<Pair<Vertex, Character>> currStateTransitions = subsetMap.get(currKey);
-			if(currStateTransitions!=null){
-				for(Pair<Vertex, Character> stateTransition : currStateTransitions){
-						if(stateTransition!=null && stateTransition.getR() ==empty  && !closureStates.contains(stateTransition.getL().stateID)){	
-								closureStates.add(stateTransition.getL().stateID);
-								//Not sure if this needs to get checked with the below condition. think on that
-								List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
-								closureStates.addAll(depthFirstEpsilons);
-						}
+			for(Pair<Vertex, Character> stateTransition : currStateTransitions){
+				if(stateTransition.getR() ==empty  && !closureStates.contains(stateTransition.getL().stateID)){	
+						closureStates.add(stateTransition.getL().stateID);
+						//Not sure if this needs to get checked with the below condition. think on that
+						List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
+						closureStates.addAll(depthFirstEpsilons);
 				}
 			}
 		}
@@ -192,17 +182,13 @@ public class GraphTable {
 		
 		List<Integer> recursedEpsilons = new LinkedList<Integer>();
 
-			if(transitionVertex.out != null && transitionVertex.out.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
+			if(transitionVertex.out.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
 				recursedEpsilons.add(transitionVertex.out.returnToVertex().stateID);
-				if(transitionVertex.out.returnToVertex() != null){
-					recurseEpsilons(transitionVertex.out.returnToVertex(),listOfStates);
-				}
+				recurseEpsilons(transitionVertex.out.returnToVertex(),listOfStates);
 			}
-			if(transitionVertex.out2 !=null && transitionVertex.out2.returnWeight()==empty && !listOfStates.contains(transitionVertex.out2.returnToVertex().stateID)){
+			if(transitionVertex.out2.returnWeight()==empty && !listOfStates.contains(transitionVertex.out.returnToVertex().stateID)){
 				recursedEpsilons.add(transitionVertex.out2.returnToVertex().stateID);
-				if(transitionVertex.out2.returnToVertex() != null){
 				recurseEpsilons(transitionVertex.out2.returnToVertex(),listOfStates);
-				}
 			}
 		return recursedEpsilons;
 	}
@@ -212,13 +198,10 @@ public class GraphTable {
 		List<Integer> returnList = new LinkedList<Integer>();
 		for(int value: travelList){
 			List<Pair<Vertex, Character>> tempList = new ArrayList<Pair<Vertex, Character>>();
-			
-			tempList = subsetMap.get(value);
-			if(tempList != null){
-				for(Pair<Vertex, Character> pair: tempList){
-					if(pair.getR() == transitionMarker){
-						returnList.add(pair.getL().stateID);
-					}
+			tempList = multiMap.get(value);
+			for(Pair<Vertex, Character> pair: tempList){
+				if(pair.getR() == transitionMarker){
+					returnList.add(pair.getL().stateID);
 				}
 			}
 		}

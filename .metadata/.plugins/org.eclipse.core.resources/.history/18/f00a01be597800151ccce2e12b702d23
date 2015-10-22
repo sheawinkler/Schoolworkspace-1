@@ -212,13 +212,10 @@ public class GraphTable {
 		List<Integer> returnList = new LinkedList<Integer>();
 		for(int value: travelList){
 			List<Pair<Vertex, Character>> tempList = new ArrayList<Pair<Vertex, Character>>();
-			
 			tempList = subsetMap.get(value);
-			if(tempList != null){
-				for(Pair<Vertex, Character> pair: tempList){
-					if(pair.getR() == transitionMarker){
-						returnList.add(pair.getL().stateID);
-					}
+			for(Pair<Vertex, Character> pair: tempList){
+				if(pair.getR() == transitionMarker){
+					returnList.add(pair.getL().stateID);
 				}
 			}
 		}

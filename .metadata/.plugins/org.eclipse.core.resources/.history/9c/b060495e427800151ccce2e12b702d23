@@ -276,17 +276,14 @@ public class mainConverter {
   
     	
     	toNFA(postfix);
-    	gTable.copyMaps();
     	gTable.PrintTable();
-
-  
-    	gTable.subsetConstruction();
-    	
-    	
+    	Map<Integer, List<Pair<Vertex,Character>>> nfaMap = new HashMap<Integer, List<Pair<Vertex,Character>>>();
+    	nfaMap=gTable.getMap();
+    	gTable.subsetConstruction(gTable.getMap());
     	//Test cases are ran below
 //    	List<String> testCases = new ArrayList<String>();
 //    	
-// 		while(scanner.hasNextLine()){
+//    		while(scanner.hasNextLine()){
 //    			testCases.add(scanner.nextLine());
 //    		}
 //    		

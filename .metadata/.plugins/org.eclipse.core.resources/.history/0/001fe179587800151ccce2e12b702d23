@@ -120,7 +120,7 @@ public class GraphTable {
 			
 			for(int i=0;i<alpha.length;i++){
 				List<Integer> setListU = new ArrayList<Integer>();
-				travelMarker(marked().getL(),alpha[i]);
+				
 				setListU = eClosureSet(travelMarker(marked().getL(),alpha[i]));
 				if(i>0)
 					marked().setR(true);
@@ -169,14 +169,12 @@ public class GraphTable {
 		for(int i =0;i<closureStates.size();i++){
 			int currKey = closureStates.get(i);
 			List<Pair<Vertex, Character>> currStateTransitions = subsetMap.get(currKey);
-			if(currStateTransitions!=null){
-				for(Pair<Vertex, Character> stateTransition : currStateTransitions){
-						if(stateTransition!=null && stateTransition.getR() ==empty  && !closureStates.contains(stateTransition.getL().stateID)){	
-								closureStates.add(stateTransition.getL().stateID);
-								//Not sure if this needs to get checked with the below condition. think on that
-								List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
-								closureStates.addAll(depthFirstEpsilons);
-						}
+			for(Pair<Vertex, Character> stateTransition : currStateTransitions){
+				if(stateTransition.getR() ==empty  && !closureStates.contains(stateTransition.getL().stateID)){	
+						closureStates.add(stateTransition.getL().stateID);
+						//Not sure if this needs to get checked with the below condition. think on that
+						List<Integer> depthFirstEpsilons = recurseEpsilons(stateTransition.getL(),closureStates);
+						closureStates.addAll(depthFirstEpsilons);
 				}
 			}
 		}
@@ -212,13 +210,10 @@ public class GraphTable {
 		List<Integer> returnList = new LinkedList<Integer>();
 		for(int value: travelList){
 			List<Pair<Vertex, Character>> tempList = new ArrayList<Pair<Vertex, Character>>();
-			
 			tempList = subsetMap.get(value);
-			if(tempList != null){
-				for(Pair<Vertex, Character> pair: tempList){
-					if(pair.getR() == transitionMarker){
-						returnList.add(pair.getL().stateID);
-					}
+			for(Pair<Vertex, Character> pair: tempList){
+				if(pair.getR() == transitionMarker){
+					returnList.add(pair.getL().stateID);
 				}
 			}
 		}

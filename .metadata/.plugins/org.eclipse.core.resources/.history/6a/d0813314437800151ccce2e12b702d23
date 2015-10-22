@@ -276,7 +276,6 @@ public class mainConverter {
   
     	
     	toNFA(postfix);
-    	gTable.copyMaps();
     	gTable.PrintTable();
 
   
