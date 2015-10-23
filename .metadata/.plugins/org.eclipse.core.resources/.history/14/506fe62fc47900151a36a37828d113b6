@@ -321,7 +321,7 @@ public class mainConverter {
 	public static void main(String[] args) {
 		System.out.println("Hello this is the main system");
 		mainConverter convertRegex = new mainConverter();
-		//convertRegex.fileParser();
+		convertRegex.fileParser();
 	
 		System.out.print ("Please enter your REGEX: ");
 		Scanner scanner = new Scanner(System.in);

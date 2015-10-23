@@ -212,7 +212,7 @@ public class GraphTable {
 		Pair<List<Integer>,List<Integer>> pTransfer = dfaMap.get(transferState);
 		List<Integer> fin = new ArrayList<Integer>();
 		
-		if(transferChar=='a' && pTransfer.getL()!=null ){
+		if(transferChar=='a' && pTransfer.getL()!=null){
 		
 				fin= pTransfer.getL();
 			

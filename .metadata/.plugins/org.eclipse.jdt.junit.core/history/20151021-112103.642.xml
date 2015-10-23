@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="HelpersTest" project="RSA" tests="2" started="2" failures="0" errors="0" ignored="0">
-  <testsuite name="HelpersTest" time="0.006">
-    <testcase name="testIsSquare" classname="HelpersTest" time="0.004"/>
-    <testcase name="testFermat" classname="HelpersTest" time="0.002"/>
-  </testsuite>
-</testrun>

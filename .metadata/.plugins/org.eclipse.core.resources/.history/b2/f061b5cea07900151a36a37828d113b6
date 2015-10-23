@@ -321,15 +321,15 @@ public class mainConverter {
 	public static void main(String[] args) {
 		System.out.println("Hello this is the main system");
 		mainConverter convertRegex = new mainConverter();
-		//convertRegex.fileParser();
+		convertRegex.fileParser();
 	
-		System.out.print ("Please enter your REGEX: ");
-		Scanner scanner = new Scanner(System.in);
-		String REGEX = scanner.next();
-		System.out.print ("And now your test case please: ");
-		String TESTCASE = scanner.next();
-		convertRegex.cmdInput(TESTCASE, REGEX);
-		scanner.close();
+//		System.out.print ("Please enter your REGEX: ");
+//		Scanner scanner = new Scanner(System.in);
+//		String REGEX = scanner.next();
+//		System.out.print ("And now your test case please: ");
+//		String TESTCASE = scanner.next();
+//		convertRegex.cmdInput(TESTCASE, REGEX);
+//		scanner.close();
 	}
 
 }

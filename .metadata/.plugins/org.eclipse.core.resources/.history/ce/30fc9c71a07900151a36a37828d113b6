@@ -117,7 +117,6 @@ public class GraphTable {
 		//System.out.println(getStartState());
 		//InitialClosure is our new starting state
 		initialClosure = eClosure(startState);
-		Collections.sort( initialClosure );
 		//Final States is
 		char[] alpha = new char[2];
 		alpha[0]='a';
@@ -141,12 +140,10 @@ public class GraphTable {
 				List<Integer> setListU = new ArrayList<Integer>();
 				if(i==0){
 					setListU = eClosureSet(travelMarker(currState,alpha[i]));
-					Collections.sort( setListU );
 					packPair.setL(setListU);
 				}
 				if(i>0){
 					setListU = eClosureSet(travelMarker(currState,alpha[i]));
-					Collections.sort( setListU );
 					packPair.setR(setListU);
 					//Empty case need to be considered when traverseMap()
 					dfaMap.put(currState, packPair);
@@ -202,6 +199,7 @@ public class GraphTable {
 				if(containsList(finalStates,transferState)==false){
 					canTraverse=false;
 				}
+				testCase = testCase.substring(i+1, testCase.length());
 			}
 		}		
 		return canTraverse;
@@ -212,7 +210,7 @@ public class GraphTable {
 		Pair<List<Integer>,List<Integer>> pTransfer = dfaMap.get(transferState);
 		List<Integer> fin = new ArrayList<Integer>();
 		
-		if(transferChar=='a' && pTransfer.getL()!=null ){
+		if(transferChar=='a' && pTransfer.getL()!=null){
 		
 				fin= pTransfer.getL();
 			
