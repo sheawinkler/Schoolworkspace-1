@@ -117,10 +117,6 @@ public class GraphTable {
 		//System.out.println(getStartState());
 		//InitialClosure is our new starting state
 		initialClosure = eClosure(startState);
-		Set<Integer> hashse = new HashSet<>();
-		hashse.addAll(initialClosure);
-		initialClosure.clear();
-		initialClosure.addAll(hashse);
 		Collections.sort( initialClosure );
 		//Final States is
 		char[] alpha = new char[2];
@@ -145,7 +141,7 @@ public class GraphTable {
 				List<Integer> setListU = new ArrayList<Integer>();
 				if(i==0){
 					setListU = eClosureSet(travelMarker(currState,alpha[i]));
-					//Jank hack! should definately just be a set instead of a List anyway..too late to implement, later update if i have time.  Crucial time complexity here!
+					
 					Set<Integer> hs = new HashSet<>();
 					hs.addAll(setListU);
 					setListU.clear();
@@ -155,10 +151,6 @@ public class GraphTable {
 				}
 				if(i>0){
 					setListU = eClosureSet(travelMarker(currState,alpha[i]));
-					Set<Integer> hset = new HashSet<>();
-					hset.addAll(setListU);
-					setListU.clear();
-					setListU.addAll(hset);
 					Collections.sort( setListU );
 					packPair.setR(setListU);
 					//Empty case need to be considered when traverseMap()
@@ -166,7 +158,7 @@ public class GraphTable {
 			
 				}
 				//We can build our table here based on the moves made
-				if(!contains(list,setListU) && !setListU.isEmpty()){
+				if(!contains(list,setListU)){
 					Pair<List<Integer>,Boolean> pairList = new Pair<List<Integer>,Boolean>();
 					pairList.setL(setListU);
 					pairList.setR(false);
@@ -267,7 +259,7 @@ public class GraphTable {
 	public boolean contains(ArrayList<Pair<List<Integer>,Boolean >> currList,  List<Integer> setToCompare ){
 		boolean truth = false;
 		for(Pair<List<Integer>,Boolean > listPair:currList){
-			if(listPair.getL().containsAll(setToCompare) && listPair.getL().size()==setToCompare.size()){
+			if(listPair.getL().containsAll(setToCompare)){
 				truth = true;
 			}
 		}

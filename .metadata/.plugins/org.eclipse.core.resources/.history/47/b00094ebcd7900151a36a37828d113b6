@@ -166,7 +166,7 @@ public class GraphTable {
 			
 				}
 				//We can build our table here based on the moves made
-				if(!contains(list,setListU) && !setListU.isEmpty()){
+				if(!contains(list,setListU)){
 					Pair<List<Integer>,Boolean> pairList = new Pair<List<Integer>,Boolean>();
 					pairList.setL(setListU);
 					pairList.setR(false);
@@ -267,7 +267,7 @@ public class GraphTable {
 	public boolean contains(ArrayList<Pair<List<Integer>,Boolean >> currList,  List<Integer> setToCompare ){
 		boolean truth = false;
 		for(Pair<List<Integer>,Boolean > listPair:currList){
-			if(listPair.getL().containsAll(setToCompare) && listPair.getL().size()==setToCompare.size()){
+			if(listPair.getL().containsAll(setToCompare)){
 				truth = true;
 			}
 		}

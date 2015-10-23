@@ -166,7 +166,7 @@ public class GraphTable {
 			
 				}
 				//We can build our table here based on the moves made
-				if(!contains(list,setListU) && !setListU.isEmpty()){
+				if(!contains(list,setListU)){
 					Pair<List<Integer>,Boolean> pairList = new Pair<List<Integer>,Boolean>();
 					pairList.setL(setListU);
 					pairList.setR(false);
