@@ -258,7 +258,7 @@ public class mainConverter {
 	
 	
 	public void fileParser(){
-    	File regexFile = new File("/Users/Deverick/Documents/workspace/RegToDFA/Libs/input.txt");
+;    	File regexFile = new File("/Users/Deverick/Documents/workspace/RegToDFA/Libs/input.txt");
     
     	Scanner scanner = null;
     	try{
@@ -283,29 +283,53 @@ public class mainConverter {
     	gTable.copyMaps();
     	gTable.PrintTable();
 
-  
+    	List<String> allCases = new ArrayList<String>();
     	gTable.subsetConstruction();
-    	//gTable.PrintDFATable();
-    
-    	//Test cases are ran below
-//    	List<String> testCases = new ArrayList<String>();
-//    	
-// 		while(scanner.hasNextLine()){
-//    			testCases.add(scanner.nextLine());
-//    		}
-//    		
-//            for(String testCase : testCases) {
-//                System.out.println(testCase);
-//            }
+    	while(scanner.hasNextLine()){
+    		allCases.add(scanner.nextLine());
+    	}
+    	gTable.runCases(allCases);
     	
+
+    	
+	}
+	
+	public  void cmdInput(String newCase, String regex){
+		InfixToPostfix toPostfix = new InfixToPostfix();
+    	
+    	String postfix = "";
+    	
+    	postfix = toPostfix.convertToPostfix(toPostfix.addConcat(regex)).toString();
+    	
+    	
+    	System.out.println("Postfix: "+ postfix);
+  
+    	
+    	toNFA(postfix);
+    	//Creates a new copy of multiMap subsetMap as multi is empty after the print statement
+    	gTable.copyMaps();
+    	gTable.PrintTable();
+
+   
+    	gTable.subsetConstruction();
+    	List<String> temp = new ArrayList<String>();
+    	temp.add(newCase);
+    	gTable.runCases(temp);
 	}
 	
 	
 	public static void main(String[] args) {
 		System.out.println("Hello this is the main system");
 		mainConverter convertRegex = new mainConverter();
-		convertRegex.fileParser();
-			
+//		convertRegex.fileParser();
+	
+		System.out.print ("Please enter your REGEX: ");
+		Scanner scanner = new Scanner(System.in);
+		String REGEX = scanner.next();
+		System.out.print ("And now your test case please: ");
+		String TESTCASE = scanner.next();
+		convertRegex.cmdInput(TESTCASE, REGEX);
+		scanner.close();
 	}
 
 }

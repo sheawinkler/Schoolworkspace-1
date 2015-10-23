@@ -102,31 +102,7 @@ public class GraphTable {
 		        it.remove(); 
 		    }
 	}
-	
-	
-	public void PrintDFATable(){
-		System.out.println("Attempting to print table now");
-	    
-		   Iterator<Entry<List<Integer>, Pair<List<Integer>, List<Integer>>>> it = dfaMap.entrySet().iterator();
-		    while (it.hasNext()) {
-		        Map.Entry<List<Integer>, Pair<List<Integer>, List<Integer>>> graphPair = (Entry<List<Integer>, Pair<List<Integer>, List<Integer>>>)it.next();
-		        
-		        Pair<List<Integer>, List<Integer>> listPair = new Pair<List<Integer>, List<Integer>>(); 
-		        
-		        
-		        
-		        System.out.println("State "+ listPair.getL() + " = ");
-		        listPair = graphPair.getValue();
-//		        for(int i=0;i<listPair.;i++){
-//		        	Pair<Vertex, Character> output = listPair.get(i);
-//		        	char outputChar = output.getR();
-//		        	Vertex outputVertex = output.getL();
-//		        	
-//		        	System.out.println("---> "+outputChar+" to state "+outputVertex.getStateID());
-//		        }
-		        it.remove(); 
-		    }
-	}
+
 	/*
 	 * Utilizing the well known subset Construction algorithm here.  
 	 * Link to researched materials are below:
@@ -189,40 +165,68 @@ public class GraphTable {
 
 	}
 	
-	public void runCases(String[] allCases){
-		for(String oneCase: allCases){
-			traverseMap(oneCase);
+	public void runCases(List<String> allCases){
+		for(String one:allCases){
+			traverseMap(one);
 		}
 	}
 	
 	public void traverseMap(String testCase){
 		
 		if(recurseRun(testCase)){
-			System.out.println("Yes");
+			System.out.println("yes");
 		}else{
-			System.out.println("No");
+			System.out.println("no");
 		}		
 	}
 	
 	public boolean recurseRun(String testCase){
 		boolean canTraverse = false;
 		List<Integer> transferState = initialClosure;
+		
 		for(int i=0; i < testCase.toCharArray().length;i++){
-			if(transferFunction(transferState)!=null){
-				
-				transferFunction();
+			
+			if(testCase.toCharArray()[i]=='e'){
+				if(i==testCase.toCharArray().length -1){
+					return true;
+				}
+				i++;
+			}
+		
+			if(transferFunction(transferState, testCase.toCharArray()[i] )!=null){
+				transferState = transferFunction(transferState,testCase.toCharArray()[i]);
 				canTraverse= true;
-			}else{
-				return false;
+				if(containsList(finalStates,transferState)==false){
+					canTraverse=false;
+				}
+				testCase = testCase.substring(i+1, testCase.length());
 			}
 		}		
-		return canTraverse	;
+		return canTraverse;
 	}
 	
-	public void transferFunction(List<Integer> transferState, char transerChar){
+	
+	public List<Integer> transferFunction(List<Integer> transferState, char transferChar){
+		Pair<List<Integer>,List<Integer>> pTransfer = dfaMap.get(transferState);
+		List<Integer> fin = new ArrayList<Integer>();
 		
+		if(transferChar=='a' && pTransfer.getL()!=null){
+		
+				fin= pTransfer.getL();
+			
+ 		}else if(transferChar=='b'&& pTransfer.getR()!=null){
+
+				fin= pTransfer.getR();
+			
+		}
+		if(fin.isEmpty()){
+			System.out.println("no");
+			System.exit(0);
+		}
+		return fin;
 	}
 	
+
 	public void findDFAFinals(){
 		//Iterate thru list, and anything with original final state is final State
 		
@@ -236,7 +240,15 @@ public class GraphTable {
 		}
 		
 	}
-	
+	public boolean containsList(List<List<Integer>> allFinals, List<Integer> checkFinals){
+		boolean truths = false;
+		for(List<Integer> stateNumber :allFinals){
+			if(stateNumber.containsAll(checkFinals)){
+				truths = true;
+			}
+		}
+		return truths;
+	}
 	public boolean contains(ArrayList<Pair<List<Integer>,Boolean >> currList,  List<Integer> setToCompare ){
 		boolean truth = false;
 		for(Pair<List<Integer>,Boolean > listPair:currList){
