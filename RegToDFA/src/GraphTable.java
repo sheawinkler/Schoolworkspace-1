@@ -111,7 +111,7 @@ public class GraphTable {
 	 */
 	
 	public void subsetConstruction(){
-		System.out.println("Attempting to convert table to a DFA now");
+		//System.out.println("Attempting to convert table to a DFA now");
 
 		//Initial State of DFA
 		//System.out.println(getStartState());
@@ -203,13 +203,12 @@ public class GraphTable {
 		for(int i=0; i < testCase.toCharArray().length;i++){
 			
 			if(testCase.toCharArray()[i]=='e'){
-				if(i==testCase.toCharArray().length -1){
-					return true;
+				if(i==testCase.toCharArray().length -1 && containsList(finalStates,transferState)==true){
+					canTraverse =  true;
 				}
-				i++;
 			}
 		
-			if(transferFunction(transferState, testCase.toCharArray()[i] )!=null){
+			if(transferFunction(transferState, testCase.toCharArray()[i] )!=null && !transferFunction(transferState, testCase.toCharArray()[i] ).isEmpty() ){
 				transferState = transferFunction(transferState,testCase.toCharArray()[i]);
 				canTraverse= true;
 				if(containsList(finalStates,transferState)==false){
@@ -225,14 +224,16 @@ public class GraphTable {
 		Pair<List<Integer>,List<Integer>> pTransfer = dfaMap.get(transferState);
 		List<Integer> fin = new ArrayList<Integer>();
 		
-		if(transferChar=='a' && pTransfer.getL()!=null ){
+		if(transferChar=='a' && pTransfer.getL()!=null && !pTransfer.getL().isEmpty() ){
 		
 				fin= pTransfer.getL();
 			
- 		}else if(transferChar=='b'&& pTransfer.getR()!=null){
+ 		}else if(transferChar=='b'&& pTransfer.getR()!=null && !pTransfer.getR().isEmpty()){
 
 				fin= pTransfer.getR();
 			
+		}else if(transferChar=='e'){
+			return fin;
 		}
 		if(fin.isEmpty()){
 			System.out.println("no");
@@ -249,7 +250,7 @@ public class GraphTable {
 		{
 			if(entry.getKey().contains(getFinalState())){
 				finalStates.add(entry.getKey());
-				System.out.println(entry.getKey().toString());
+				//System.out.println(entry.getKey().toString());
 			}
 		    
 		}

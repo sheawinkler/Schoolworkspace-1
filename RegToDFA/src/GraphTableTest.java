@@ -15,7 +15,7 @@ public class GraphTableTest {
 	@Test
 	public void testInsertEdgeByWeight() {
 		
-		mainConverter main = new mainConverter();
+		Project1 main = new Project1();
 		Vertex start = main.createStart();
 		Vertex end = main.createFinal();
 		Vertex start2 = main.createStart();
