@@ -1,7 +1,7 @@
-(a|b)*(aba|bab)(a|b)*
-ababab
-bababa
-abab
-baba
+(a|b)*a
+aaaa
 aba
-e
+bba
+a
+b
+bbb

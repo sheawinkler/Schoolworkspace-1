@@ -319,7 +319,7 @@ public class Project1 {
 	
 	
 	public static void main(String[] args) {
-		System.out.println("Hello, this is the main system");
+		//System.out.println("Hello, this is the main system");
 		Project1 convertRegex = new Project1();
 		//convertRegex.fileParser();
 		
@@ -329,8 +329,18 @@ public class Project1 {
 		Scanner scanner = new Scanner(System.in);
 		String REGEX = scanner.next();
 		System.out.print ("Now your test case please: ");
-		String TESTCASE = scanner.next();
-		convertRegex.cmdInput(TESTCASE, REGEX);
+		String TESTCASE0 = scanner.next();
+		String TESTCASE1 = scanner.next();
+		String TESTCASE2 = scanner.next();
+		String TESTCASE3 = scanner.next();
+		String TESTCASE4 = scanner.next();
+		String TESTCASE5 = scanner.next();
+		convertRegex.cmdInput(TESTCASE0, REGEX);
+		convertRegex.cmdInput(TESTCASE1, REGEX);
+		convertRegex.cmdInput(TESTCASE2, REGEX);
+		convertRegex.cmdInput(TESTCASE3, REGEX);
+		convertRegex.cmdInput(TESTCASE4, REGEX);
+		convertRegex.cmdInput(TESTCASE5, REGEX);
 		scanner.close();
 	}
 

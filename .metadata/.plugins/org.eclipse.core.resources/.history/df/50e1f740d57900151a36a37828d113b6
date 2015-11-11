@@ -1,7 +1,0 @@
-(a|b)*(aba|bab)(a|b)*
-ababab
-bababa
-abab
-baba
-aba
-e
