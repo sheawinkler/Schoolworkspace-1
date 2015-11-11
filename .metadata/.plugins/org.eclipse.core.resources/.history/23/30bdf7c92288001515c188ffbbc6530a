@@ -1,0 +1,138 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.util.Scanner;
+
+
+public class DigestToOutput {
+	
+	
+	
+
+	public static BigInteger F(BigInteger X, BigInteger Y, BigInteger Z){
+		return X.and(Y).or(X.not().and(Z));
+	
+	}
+
+	public static BigInteger G(BigInteger X, BigInteger Y, BigInteger Z){
+		
+		return X.and(Y).or(X.and(Z)).or(Y.and(Z));
+	}
+	
+	public static BigInteger H(BigInteger X, BigInteger Y, BigInteger Z){
+		return X.xor(Y).xor(Z);
+	}
+	
+	public static BigInteger roundOne(BigInteger a, BigInteger b, BigInteger c, BigInteger d, BigInteger Xk, int s){
+		a = (a.add(F(b,c,d)).add(Xk)).shiftLeft(s);
+		return a;
+	}
+
+	public static BigInteger roundTwo(BigInteger a, BigInteger b, BigInteger c, BigInteger d, BigInteger Xk, int s){
+		BigInteger val = new BigInteger("5A827999", 16);
+		a = (a.add(G(b,c,d)).add(Xk).add(val)).shiftLeft(s);
+		return a;
+	}
+	
+	public static BigInteger roundThree(BigInteger a, BigInteger b, BigInteger c, BigInteger d, BigInteger Xk, int s){
+		BigInteger val = new BigInteger("6ED9EBA1", 16);
+		a = (a.add(H(b,c,d)).add(Xk).add(val)).shiftLeft(s);
+		return a;
+	}
+	
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		
+		// Start Up Menu
+		System.out.println("Hello My Friend, we are going to run the MD4 System now, please supply the absolute path to file to digest:");		
+		
+		//Snatch data from cmdLine
+//		Scanner scanner = new Scanner(System.in);
+//		String md4FileString = scanner.next();
+//		scanner.close();
+		/*
+		 * Delete for commandline--Remove comments from three lines above
+		 */
+		String md4FileString = "/Users/Deverick/Documents/workspace/MD4/lib/input.txt";
+		//Create a quick file
+		File	md4File = new File( md4FileString );
+		
+		//Scan it 
+		Scanner fileScanner = null;
+    	try{
+    		fileScanner = new Scanner(md4File);
+    	}catch(FileNotFoundException t){
+    		t.printStackTrace();
+    	}
+    
+    	String contains = new String();
+    	while(fileScanner.hasNextLine()){
+    		contains = contains.concat(fileScanner.nextLine());
+    	}
+    	//Possibly I may need to insert the 0 that is getting excluded at the beginning of the bit   
+    	
+    	String binary = new BigInteger(contains.getBytes()).toString(2);
+    	if(binary.length()%8!=0){
+    		binary= "0"+binary;
+    	}
+    	// Grab a copy to append in step 2. must make 64 bit..
+    	String pre = binary;
+    	
+    	//Can deletethis
+    	System.out.println("As binary: "+binary);
+    	String text2 = new String(new BigInteger(binary, 2).toByteArray());
+    	System.out.println("As text again: "+text2);
+ 
+    	//Moving to Step 2  Append Padding Bits
+    	binary =  binary.concat("1");
+
+    	//Append the padding bits
+    	while(binary.length()%512 != 448){
+    		binary = binary.concat("0");
+    	}
+    	
+    	System.out.println("As binary after padding bits: "+binary);
+    	System.out.println("Binary Length after adding padding: "+binary.length());
+ 
+    	//Moving to Step 2, Extend to 64Bit,  Append Length
+    	while(pre.length()%64 !=0){
+    		pre = "0".concat(pre);
+    	}
+    	System.out.println(pre.toString().length());
+    	String message = binary+pre;
+
+    	
+    	//Step three: Initialize buffer
+    	BigInteger hexA = new BigInteger("01234567", 16);
+    	BigInteger hexB = new BigInteger("89abcdef", 16);
+    	BigInteger hexC = new BigInteger("fedcba98", 16);
+    	BigInteger hexD = new BigInteger("76543210", 16);
+  
+    	
+ 
+    	
+    	
+    	Byte[] XBlock = new Byte[16];
+    	for(int i =0; i < message.length(); i+=16){
+    		for(int j = 0; j<= 15;j++){
+    			XBlock[j]= (byte) Character.getNumericValue(message.charAt(i*16+j));
+    		}	
+    		
+    		
+    		BigInteger hexAA = hexA;
+    		BigInteger hexBB = hexB;
+    		BigInteger hexCC = hexC;
+    		BigInteger hexDD = hexD;
+    		
+    		BigInteger a;
+    		BigInteger byteRep = BigInteger.valueOf(XBlock.toString().charAt(0));
+    		a= roundOne(hexA,hexB,hexC,hexD, byteRep,3);
+    		
+    		
+            hexA = hexA.add(hexAA);
+            hexB = hexB.add(hexBB);
+            hexC = hexC.add(hexCC);
+            hexD = hexD.add(hexDD);
+    	}
+	}
+}

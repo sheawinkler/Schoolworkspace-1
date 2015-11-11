@@ -2,39 +2,47 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.UnsupportedEncodingException;
 import java.math.BigInteger;
+import java.nio.ByteBuffer;
+import java.nio.IntBuffer;
 import java.util.Scanner;
 
 
 public class DigestToOutput {
 	
-
+	
 	
 
-	public int F(int X, int Y, int Z){
-		return X&Y|(~X)&Z ;
+	public static BigInteger F(BigInteger X, BigInteger Y, BigInteger Z){
+		return X.and(Y).or(X.not().and(Z));
+	
 	}
 
-	public int G(int X, int Y, int Z){
+	public static BigInteger G(BigInteger X, BigInteger Y, BigInteger Z){
 		
-		return X&Y|X&Z|Y&Z;
+		return X.and(Y).or(X.and(Z)).or(Y.and(Z));
 	}
 	
-	public int H(int X, int Y, int Z){
-		return X^Y^Z;
+	public static BigInteger H(BigInteger X, BigInteger Y, BigInteger Z){
+		return X.xor(Y).xor(Z);
 	}
 	
-	public int roundOne(int a, int b, int c, int d, int Xk, int s){
-		a = (a+F(b,c,d)+Xk)<<s;
+	public static BigInteger roundOne(BigInteger a, BigInteger b, BigInteger c, BigInteger d, int Xk, int s){
+		BigInteger bi = BigInteger.valueOf(Xk);
+		a = (a.add(F(b,c,d)).add(bi)).shiftLeft(s);
 		return a;
 	}
 
-	public int roundTwo(int a, int b, int c, int d, int Xk, int s){
-		a = (a+G(b,c,d)+Xk+0x5A827999)<<s;
+	public static BigInteger roundTwo(BigInteger a, BigInteger b, BigInteger c, BigInteger d, int Xk, int s){
+		BigInteger bi = BigInteger.valueOf(Xk);
+		BigInteger val = new BigInteger("5A827999", 16);
+		a = (a.add(G(b,c,d)).add(bi).add(val)).shiftLeft(s);
 		return a;
 	}
 	
-	public int roundThree(int a, int b, int c, int d, int Xk, int s){
-		a = (a+H(b,c,d)+Xk+0x6ED9EBA1)<<s;
+	public static BigInteger roundThree(BigInteger a, BigInteger b, BigInteger c, BigInteger d, int Xk, int s){
+		BigInteger bi = BigInteger.valueOf(Xk);
+		BigInteger val = new BigInteger("6ED9EBA1", 16);
+		a = (a.add(H(b,c,d)).add(bi).add(val)).shiftLeft(s);
 		return a;
 	}
 	
@@ -62,11 +70,16 @@ public class DigestToOutput {
     		t.printStackTrace();
     	}
     
+    	
     	String contains = new String();
+	
     	while(fileScanner.hasNextLine()){
-    		contains = contains.concat(fileScanner.nextLine());
+    		 contains = contains + fileScanner.nextLine();
     	}
     	//Possibly I may need to insert the 0 that is getting excluded at the beginning of the bit   
+    	
+    
+    	
     	
     	String binary = new BigInteger(contains.getBytes()).toString(2);
     	if(binary.length()%8!=0){
@@ -95,39 +108,112 @@ public class DigestToOutput {
     	while(pre.length()%64 !=0){
     		pre = "0".concat(pre);
     	}
-    	System.out.println(pre.toString().length());
-    	String message = binary+pre;
-    	//System.out.println(message);
+    	System.out.println("A 64-bit representation of b: "+pre.toString()+" With length: " +pre.toString().length());
+
+    	if(pre.toString().length()>64){
+    		pre = pre.substring(pre.toString().length() - 64, pre.toString().length());
+    	}
+    	String message = binary.concat(pre);
+    	System.out.println("Full length of message is: "+ message.length());
+   
     	
     	//Step three: Initialize buffer
-    	int hexA = 0x01234567;
-    	int hexB = 0x89abcdef;
-    	int hexC = 0xfedcba98;
-    	int hexD = 0x76543210;
-    	
+    	BigInteger hexA = new BigInteger("01234567", 16);
+    	BigInteger hexB = new BigInteger("89abcdef", 16);
+    	BigInteger hexC = new BigInteger("fedcba98", 16);
+    	BigInteger hexD = new BigInteger("76543210", 16);
+  
     	
  
     	
-    	
-    	Byte[] XBlock = new Byte[16];
+    	int[] XBlock = new int[16];
     	for(int i =0; i < message.length(); i+=16){
-    		for(int j = 0; j< 15;j++){
-    			XBlock[j]=(byte) message.charAt(i*16+j);
+    		for(int j = 0; j< 16;j++){
+    			XBlock[j]= (Integer) Character.getNumericValue(message.charAt(i*16+j%message.length()));
     		}	
     		
     		
-    		int hexAA = hexA;
-    		int hexBB = hexB;
-    		int hexCC = hexC;
-    		int hexDD = hexD;
-    		
-    		int a;
     		
     		
-            hexA = hexA + hexAA;
-            hexB = hexB + hexBB;
-            hexC = hexC + hexCC;
-            hexD = hexD + hexDD;
+    		BigInteger hexAA = hexA;
+    		BigInteger hexBB = hexB;
+    		BigInteger hexCC = hexC;
+    		BigInteger hexDD = hexD;
+  
+    		//ROUND 1
+    		
+    		hexA= roundOne(hexA,hexB,hexC,hexD, XBlock[0],3);
+    		hexD= roundOne(hexD,hexA,hexB,hexC, XBlock[1],7);
+    		hexC= roundOne(hexC,hexD,hexA,hexB, XBlock[2],11);
+    		hexB= roundOne(hexB,hexC,hexD,hexA, XBlock[3],19);
+
+    		hexA= roundOne(hexA,hexB,hexC,hexD, XBlock[4],3);
+    		hexD= roundOne(hexD,hexA,hexB,hexC, XBlock[5],7);
+    		hexC= roundOne(hexC,hexD,hexA,hexB, XBlock[6],11);
+    		hexB= roundOne(hexB,hexC,hexD,hexA, XBlock[7],19);
+    		
+    		hexA= roundOne(hexA,hexB,hexC,hexD, XBlock[8],3);
+    		hexD= roundOne(hexD,hexA,hexB,hexC, XBlock[9],7);
+    		hexC= roundOne(hexC,hexD,hexA,hexB, XBlock[10],11);
+    		hexB= roundOne(hexB,hexC,hexD,hexA, XBlock[11],19);
+    		
+    		hexA= roundOne(hexA,hexB,hexC,hexD, XBlock[12],3);
+    		hexD= roundOne(hexD,hexA,hexB,hexC, XBlock[13],7);
+    		hexC= roundOne(hexC,hexD,hexA,hexB, XBlock[14],11);
+    		hexB= roundOne(hexB,hexC,hexD,hexA, XBlock[15],19);
+    		
+    		//Round 2
+    		
+    		hexA= roundTwo(hexA,hexB,hexC,hexD, XBlock[0],3);
+    		hexD= roundTwo(hexD,hexA,hexB,hexC, XBlock[4],5);
+    		hexC= roundTwo(hexC,hexD,hexA,hexB, XBlock[8],9);
+    		hexB= roundTwo(hexB,hexC,hexD,hexA, XBlock[12],13);
+
+    		hexA= roundTwo(hexA,hexB,hexC,hexD, XBlock[1],3);
+    		hexD= roundTwo(hexD,hexA,hexB,hexC, XBlock[5],5);
+    		hexC= roundTwo(hexC,hexD,hexA,hexB, XBlock[9],9);
+    		hexB= roundTwo(hexB,hexC,hexD,hexA, XBlock[13],13);
+    		
+    		hexA= roundTwo(hexA,hexB,hexC,hexD, XBlock[2],3);
+    		hexD= roundTwo(hexD,hexA,hexB,hexC, XBlock[6],5);
+    		hexC= roundTwo(hexC,hexD,hexA,hexB, XBlock[10],9);
+    		hexB= roundTwo(hexB,hexC,hexD,hexA, XBlock[14],13);
+    		
+    		hexA= roundTwo(hexA,hexB,hexC,hexD, XBlock[3],3);
+    		hexD= roundTwo(hexD,hexA,hexB,hexC, XBlock[7],5);
+    		hexC= roundTwo(hexC,hexD,hexA,hexB, XBlock[11],9);
+    		hexB= roundTwo(hexB,hexC,hexD,hexA, XBlock[15],13);
+    		
+    		
+    		//Round 3
+    		
+    		hexA= roundThree(hexA,hexB,hexC,hexD, XBlock[0],3);
+    		hexD= roundThree(hexD,hexA,hexB,hexC, XBlock[8],9);
+    		hexC= roundThree(hexC,hexD,hexA,hexB, XBlock[4],11);
+    		hexB= roundThree(hexB,hexC,hexD,hexA, XBlock[12],15);
+
+    		hexA= roundThree(hexA,hexB,hexC,hexD, XBlock[2],3);
+    		hexD= roundThree(hexD,hexA,hexB,hexC, XBlock[10],9);
+    		hexC= roundThree(hexC,hexD,hexA,hexB, XBlock[6],11);
+    		hexB= roundThree(hexB,hexC,hexD,hexA, XBlock[14],15);
+    		
+    		hexA= roundThree(hexA,hexB,hexC,hexD, XBlock[1],3);
+    		hexD= roundThree(hexD,hexA,hexB,hexC, XBlock[9],9);
+    		hexC= roundThree(hexC,hexD,hexA,hexB, XBlock[5],11);
+    		hexB= roundThree(hexB,hexC,hexD,hexA, XBlock[13],15);
+    		
+    		hexA= roundThree(hexA,hexB,hexC,hexD, XBlock[3],3);
+    		hexD= roundThree(hexD,hexA,hexB,hexC, XBlock[11],9);
+    		hexC= roundThree(hexC,hexD,hexA,hexB, XBlock[7],11);
+    		hexB= roundThree(hexB,hexC,hexD,hexA, XBlock[15],15);
+    				
+    		
+            hexA = hexA.add(hexAA);
+            hexB = hexB.add(hexBB);
+            hexC = hexC.add(hexCC);
+            hexD = hexD.add(hexDD);
+            
+            //System.out.println(hexA+", "+hexB+", "+ hexC+", "+hexD);
     	}
 	}
 }
